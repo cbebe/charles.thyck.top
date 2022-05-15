@@ -9,19 +9,23 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-code-font-size: 95%;
+  --ifm-color-primary-lightest: #b481bb;
+  --ifm-color-primary-lighter: #b483be;
+  --ifm-color-primary-light: #b486c1;
+  --ifm-color-primary: #b388c5;
+  --ifm-color-primary-dark: #b38ac8;
+  --ifm-color-primary-darker: #b28dcb;
+  --ifm-color-primary-darkest: #b28fce;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
+/* https://nipponcolors.com/#ouchi */
+/* https://nipponcolors.com/#usu */
+/* https://nipponcolors.com/#benifuji */
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* https://nipponcolors.com/#fuji #8B81C3 */
 /* https://nipponcolors.com/#konkikyo #211e55 */
+/* prettier-ignore */
 [data-theme="dark"] {
-  --ifm-color-primary-lightest: #8b81c3;
-  --ifm-color-primary-lighter: #8076b5;
-  --ifm-color-primary-light: #736ba7;
-  --ifm-color-primary: #655e96;
-  --ifm-color-primary-dark: #554e84;
-  --ifm-color-primary-darker: #403b6f;
-  --ifm-color-primary-darkest: #211e55;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

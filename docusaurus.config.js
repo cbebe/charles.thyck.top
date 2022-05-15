@@ -40,6 +40,7 @@ const config = {
   tagline: "A Computer Engineering Student at the University of Alberta",
   url: "https://charlesancheta.com",
   baseUrl: "/",
+  trailingSlash: true,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -95,8 +96,8 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          { to: "/experience", label: "Experience", position: "left" },
-          { to: "/projects", label: "Projects", position: "left" },
+          // { to: "/experience", label: "Experience", position: "left" },
+          // { to: "/projects", label: "Projects", position: "left" },
           {
             type: "html",
             value: addNewTabLink("/Resume.pdf", "Resume"),

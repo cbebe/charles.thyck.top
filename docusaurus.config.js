@@ -6,9 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://charlesancheta.com.com",
+  title: "Charles Ancheta",
+  tagline: "Computer Engineering Student",
+  url: "https://charlesancheta.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -36,15 +36,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/cbebe/my-website/edit/master/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/cbebe/my-website/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -58,20 +56,27 @@ const config = {
     ({
       colorMode: {
         defaultMode: "dark",
-        respectPrefersColorScheme: true,
+        respectPrefersColorScheme: false,
       },
       navbar: {
-        title: "My Site",
+        title: "Charles Ancheta",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
         },
         items: [
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/experience", label: "Experience", position: "left" },
+          { to: "/projects", label: "Projects", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            type: "html",
+            value:
+              '<a target="_blank" rel="noopener noreferrer" class="navbar__link" href="/Resume.pdf">Resume<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules--pnpm-@docusaurus+theme-classic@2-0-0-beta-20_oagctitnqx3g7idiuq5vrj5arm-node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a>',
+            position: "left",
+          },
+          {
+            href: "https://github.com/cbebe",
             label: "GitHub",
-            position: "right",
+            position: "left",
           },
         ],
       },

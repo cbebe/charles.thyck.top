@@ -4,27 +4,24 @@
  * work well for content-centric websites.
  */
 
+/* https://colordesigner.io/gradient-generator */
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+/* https://nipponcolors.com/#fuji #8B81C3 */
+/* https://nipponcolors.com/#konkikyo #211e55 */
+[data-theme="dark"] {
+  --ifm-color-primary-lightest: #8b81c3;
+  --ifm-color-primary-lighter: #8076b5;
+  --ifm-color-primary-light: #736ba7;
+  --ifm-color-primary: #655e96;
+  --ifm-color-primary-dark: #554e84;
+  --ifm-color-primary-darker: #403b6f;
+  --ifm-color-primary-darkest: #211e55;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

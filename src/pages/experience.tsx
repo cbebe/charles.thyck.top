@@ -1,1 +1,1 @@
-export { ExperiencePage as default } from "../components/ExperiencePage";
+export { Experience as default } from "../components/ExperiencePage";

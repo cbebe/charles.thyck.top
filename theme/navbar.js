@@ -9,8 +9,8 @@ const navbar =
       src: "img/logo.svg",
     },
     items: [
-      // { to: "/experience", label: "Experience", position: "left" },
-      // { to: "/projects", label: "Projects", position: "left" },
+      { to: "/experience", label: "Experience", position: "left" },
+      { to: "/projects", label: "Projects", position: "left" },
       {
         type: "html",
         value: addNewTabLink("/Resume.pdf", "Resume"),

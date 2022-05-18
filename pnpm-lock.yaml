@@ -5,6 +5,7 @@ specifiers:
   '@docusaurus/core': 2.0.0-beta.20
   '@docusaurus/module-type-aliases': 2.0.0-beta.20
   '@docusaurus/preset-classic': 2.0.0-beta.20
+  '@docusaurus/theme-classic': 2.0.0-beta.20
   '@docusaurus/types': 2.0.0-beta.20
   '@mdx-js/react': ^1.6.22
   '@tsconfig/docusaurus': ^1.0.5
@@ -19,6 +20,7 @@ dependencies:
   '@algolia/client-search': 4.13.0
   '@docusaurus/core': 2.0.0-beta.20_oagctitnqx3g7idiuq5vrj5arm
   '@docusaurus/preset-classic': 2.0.0-beta.20_luwm2mckvs7hirkhpgypcroowm
+  '@docusaurus/theme-classic': 2.0.0-beta.20_oagctitnqx3g7idiuq5vrj5arm
   '@mdx-js/react': 1.6.22_react@17.0.2
   clsx: 1.1.1
   prism-react-renderer: 1.3.1_react@17.0.2

@@ -3,8 +3,8 @@ import React from "react";
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "Thyck Corgis",
+    Svg: require("@site/static/img/thyck/logo.svg").default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and used to get your website up and running
@@ -34,6 +34,6 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-export const HomepageFeatures = () => <Features list={FeatureList} />;
+export const ProjectFeatures = () => <Features list={FeatureList} />;
 
-export default HomepageFeatures;
+export default ProjectFeatures;

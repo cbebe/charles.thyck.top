@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import React from "react";
 import { HeaderSection } from "../../basics/HeaderSection";
+import ProjectFeatures from "./ProjectFeatures";
 import styles from "./projects.module.css";
 
 const ExtLink = ({ label, to }: { label: string; to: string }) => (
@@ -21,7 +22,9 @@ export function Projects(): JSX.Element {
           <ExtLink to="https://git.thyck.top" label="Gitea" />
         </div>
       </HeaderSection>
-      <main></main>
+      <main>
+        <ProjectFeatures />
+      </main>
     </Layout>
   );
 }

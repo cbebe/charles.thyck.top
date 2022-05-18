@@ -2,7 +2,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import React, { useMemo } from "react";
 import { HeaderSection } from "../../basics/HeaderSection";
-import styles from "./home.module.css";
 import HomepageFeatures from "./HomepageFeatures";
 
 function HomepageHeader() {
@@ -15,7 +14,7 @@ function HomepageHeader() {
 
   return (
     <HeaderSection title="Hi, I'm Charles!" subtitle={siteConfig.tagline}>
-      <div className={styles.buttons}>
+      <div className="centre-content">
         <a className="button button--secondary button--lg" href="/Resume.pdf">
           Resume - Last Updated {lastResumeUpdate}
         </a>

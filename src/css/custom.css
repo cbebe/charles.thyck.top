@@ -29,3 +29,9 @@
 [data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.centre-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -8,7 +8,7 @@ const MIT_LINK = '<a href="https://choosealicense.com/licenses/mit">MIT</a>';
 
 const themeConfig =
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-  {
+  ({
     colorMode: {
       defaultMode: "dark",
       respectPrefersColorScheme: false,
@@ -23,6 +23,6 @@ const themeConfig =
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-  };
+  });
 
 module.exports = { themeConfig };

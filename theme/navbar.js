@@ -1,8 +1,8 @@
 // @ts-check
 
 const navbar =
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig.navbar} */
-  {
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig['navbar']} */
+  ({
     title: "Charles Ancheta",
     logo: {
       alt: "My Site Logo",
@@ -32,7 +32,7 @@ const navbar =
         position: "left",
       },
     ],
-  };
+  });
 
 /**
  * Create a new tab link that also uses the responsive Docusaurus stuff

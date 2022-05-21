@@ -1,20 +1,26 @@
+import Link from "@docusaurus/Link";
 import { FeatureItem, Features } from "@site/src/components/basics/Features";
 import React from "react";
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Thyck Corgis",
-    Svg: require("@site/static/img/thyck/logo.svg").default,
+    title: (
+      <Link to="https://thyck.top">
+        <h3>Thyck Corgis</h3>
+      </Link>
+    ),
+    svg: require("@site/static/img/thyck/logo.svg").default,
     description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and used to get your website up and running
-        quickly.
-      </>
+      <div>
+        <p>October 2020</p>
+        Formed for University of Alberta Engineering Competition, we went on to participate in a couple more hackathons
+        as a team. Check out our <Link to="https://github.com/thyckcorgis">GitHub</Link>!
+      </div>
     ),
   },
   {
     title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go ahead and move your docs into the{" "}
@@ -24,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can be extended while reusing the same

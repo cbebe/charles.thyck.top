@@ -9,7 +9,7 @@ const navbar =
       src: "img/logo.svg",
     },
     items: [
-      { to: "/experience", label: "Experience", position: "left" },
+      { to: "/work", label: "Work", position: "left" },
       { to: "/projects", label: "Projects", position: "left" },
       {
         type: "html",

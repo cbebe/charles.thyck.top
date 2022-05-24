@@ -40,16 +40,21 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/cbebe/my-website/edit/master/",
-        },
+        // Disable until we've found something worth putting
+        docs: false,
+        // docs: {
+        //   sidebarPath: require.resolve("./sidebars.js"),
+        //   editUrl: "https://github.com/cbebe/my-website/edit/master/",
+        // },
         blog: {
           showReadingTime: true,
           editUrl: "https://github.com/cbebe/my-website/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        sitemap: {
+          changefreq: "daily",
         },
       }),
     ],

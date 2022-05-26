@@ -8,6 +8,9 @@ build: data/packages.md assets/turnip.html
 watch: data/packages.md assets/turnip.html
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D
 
+clean:
+	rm -f *.aux *.log *.out Resume-*.tex
+
 pages: turnip build deploy
 
 assets/turnip.html:

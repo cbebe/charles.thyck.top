@@ -3,7 +3,6 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import React, { useMemo } from "react";
 import { HeaderSection } from "../../basics/HeaderSection";
-import HomepageFeatures from "./HomepageFeatures";
 import styles from "./styles.module.css";
 
 function HomepageHeader() {
@@ -29,9 +28,7 @@ export function Home(): JSX.Element {
   return (
     <Layout title="Hello!" description="Charles Ancheta's Personal Website">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      {/* <main><HomepageFeatures /></main> */}
     </Layout>
   );
 }

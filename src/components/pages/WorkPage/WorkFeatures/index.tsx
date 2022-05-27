@@ -5,9 +5,9 @@ import React from "react";
 const FeatureList: FeatureItem[] = [
   {
     title: (
-      <Link to="/work/isaic">
-        <h1>Industry Sandbox and AI Computing (ISAIC)</h1>
-      </Link>
+      // <Link to="/work/isaic">
+      <h1>Industry Sandbox and AI Computing (ISAIC)</h1>
+      // </Link>
     ),
     svg: require("@site/static/img/isaic.svg").default,
     description: (

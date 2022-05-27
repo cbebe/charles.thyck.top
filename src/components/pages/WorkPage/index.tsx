@@ -6,7 +6,7 @@ import WorkFeatures from "./WorkFeatures";
 export function Work() {
   return (
     <Layout title="Work" description="Charles Ancheta's Professional Experience">
-      <HeaderSection title="Work"></HeaderSection>
+      <HeaderSection title="Work" subtitle="My Professional Experience"></HeaderSection>
       <main>
         <WorkFeatures />
       </main>

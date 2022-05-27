@@ -25,7 +25,7 @@ export function Projects(): JSX.Element {
       </HeaderSection>
       <main>
         <section id="thyck-corgis">
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div className="text--center padding-horiz--md">
             <ThyckCorgiSvg role="img" />
             <h1 className={clsx("hero__title", styles.sectionHead)}>Thyck Corgis</h1>
             <p>Started October 2020</p>

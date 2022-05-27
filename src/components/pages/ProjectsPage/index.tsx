@@ -1,4 +1,5 @@
 import Link from "@docusaurus/Link";
+import ThyckCorgiSvg from "@site/static/img/thyck/logo.svg";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
 import React from "react";
@@ -15,7 +16,7 @@ const ExtLink = ({ label, to }: { label: string; to: string }) => (
 export function Projects(): JSX.Element {
   return (
     <Layout title="Projects" description="Charles Ancheta's Projects">
-      <HeaderSection title="My Projects" subtitle="Both personal and with ✨ friends ✨">
+      <HeaderSection title="My Personal Projects" subtitle="Both alone and with ✨friends✨">
         <div className={clsx("centre-content", styles.buttons)}>
           <ExtLink to="https://github.com/cbebe" label="GitHub" />
           <ExtLink to="https://devpost.com/charlesancheta" label="Devpost" />
@@ -23,7 +24,18 @@ export function Projects(): JSX.Element {
         </div>
       </HeaderSection>
       <main>
-        <ProjectFeatures />
+        <section id="thyck-corgis">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <ThyckCorgiSvg role="img" />
+            <h1 className={clsx("hero__title", styles.sectionHead)}>Thyck Corgis</h1>
+            <p>Started October 2020</p>
+            <p>
+              Formed for University of Alberta Engineering Competition, we went on to participate in a couple more
+              hackathons as a team. Check out our <Link to="https://github.com/thyckcorgis">GitHub</Link>!
+            </p>
+          </div>
+          <ProjectFeatures />
+        </section>
       </main>
     </Layout>
   );

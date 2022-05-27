@@ -1,8 +1,10 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import clsx from "clsx";
 import React, { useMemo } from "react";
 import { HeaderSection } from "../../basics/HeaderSection";
 import HomepageFeatures from "./HomepageFeatures";
+import styles from "./styles.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -14,7 +16,7 @@ function HomepageHeader() {
 
   return (
     <HeaderSection title="Hi, I'm Charles!" subtitle={siteConfig.tagline}>
-      <div className="centre-content">
+      <div className={clsx("centre-content", styles.space)}>
         <a className="button button--secondary button--lg" href="/Resume.pdf">
           Resume - Last Updated {lastResumeUpdate}
         </a>

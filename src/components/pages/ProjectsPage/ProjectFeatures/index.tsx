@@ -5,39 +5,43 @@ import React from "react";
 const FeatureList: FeatureItem[] = [
   {
     title: (
-      <Link to="https://thyck.top">
-        <h3>Thyck Corgis</h3>
+      <Link to="https://devpost.com/software/wapp">
+        <h3>WApp</h3>
       </Link>
     ),
-    svg: require("@site/static/img/thyck/logo.svg").default,
+    svg: require("@site/static/img/thyck/wapp.svg").default,
     description: (
       <div>
-        <p>October 2020</p>
-        Formed for University of Alberta Engineering Competition, we went on to participate in a couple more hackathons
-        as a team. Check out our <Link to="https://github.com/thyckcorgis">GitHub</Link>!
+        <p>February 2021</p>
+        Are you thirsty?! Well urine luck! ComPEEte with friends to rank #1 in the litreboard using our award winning
+        WApp! <Link to="https://youtu.be/BXuvQGEnreE">Demo Video</Link>
       </div>
     ),
   },
   {
-    title: "Focus on What Matters",
-    svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: (
+      <Link to="https://devpost.com/software/heart-2-heart">
+        <h3>Heart 2 Heart Confessations</h3>
+      </Link>
+    ),
+    svg: require("@site/static/img/thyck/h2h.svg").default,
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go ahead and move your docs into the{" "}
-        <code>docs</code> directory.
-      </>
+      <div>
+        <p>January 2021</p>A mobile application that tackles the fear of initiating difficult conversations with
+        friends, family, or significant others.
+      </div>
     ),
   },
-  {
-    title: "Powered by React",
-    svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can be extended while reusing the same
-        header and footer.
-      </>
-    ),
-  },
+  // {
+  //   title: "Powered by React",
+  //   svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+  //   description: (
+  //     <>
+  //       Extend or customize your website layout by reusing React. Docusaurus can be extended while reusing the same
+  //       header and footer.
+  //     </>
+  //   ),
+  // },
 ];
 
 export const ProjectFeatures = () => <Features list={FeatureList} />;

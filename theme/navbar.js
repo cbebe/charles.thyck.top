@@ -6,7 +6,7 @@ const navbar =
     title: "Charles Ancheta",
     logo: {
       alt: "My Site Logo",
-      src: "img/logo.svg",
+      src: "img/thyck/logo.svg",
     },
     items: [
       { to: "/work", label: "Work", position: "left" },

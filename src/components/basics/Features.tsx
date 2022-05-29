@@ -1,3 +1,4 @@
+import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import React, { ComponentProps, ComponentType, ReactChild } from "react";
 import styles from "./styles.module.css";
@@ -6,13 +7,19 @@ export interface FeatureItem {
   title: ReactChild;
   svg: ComponentType<ComponentProps<"svg">>;
   description: JSX.Element;
+  link?: string;
 }
 
-export const Feature = ({ title, svg: Svg, description, col }: FeatureItem & { col: number }) => (
+export const Feature = ({ title, svg: Svg, description, col, link }: FeatureItem & { col: number }) => (
   <div className={clsx("col", `col--${col}`)}>
     <div className="text--center">
-      {/* @ts-expect-error */}
-      <Svg className={styles.featureSvg} role="img" />
+      {link ? (
+        <Link to={link}>
+          <Svg className={styles.featureSvg} role="img" />
+        </Link>
+      ) : (
+        <Svg className={styles.featureSvg} role="img" />
+      )}
     </div>
     <div className="text--center padding-horiz--md">
       {typeof title === "string" ? <h3>{title}</h3> : title}

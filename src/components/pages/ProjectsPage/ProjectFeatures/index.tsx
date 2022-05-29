@@ -5,11 +5,8 @@ import React from "react";
 
 const FeatureList: FeatureItem[] = [
   {
-    title: (
-      <Link to="https://devpost.com/software/wapp">
-        <h3>WApp</h3>
-      </Link>
-    ),
+    title: "WApp",
+    link: "https://devpost.com/software/wapp",
     svg: WappSvg,
     description: (
       <div>
@@ -20,11 +17,8 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: (
-      <Link to="https://devpost.com/software/heart-2-heart">
-        <h3>Heart 2 Heart Confessations</h3>
-      </Link>
-    ),
+    title: "Heart 2 Heart Confessations",
+    link: "https://devpost.com/software/heart-2-heart",
     svg: H2HSvg,
     description: (
       <div>

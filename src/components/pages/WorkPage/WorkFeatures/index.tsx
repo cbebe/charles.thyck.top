@@ -5,12 +5,9 @@ import React from "react";
 
 const FeatureList: FeatureItem[] = [
   {
-    title: (
-      // <Link to="/work/isaic">
-      <h1>Industry Sandbox and AI Computing (ISAIC)</h1>
-      // </Link>
-    ),
+    title: <h1>Industry Sandbox and AI Computing (ISAIC)</h1>,
     svg: IsaicSvg,
+    link: "https://isaic.ca",
     description: (
       <div>
         <h2>January 2021 - Present</h2>

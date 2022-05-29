@@ -21,7 +21,9 @@ export function Projects(): JSX.Element {
       <main>
         <section id="thyck-corgis">
           <div className="text--center padding-horiz--md">
-            <ThyckCorgiSvg role="img" />
+            <Link to="https://thyck.top">
+              <ThyckCorgiSvg role="img" />
+            </Link>
             <h1 className={clsx("hero__title", styles.sectionHead)}>Thyck Corgis</h1>
             <p>Started October 2020</p>
             <p>

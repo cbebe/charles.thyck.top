@@ -7,6 +7,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: "WApp",
     link: "https://devpost.com/software/wapp",
+    type: "svg",
     svg: WappSvg,
     description: (
       <div>
@@ -19,6 +20,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: "Heart 2 Heart Confessations",
     link: "https://devpost.com/software/heart-2-heart",
+    type: "svg",
     svg: H2HSvg,
     description: (
       <div>

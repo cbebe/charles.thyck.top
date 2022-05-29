@@ -21,16 +21,6 @@ const navbar =
         label: "GitHub",
         position: "left",
       },
-      {
-        href: "https://www.linkedin.com/in/charles-ancheta",
-        label: "Linkedin",
-        position: "left",
-      },
-      {
-        href: "mailto:cancheta@ualberta.ca",
-        label: "Email",
-        position: "left",
-      },
     ],
   });
 

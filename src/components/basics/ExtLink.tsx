@@ -4,7 +4,7 @@ import React, { ComponentProps, ComponentType } from "react";
 import styles from "./styles.module.css";
 
 export interface ExtLinkProps {
-  label: string;
+  label?: JSX.Element | string;
   to: string;
   svg?: ComponentType<ComponentProps<"svg">>;
 }

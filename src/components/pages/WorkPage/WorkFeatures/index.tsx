@@ -1,12 +1,13 @@
 import Link from "@docusaurus/Link";
 import { FeatureItem, Features } from "@site/src/components/basics/Features";
-import { IsaicSvg } from "@site/src/svg";
 import React from "react";
 
 const FeatureList: FeatureItem[] = [
   {
     title: <h1>Industry Sandbox and AI Computing (ISAIC)</h1>,
-    svg: IsaicSvg,
+    type: "img",
+    img: require("@site/static/img/isaic-logo.png").default,
+    alt: "ISAIC Logo",
     link: "https://isaic.ca",
     description: (
       <div>

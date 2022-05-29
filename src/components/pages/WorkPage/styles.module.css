@@ -1,0 +1,11 @@
+.resumeButton {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  white-space: normal;
+}
+
+@media screen and (min-width: 600px) {
+  .resumeButton {
+    margin-bottom: 1rem;
+  }
+}

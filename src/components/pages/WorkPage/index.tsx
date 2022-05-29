@@ -1,3 +1,4 @@
+import { EMAIL, LINKEDIN_URL } from "@site/config/url";
 import { EmailSvg, LinkedinSvg } from "@site/src/svg";
 import { useLastResumeUpdate } from "@site/src/util/useLastResumeUpdate";
 import Layout from "@theme/Layout";
@@ -24,8 +25,8 @@ export function Work() {
     <Layout title="Work" description="Charles Ancheta's Professional Experience">
       <HeaderSection title="Work" subtitle="My Professional Experience">
         <ResumeButton />
-        <ExtLink svg={LinkedinSvg} label="Linkedin" to="https://www.linkedin.com/in/charles-ancheta" />
-        <ExtLink svg={EmailSvg} label="Email" to="mailto:cancheta.dev@gmail.com" />
+        <ExtLink svg={LinkedinSvg} label="Linkedin" to={LINKEDIN_URL} />
+        <ExtLink svg={EmailSvg} label="Email" to={EMAIL} />
       </HeaderSection>
       <main>
         <WorkFeatures />

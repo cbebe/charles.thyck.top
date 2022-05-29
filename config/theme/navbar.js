@@ -1,5 +1,7 @@
 // @ts-check
 
+const { GITHUB_URL } = require("../url");
+
 const navbar =
   /** @type {import('@docusaurus/preset-classic').ThemeConfig['navbar']} */
   ({
@@ -17,7 +19,7 @@ const navbar =
         position: "left",
       },
       {
-        href: "https://github.com/cbebe",
+        href: GITHUB_URL,
         label: "GitHub",
         position: "left",
       },

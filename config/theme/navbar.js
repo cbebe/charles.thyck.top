@@ -13,6 +13,7 @@ const navbar =
     items: [
       { to: "/work", label: "Work", position: "left" },
       { to: "/projects", label: "Projects", position: "left" },
+      { to: "/blog", label: "Blog", position: "left" },
       {
         type: "html",
         value: addNewTabLink("/Resume.pdf", "Resume"),

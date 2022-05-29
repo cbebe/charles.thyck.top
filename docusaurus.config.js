@@ -1,8 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const { themeConfig } = require("./theme");
-
 /** @type {(file: string) => string} */
 function getLastModified(file) {
   return require("fs").statSync(file).mtime.toISOString();
@@ -21,20 +19,12 @@ const config = {
   customFields: {
     lastResumeUpdate: getLastModified("./static/Resume.pdf"),
   },
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "cbebe", // Usually your GitHub org/user name.
-  projectName: "my-website", // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  organizationName: "cbebe",
+  projectName: "my-website",
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
-
   presets: [
     [
       "classic",
@@ -59,7 +49,7 @@ const config = {
       }),
     ],
   ],
-  themeConfig,
+  themeConfig: require("./theme").themeConfig,
 };
 
 module.exports = config;

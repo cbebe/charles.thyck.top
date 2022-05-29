@@ -1,6 +1,7 @@
 // @ts-check
 
-const MIT_LINK = '<a href="https://choosealicense.com/licenses/mit">MIT</a>';
+const MIT_LINK =
+  '<a style="color: var(--ifm-footer-link-color)" href="https://choosealicense.com/licenses/mit">MIT</a>';
 
 const themeConfig =
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

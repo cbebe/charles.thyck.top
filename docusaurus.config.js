@@ -50,6 +50,7 @@ const config = {
     ],
   ],
   themeConfig: require("./theme").themeConfig,
+  plugins: [require("./plugins/pwa")],
 };
 
 module.exports = config;

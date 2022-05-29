@@ -1,5 +1,6 @@
 import Link from "@docusaurus/Link";
 import { FeatureItem, Features } from "@site/src/components/basics/Features";
+import { H2HSvg, WappSvg } from "@site/src/svg";
 import React from "react";
 
 const FeatureList: FeatureItem[] = [
@@ -9,7 +10,7 @@ const FeatureList: FeatureItem[] = [
         <h3>WApp</h3>
       </Link>
     ),
-    svg: require("@site/static/img/thyck/wapp.svg").default,
+    svg: WappSvg,
     description: (
       <div>
         <p>February 2021</p>
@@ -24,7 +25,7 @@ const FeatureList: FeatureItem[] = [
         <h3>Heart 2 Heart Confessations</h3>
       </Link>
     ),
-    svg: require("@site/static/img/thyck/h2h.svg").default,
+    svg: H2HSvg,
     description: (
       <div>
         <p>January 2021</p>A mobile application that tackles the fear of initiating difficult conversations with
@@ -32,16 +33,6 @@ const FeatureList: FeatureItem[] = [
       </div>
     ),
   },
-  // {
-  //   title: "Powered by React",
-  //   svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-  //   description: (
-  //     <>
-  //       Extend or customize your website layout by reusing React. Docusaurus can be extended while reusing the same
-  //       header and footer.
-  //     </>
-  //   ),
-  // },
 ];
 
 export const ProjectFeatures = () => <Features list={FeatureList} />;

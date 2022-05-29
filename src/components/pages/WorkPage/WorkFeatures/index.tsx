@@ -1,5 +1,6 @@
 import Link from "@docusaurus/Link";
 import { FeatureItem, Features } from "@site/src/components/basics/Features";
+import { IsaicSvg } from "@site/src/svg";
 import React from "react";
 
 const FeatureList: FeatureItem[] = [
@@ -9,7 +10,7 @@ const FeatureList: FeatureItem[] = [
       <h1>Industry Sandbox and AI Computing (ISAIC)</h1>
       // </Link>
     ),
-    svg: require("@site/static/img/isaic.svg").default,
+    svg: IsaicSvg,
     description: (
       <div>
         <h2>January 2021 - Present</h2>

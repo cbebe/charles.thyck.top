@@ -1,14 +1,6 @@
-.buttonSpaced {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 @media screen and (max-width: 600px) {
   .buttons {
     flex-direction: column;
-  }
-  .buttonSpaced {
-    margin-top: 1rem;
   }
 }
 

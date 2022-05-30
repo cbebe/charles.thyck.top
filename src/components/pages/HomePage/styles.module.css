@@ -1,5 +1,22 @@
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  flex-direction: column;
+  align-items: center;
+}
+
+.softie {
+  text-align: center;
+  animation: softFadeIn 1s 1.25s linear forwards;
+  opacity: 0;
+}
+
+@keyframes softFadeIn {
+  100% {
+    opacity: 1;
+  }
 }

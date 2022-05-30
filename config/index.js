@@ -1,13 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-/** @type {(file: string) => Promise<string>} */
-async function getLastModified(file) {
-  const fs = await import("fs/promises");
-  const stat = await fs.stat(file);
-  return stat.mtime.toISOString();
-}
-
 async function createConfig() {
   const { WEBSITE_URL, WEBSITE_REPO_URL } = await import("./url.js");
   /** @type {import('@docusaurus/types').Config} */
@@ -21,7 +14,8 @@ async function createConfig() {
     onBrokenMarkdownLinks: "warn",
     favicon: "/favicon.ico",
     customFields: {
-      lastResumeUpdate: await getLastModified(require.resolve("../static/Resume.pdf")),
+      // Cloning the repo would reset the last modified time so this would be more reliable
+      lastResumeUpdate: await getGitLastModified("static/Resume.pdf"),
     },
     organizationName: "cbebe",
     projectName: "my-website",
@@ -61,3 +55,20 @@ async function createConfig() {
 }
 
 module.exports = createConfig;
+
+/** @type {(file: string) => Promise<string>} */
+function execAsync(cmd) {
+  return new Promise((resolve, reject) => {
+    import("child_process").then(({ exec }) => {
+      exec(cmd, (err, stdout) => {
+        if (err) return reject(err);
+        resolve(stdout);
+      });
+    });
+  });
+}
+
+/** @type {(file: string) => Promise<string>} */
+function getGitLastModified(file) {
+  return execAsync(`git log -1 --pretty="format:%cI" ${file}`);
+}

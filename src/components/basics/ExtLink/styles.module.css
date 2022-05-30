@@ -1,0 +1,24 @@
+.withSvg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonSvg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.buttonSpaced {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .buttonSpaced {
+    margin-top: 1rem;
+  }
+}

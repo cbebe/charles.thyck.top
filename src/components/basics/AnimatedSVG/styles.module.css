@@ -1,0 +1,33 @@
+.svg {
+  transform: translateY(20px);
+  animation: moveUp 1s 0s ease-in forwards;
+  width: 400px;
+  height: 250px;
+}
+
+@media screen and (max-width: 600px) {
+  .svg {
+    width: 80vw;
+    height: auto;
+  }
+}
+
+.svg path {
+  stroke-dasharray: 120%;
+  animation: hi 1s 0.25s ease-in forwards;
+  opacity: 0;
+  stroke-dashoffset: 120%;
+}
+
+@keyframes moveUp {
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hi {
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0%;
+  }
+}

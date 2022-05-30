@@ -1,6 +1,7 @@
 // @ts-check
 
 const DEVPOST_URL = "https://devpost.com/charlesancheta";
+const DOCUSAURUS_URL = "https://docusaurus.io";
 const EMAIL = "mailto:cancheta.dev@gmail.com";
 const GITEA_URL = "https://git.thyck.top";
 const GITHUB_URL = "https://github.com/cbebe";
@@ -23,6 +24,7 @@ const WEBSITE_URL = "https://charlesancheta.com";
 
 module.exports = {
   DEVPOST_URL,
+  DOCUSAURUS_URL,
   EMAIL,
   GITEA_URL,
   GITHUB_URL,

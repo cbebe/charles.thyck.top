@@ -4,7 +4,7 @@ module.exports = [
   "@docusaurus/plugin-pwa",
   /** @type {import('@docusaurus/plugin-pwa').PluginOptions} */
   {
-    debug: true,
+    debug: false,
     offlineModeActivationStrategies: ["appInstalled", "standalone", "queryString"],
     pwaHead: [
       {

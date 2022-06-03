@@ -13,6 +13,7 @@ export function Home(): JSX.Element {
         <div className={styles.softieWrapper}>
           <VMoji />
           <h1 className={clsx("hero__subtitle", styles.softie)}>Software Engineer</h1>
+          <VMoji mirror />
         </div>
       </main>
     </Layout>

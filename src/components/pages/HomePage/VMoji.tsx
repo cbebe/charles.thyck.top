@@ -1,9 +1,10 @@
+import clsx from "clsx";
 import React from "react";
 import styles from "./styles.module.css";
 
-export function VMoji() {
+export function VMoji({ mirror }: { mirror?: boolean }) {
   return (
-    <div className={styles.vmoji}>
+    <div className={clsx(styles.vmoji, { [styles.mirror]: mirror })}>
       <svg width="100%" height="100%" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path

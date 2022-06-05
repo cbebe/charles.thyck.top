@@ -1,6 +1,6 @@
 // @ts-check
 
-const { GITHUB_URL } = require("../url");
+const { PROFILES } = require("../url");
 
 const navbar =
   /** @type {import('@docusaurus/preset-classic').ThemeConfig['navbar']} */
@@ -20,7 +20,7 @@ const navbar =
         position: "left",
       },
       {
-        href: GITHUB_URL,
+        href: PROFILES.GITHUB,
         label: "GitHub",
         position: "left",
       },

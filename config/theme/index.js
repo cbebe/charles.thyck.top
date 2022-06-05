@@ -1,6 +1,6 @@
 // @ts-check
 
-const { MIT_URL, DOCUSAURUS_URL } = require("../url");
+const { EXTRAS } = require("../url");
 
 /**
  *
@@ -10,8 +10,8 @@ const { MIT_URL, DOCUSAURUS_URL } = require("../url");
  */
 const createLink = (label, href) => `<a style="color: var(--ifm-footer-link-color)" href="${href}">${label}</a>`;
 
-const DOCUSAURUS_LINK = createLink("Docusaurus️", DOCUSAURUS_URL);
-const MIT_LINK = createLink("MIT", MIT_URL);
+const DOCUSAURUS_LINK = createLink("Docusaurus️", EXTRAS.DOCUSAURUS_URL);
+const MIT_LINK = createLink("MIT", EXTRAS.MIT_URL);
 
 const themeConfig =
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

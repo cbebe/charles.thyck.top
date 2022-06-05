@@ -2,12 +2,12 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 async function createConfig() {
-  const { WEBSITE_URL, WEBSITE_REPO_URL } = await import("./url.js");
+  const { WEBSITE } = await import("./url.js");
   /** @type {import('@docusaurus/types').Config} */
   const config = {
     title: "Charles Ancheta",
     tagline: "A Computer Engineering Student at the University of Alberta",
-    url: WEBSITE_URL,
+    url: WEBSITE.URL,
     baseUrl: "/",
     trailingSlash: true,
     onBrokenLinks: "throw",
@@ -36,7 +36,7 @@ async function createConfig() {
           // },
           blog: {
             showReadingTime: true,
-            editUrl: `${WEBSITE_REPO_URL}/edit/master/`,
+            editUrl: `${WEBSITE.REPO_URL}/edit/master/`,
           },
           theme: {
             customCss: require.resolve("../src/css/custom.css"),

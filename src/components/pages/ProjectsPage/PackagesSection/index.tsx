@@ -1,4 +1,3 @@
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { NPMPackage } from "@site/config/package";
 import React, { useMemo } from "react";
@@ -36,7 +35,7 @@ export function PackagesSection() {
         {packages.map((p) => (
           <div key={p.name}>
             <h1>
-              <Link href={p.url}>{p.name}</Link>
+              <a href={p.url}>{p.name}</a>
             </h1>
             <p>{p.description}</p>
           </div>

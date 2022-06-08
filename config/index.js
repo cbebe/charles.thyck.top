@@ -3,6 +3,12 @@
 
 async function createConfig() {
   const { WEBSITE } = await import("./url.js");
+  const fetch = (await import("node-fetch")).default;
+  const res = await fetch("https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe");
+  /** @type {import('./package').Data} */
+  // @ts-expect-error no way to prevent this
+  const data = await res.json();
+
   /** @type {import('@docusaurus/types').Config} */
   const config = {
     title: "Charles Ancheta",
@@ -16,6 +22,7 @@ async function createConfig() {
     customFields: {
       // Cloning the repo would reset the last modified time so this would be more reliable
       lastResumeUpdate: await getGitLastModified("static/Resume.pdf"),
+      packages: data.objects,
     },
     organizationName: "cbebe",
     projectName: "my-website",

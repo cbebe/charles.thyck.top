@@ -1,4 +1,3 @@
-import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import React, { ComponentProps, ComponentType } from "react";
 import styles from "./styles.module.css";
@@ -10,7 +9,7 @@ export interface ExtLinkProps {
 }
 
 export const ExtLink = ({ label, to, svg: Svg }: ExtLinkProps) => (
-  <Link className={clsx("button button--secondary button--lg", styles.buttonSpaced)} to={to}>
+  <a className={clsx("button button--secondary button--lg", styles.buttonSpaced)} href={to}>
     {Svg ? (
       <span className={styles.withSvg}>
         <Svg role="img" className={styles.buttonSvg} /> {label}
@@ -18,5 +17,5 @@ export const ExtLink = ({ label, to, svg: Svg }: ExtLinkProps) => (
     ) : (
       label
     )}
-  </Link>
+  </a>
 );

@@ -21,6 +21,6 @@ const THYCK = {
   H2H: { DEVPOST_URL: "https://devpost.com/software/heart-2-heart" },
 };
 
-const WEBSITE = { URL: "https://charlesancheta.com", REPO_URL: "https://github.com/cbebe/my-website" };
+const WEBSITE = { URL: "https://charlesancheta.com", REPO_URL: "https://github.com/cbebe/charlesancheta.com" };
 
 module.exports = { PROFILES, EXTRAS, WORK, THYCK, WEBSITE };

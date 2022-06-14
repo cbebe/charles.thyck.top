@@ -25,7 +25,7 @@ async function createConfig() {
       packages: data.objects,
     },
     organizationName: "cbebe",
-    projectName: "my-website",
+    projectName: "charlesancheta.com",
     i18n: {
       defaultLocale: "en",
       locales: ["en"],

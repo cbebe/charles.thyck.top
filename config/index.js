@@ -4,7 +4,9 @@
 async function createConfig() {
   const { WEBSITE } = await import("./url.js");
   const fetch = (await import("node-fetch")).default;
-  const res = await fetch("https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe");
+  const res = await fetch(
+    "https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe",
+  );
   /** @type {import('./package').Data} */
   // @ts-expect-error no way to prevent this
   const data = await res.json();

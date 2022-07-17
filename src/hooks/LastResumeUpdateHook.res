@@ -4,6 +4,7 @@ type docusaurusContext = {siteConfig: siteConfig}
 @module("@docusaurus/useDocusaurusContext")
 external useDocusaurusContext: unit => docusaurusContext = "default"
 
+@genType
 let useLastResumeUpdate = () => {
   let {siteConfig} = useDocusaurusContext()
   React.useMemo1(() => {

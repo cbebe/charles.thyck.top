@@ -23,6 +23,7 @@ drafts
 
 # Rescript artifacts
 *.bs.js
+*.gen.tsx
 .bsb.lock
 .merlin
 lib/bs

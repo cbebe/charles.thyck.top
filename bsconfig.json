@@ -7,5 +7,15 @@
   },
   "suffix": ".bs.js",
   "sources": [{ "dir": "src", "subdirs": true }],
-  "bs-dependencies": ["@rescript/react", "rescript-webapi"]
+  "bs-dependencies": ["@rescript/react", "rescript-webapi"],
+  "gentypeconfig": {
+    "language": "typescript",
+    "shims": {},
+    "generatedFileExtension": ".gen.tsx",
+    "module": "es6",
+    "debug": {
+      "all": false,
+      "basic": false
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import { PROFILES } from "@site/config/url";
 import { ExtLink } from "@site/src/components/basics/ExtLink";
-import { HeaderSection } from "@site/src/components/basics/HeaderSection";
+import { make as HeaderSection } from "@site/src/components/basics/HeaderSection/HeaderSection.gen";
 import { DevpostSvg, GiteaSvg, GithubSvg, NPMSvg } from "@site/src/svg";
 import clsx from "clsx";
 import React from "react";

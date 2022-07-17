@@ -1,10 +1,10 @@
 import { PROFILES, WORK } from "@site/config/url";
+import { make as HeaderSection } from "@site/src/components/basics/HeaderSection/HeaderSection.gen";
 import { EmailSvg, LinkedinSvg } from "@site/src/svg";
 import Layout from "@theme/Layout";
 import React from "react";
 import { ExtLink } from "../../basics/ExtLink";
-import { HeaderSection } from "../../basics/HeaderSection";
-import { make as ResumeButton } from "./ResumeButton.bs";
+import { make as ResumeButton } from "./ResumeButton.gen";
 import WorkFeatures from "./WorkFeatures";
 
 export function Work() {

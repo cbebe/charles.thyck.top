@@ -21,6 +21,7 @@ let flatten = (arr: Js.Array2.t<option<'a>>) => {
 type logObj = {viewBox: option<string>, pathDs: array<string>}
 
 type displayStyle = {display: [#none]}
+@genType
 let useSvg = () => {
   React.useEffect(() => {
     open Webapi.Dom

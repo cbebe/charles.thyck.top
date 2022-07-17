@@ -20,3 +20,9 @@ yarn-debug.log*
 yarn-error.log*
 
 drafts
+
+# Rescript artifacts
+*.bs.js
+.bsb.lock
+.merlin
+lib/bs

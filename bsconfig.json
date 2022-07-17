@@ -1,0 +1,11 @@
+{
+  "name": "charlesancheta.com",
+  "reason": { "react-jsx": 3 },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "sources": [{ "dir": "src", "subdirs": true }],
+  "bs-dependencies": ["@rescript/react", "rescript-webapi"]
+}

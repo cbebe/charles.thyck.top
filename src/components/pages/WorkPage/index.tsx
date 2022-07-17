@@ -1,24 +1,11 @@
 import { PROFILES, WORK } from "@site/config/url";
 import { EmailSvg, LinkedinSvg } from "@site/src/svg";
-import { useLastResumeUpdate } from "@site/src/util/useLastResumeUpdate";
 import Layout from "@theme/Layout";
-import clsx from "clsx";
 import React from "react";
 import { ExtLink } from "../../basics/ExtLink";
 import { HeaderSection } from "../../basics/HeaderSection";
-import styles from "./styles.module.css";
+import { make as ResumeButton } from "./ResumeButton.bs";
 import WorkFeatures from "./WorkFeatures";
-
-function ResumeButton() {
-  const lastResumeUpdate = useLastResumeUpdate();
-  return (
-    <div className="centre-content">
-      <a className={clsx("button button--secondary button--lg", styles.resumeButton)} href="/Resume.pdf">
-        Resume - Last Updated {lastResumeUpdate}
-      </a>
-    </div>
-  );
-}
 
 export function Work() {
   return (

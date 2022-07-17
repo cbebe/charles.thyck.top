@@ -1,5 +1,5 @@
 import useIsBrowser from "@docusaurus/useIsBrowser";
-import { useIsDark } from "@site/src/util/useIsDark";
+import { useIsDark } from "@site/src/hooks/IsDarkHook.bs";
 import React from "react";
 import { AnimatedSVG } from "../../basics/AnimatedSVG";
 

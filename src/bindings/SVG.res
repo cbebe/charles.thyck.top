@@ -1,13 +1,13 @@
 @genType
 module DevpostSvg = {
   @genType @module("@site/static/img/devpost.svg") @react.component
-  external make: (~role: string=?, ~className: string=?) => React.element = "ReactComponent"
+  external make: (~role: string=?, ~className: string=?) => React.element = "default"
 }
 
 @genType
 module ThyckCorgiSvg = {
   @genType @module("@site/static/img/thyck/logo.svg") @react.component
-  external make: (~role: string=?, ~className: string=?) => React.element = "ReactComponent"
+  external make: (~role: string=?, ~className: string=?) => React.element = "default"
 }
 
 type role = [#img]

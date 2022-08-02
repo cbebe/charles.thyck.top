@@ -1,3 +1,6 @@
+%%raw(`
+import { THYCK } from "@site/config/url";
+`)
 module ProjectFeatures = {
   @module("./ThyckCorgisSection/ProjectFeatures") @react.component
   external make: unit => React.element = "default"
@@ -15,7 +18,7 @@ let make = () => {
   <section id="thyck-corgis">
     <div className="text--center padding-horiz--md">
       <Link to={thyck["WEBSITE_URL"]}>
-        <SVG.ThyckCorgiSvg role="img" />
+      <SVG.ThyckCorgiSvg role="img" />
       </Link>
       <h1 className={CLSX.clsx("hero__title", styles.sectionHead)}>
         {"Thyck Corgis"->React.string}

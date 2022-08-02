@@ -1,13 +1,12 @@
-type styles = {vmoji: string}
+type styles = {vmoji: string, mirror: string}
 @module("./styles.module.css")
 external styles: styles = "default"
 
-type mirror = {mirror: bool}
-external toDict: mirror => Js.Dict.t<bool> = "%identity"
-
 @genType @react.component
 let make = (~mirror=false) => {
-  <div className={CLSX.clsxd(styles.vmoji, {mirror: mirror}->toDict)}>
+  let dict = Js.Dict.empty()
+  Js.Dict.set(dict, styles.mirror, mirror)
+  <div className={CLSX.clsxd(styles.vmoji, dict)}>
     <svg width="100%" height="100%" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
       <g>
         <path

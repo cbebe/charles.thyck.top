@@ -4,8 +4,7 @@ external styles: styles = "default"
 
 @genType @react.component
 let make = () => {
-  open LastResumeUpdateHook
-  let lastResumeUpdate = useLastResumeUpdate()
+  let lastResumeUpdate = LastResumeUpdateHook.useLastResumeUpdate()
   <div className="centre-content">
     <a
       className={CLSX.clsx("button button--secondary button--lg", styles.resumeButton)}

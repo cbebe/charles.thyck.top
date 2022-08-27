@@ -25,12 +25,11 @@ type displayStyle = {display: [#none]}
 let useSvg = () => {
   React.useEffect(() => {
     open Webapi.Dom
-    let paths = Document.querySelectorAll(d, "#svg path")
+    let paths = d->Document.querySelectorAll("#svg path")
     let pathDs = {
-      open Js.Array2
       paths
       ->NodeList.toArray
-      ->map(x =>
+      ->Js.Array2.map(x =>
         Js.Option.map(
           (. e) => {
             Element.getAttribute(e, "d")->unwrap
@@ -40,7 +39,7 @@ let useSvg = () => {
       )
       ->flatten
     }
-    let svg = Document.querySelector(d, "#svg")
+    let svg = d->Document.querySelector("#svg")
     switch (svg, pathDs) {
     | (Some(svg), pathDs) =>
       Js.log2(

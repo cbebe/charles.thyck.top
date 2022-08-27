@@ -6,16 +6,14 @@ type svgComp = React.component<SVG.props>
 
 @genType @react.component
 let make = (~svg: option<'a>=?, ~label, ~to) => {
-  open React
-  open SVG
   <a className={CLSX.clsx("button button--secondary button--lg", styles.buttonSpaced)} href={to}>
     {switch svg {
     | Some(component) =>
       <span className={styles.withSvg}>
-        {createElement(component, {role: #img, className: styles.buttonSvg})}
-        {(" " ++ label)->string}
+        {React.createElement(component, {SVG.role: #img, className: styles.buttonSvg})}
+        {(" " ++ label)->React.string}
       </span>
-    | None => label->string
+    | None => label->React.string
     }}
   </a>
 }

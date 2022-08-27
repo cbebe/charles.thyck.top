@@ -1,10 +1,3 @@
-%%raw(`
-import { EmailSvg, LinkedinSvg } from "@site/src/svg";
-`)
-
-@var external linkedinSvg: React.component<SVG.props> = "LinkedinSvg"
-@var external emailSvg: React.component<SVG.props> = "EmailSvg"
-
 module WorkFeatures = {
   @react.component @module("./WorkFeatures")
   external make: unit => React.element = "default"
@@ -15,8 +8,8 @@ let make = () => {
   <Docusaurus.Layout title="Work" description="Charles Ancheta's Professional Experience">
     <HeaderSection title="Work" subtitle="My Professional Experience">
       <ResumeButton />
-      <ExtLink svg={linkedinSvg} label="Linkedin" to={URL.profiles["linkedin"]} />
-      <ExtLink svg={emailSvg} label="Email" to={URL.work["email"]} />
+      <ExtLink svg={SVG.linkedin} label="Linkedin" to={URL.profiles["linkedin"]} />
+      <ExtLink svg={SVG.email} label="Email" to={URL.work["email"]} />
     </HeaderSection>
     <main>
       <WorkFeatures />

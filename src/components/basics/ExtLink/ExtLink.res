@@ -5,7 +5,7 @@ external styles: styles = "default"
 type svgComp = React.component<SVG.props>
 
 @genType @react.component
-let make = (~svg: 'a=?, ~label, ~to) => {
+let make = (~svg: option<'a>=?, ~label, ~to) => {
   open React
   open SVG
   <a className={CLSX.clsx("button button--secondary button--lg", styles.buttonSpaced)} href={to}>
@@ -15,7 +15,6 @@ let make = (~svg: 'a=?, ~label, ~to) => {
         {createElement(component, {role: #img, className: styles.buttonSvg})}
         {(" " ++ label)->string}
       </span>
-
     | None => label->string
     }}
   </a>

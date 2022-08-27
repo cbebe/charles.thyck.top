@@ -19,6 +19,7 @@ module MyName = {
   @react.component
   let make = (~isDark=false) => {
     <AnimatedSVG
+      svgTitle="Charles Ancheta"
       stroke={isDark ? "white" : "black"}
       strokeWidth="1"
       viewBox="0 0 201 125"

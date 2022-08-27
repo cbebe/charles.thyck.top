@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 async function createConfig() {
-  const { website } = await import("./url.js");
+  const { website, repo } = await import("./url.js");
   const fetch = (await import("node-fetch")).default;
   const res = await fetch(
     "https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe",
@@ -26,12 +26,9 @@ async function createConfig() {
       lastResumeUpdate: await getGitLastModified("static/Resume.pdf"),
       packages: data.objects,
     },
-    organizationName: "cbebe",
-    projectName: "charlesancheta.com",
-    i18n: {
-      defaultLocale: "en",
-      locales: ["en"],
-    },
+    organizationName: repo.orgName,
+    projectName: repo.projectName,
+    i18n: { defaultLocale: "en", locales: ["en"] },
     presets: [
       [
         "classic",

@@ -27,3 +27,8 @@ let website = {
   "url": "https://charlesancheta.com",
   "repoUrl": "https://github.com/cbebe/charlesancheta.com",
 }
+
+let repo = {
+  "orgName": "cbebe",
+  "projectName": "charlesancheta.com",
+}

@@ -11,6 +11,7 @@ module.exports = {
   profiles,
   thyck,
   website,
+  repo,
 };
 EOF
 } >config/url.js

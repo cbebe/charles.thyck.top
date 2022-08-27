@@ -7,19 +7,23 @@ let utterancesSelector = "iframe.utterances-frame"
 module Script = {
   type t = {mutable src: string, mutable crossOrigin: [#anonymous], mutable async: bool}
   external conv: el => t = "%identity"
-  @val external d: Webapi.Dom.Document.t = "document"
   let make = (ref: React.ref<el>, theme: string) => {
     open Webapi.Dom
     open Element
-    let script = d->Document.createElement("script")
-    let e = script->conv
-    e.src = "https://utteranc.es/client.js"
-    script->setAttribute("repo", "cbebe/charlesancheta.com")
+    let script = document->Document.createElement("script")
+
+    {
+      let e = script->conv
+      e.src = "https://utteranc.es/client.js"
+      e.crossOrigin = #anonymous
+      e.async = true
+    }
+
+    script->setAttribute("repo", `${URL.repo["orgName"]}/${URL.repo["projectName"]}`)
     script->setAttribute("issue-term", "pathname")
     script->setAttribute("label", "comment")
     script->setAttribute("theme", theme)
-    e.crossOrigin = #anonymous
-    e.async = true
+
     ref.current->appendChild(~child=script)
     ()
   }

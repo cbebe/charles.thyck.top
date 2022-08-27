@@ -1,0 +1,12 @@
+{
+  "fmt": {
+    "files": {
+      "include": ["."],
+      "exclude": ["node_modules/", "lib/bs", ".docusaurus"]
+    },
+    "options": {
+      "lineWidth": 120,
+      "singleQuote": false
+    }
+  }
+}

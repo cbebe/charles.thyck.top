@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 async function createConfig() {
-  const { WEBSITE } = await import("./url.js");
+  const { website } = await import("../src/bindings/URL.bs.js");
   const fetch = (await import("node-fetch")).default;
   const res = await fetch(
     "https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe",
@@ -15,7 +15,7 @@ async function createConfig() {
   const config = {
     title: "Charles Ancheta",
     tagline: "A Computer Engineering Student at the University of Alberta",
-    url: WEBSITE.URL,
+    url: website.url,
     baseUrl: "/",
     trailingSlash: true,
     onBrokenLinks: "throw",
@@ -43,16 +43,9 @@ async function createConfig() {
           //   sidebarPath: require.resolve("./sidebars.js"),
           //   editUrl: `${WEBSITE_REPO_URL}/edit/master/`,
           // },
-          blog: {
-            showReadingTime: true,
-            editUrl: `${WEBSITE.REPO_URL}/edit/master/`,
-          },
-          theme: {
-            customCss: require.resolve("../src/css/custom.css"),
-          },
-          sitemap: {
-            changefreq: "daily",
-          },
+          blog: { showReadingTime: true, editUrl: `${website.repoUrl}/edit/master/` },
+          theme: { customCss: require.resolve("../src/css/custom.css") },
+          sitemap: { changefreq: "daily" },
         }),
       ],
     ],

@@ -1,6 +1,6 @@
 // @ts-check
 
-const { PROFILES } = require("../url");
+const { profiles } = require("../../src/bindings/URL.bs");
 const { readFileSync } = require("fs");
 
 const newTabSvg = readFileSync("static/img/new_tab.svg");
@@ -9,24 +9,13 @@ const navbar =
   /** @type {import('@docusaurus/preset-classic').ThemeConfig['navbar']} */
   ({
     title: "Charles Ancheta",
-    logo: {
-      alt: "My Site Logo",
-      src: "img/thyck/logo.svg",
-    },
+    logo: { alt: "My Site Logo", src: "img/thyck/logo.svg" },
     items: [
       { to: "/work", label: "Work", position: "left" },
       { to: "/projects", label: "Projects", position: "left" },
       { to: "/blog", label: "Blog", position: "left" },
-      {
-        type: "html",
-        value: addNewTabLink("/Resume.pdf", "Resume"),
-        position: "left",
-      },
-      {
-        href: PROFILES.GITHUB,
-        label: "GitHub",
-        position: "left",
-      },
+      { type: "html", value: addNewTabLink("/Resume.pdf", "Resume"), position: "left" },
+      { href: profiles.github, label: "GitHub", position: "left" },
     ],
   });
 

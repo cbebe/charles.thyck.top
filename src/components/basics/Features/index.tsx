@@ -24,8 +24,9 @@ export type FeatureItemWithSvg = BaseFeatureItem & {
 
 export const Feature = (props: FeatureItem & { col: number }) => {
   const { title, type, description, col, link } = props;
-  const elem =
-    type === "img" ? <img src={props.img} alt={props.alt} /> : <props.svg className={styles.featureSvg} role="img" />;
+  const elem = type === "img"
+    ? <img src={props.img} alt={props.alt} />
+    : <props.svg className={styles.featureSvg} role="img" />;
   return (
     <div className={clsx("col", `col--${col}`)}>
       <div className="text--center">{link ? <Link to={link}>{elem}</Link> : elem}</div>
@@ -45,9 +46,7 @@ export function Features({ list }: { list: FeatureItem[] }) {
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {list.map((props, idx) => (
-            <Feature key={idx} col={12 / calculateRow(idx)} {...props} />
-          ))}
+          {list.map((props, idx) => <Feature key={idx} col={12 / calculateRow(idx)} {...props} />)}
         </div>
       </div>
     </section>

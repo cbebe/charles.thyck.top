@@ -1,1 +1,1 @@
-export { make as default } from "./BlogPostItem.gen";
+export { make as default } from "./BlogPostItem.bs";

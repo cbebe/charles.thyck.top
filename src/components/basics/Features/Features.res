@@ -5,13 +5,7 @@ module Feature = {
   type elem = Img({img: string, alt?: string}) | Svg(SVG.t)
   type title = Raw(React.element) | Heading(string)
   type description = Raw(React.element) | Paragraph(string)
-
-  type t = {
-    elem: elem,
-    title: title,
-    description: description,
-    link: option<string>,
-  }
+  type t = {elem: elem, title: title, description: description, link: option<string>}
 
   @react.component
   let make = (

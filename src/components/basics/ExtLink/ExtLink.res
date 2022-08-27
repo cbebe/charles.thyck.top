@@ -1,8 +1,6 @@
 @module("./styles.module.css")
 external styles: {"withSvg": string, "buttonSvg": string, "buttonSpaced": string} = "default"
 
-type svgComp = React.component<SVG.props>
-
 @genType @react.component
 let make = (~svg: option<'a>=?, ~label, ~to) => {
   <a className={CLSX.clsx("button button--secondary button--lg", styles["buttonSpaced"])} href={to}>

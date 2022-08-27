@@ -8,8 +8,6 @@ let elem =
     xmlns="http://www.w3.org/2000/svg"
   />
 
-@val external d: Webapi.Dom.Document.t = "document"
-
 external unwrap: option<'a> => 'a = "%identity"
 external unwrapList: Js.Array2.t<option<'a>> => Js.Array2.t<'a> = "%identity"
 
@@ -20,20 +18,19 @@ let useSvg = () => {
   React.useEffect(() => {
     open Webapi.Dom
     let paths =
-      d
+      document
       ->Document.querySelectorAll("#svg path")
       ->NodeList.toArray
       ->Js.Array2.map(x =>
-        Js.Option.map((. e) => Element.getAttribute(e, "d")->unwrap, Element.ofNode(x))
+        Js.Option.map((. e) => e->Element.getAttribute("d")->unwrap, Element.ofNode(x))
       )
       ->flatten
 
-    let svg = d->Document.querySelector("#svg")
-    switch (svg, paths) {
-    | (Some(s), paths) =>
+    switch (document->Document.querySelector("#svg"), paths) {
+    | (Some(svg), paths) =>
       Js.log2(
         "Copy this object to use as an AnimatedSVG component",
-        {"viewBox": Element.getAttribute(s, "viewBox"), "paths": paths},
+        {"viewBox": svg->Element.getAttribute("viewBox"), "paths": paths},
       )
     | _ => ()
     }

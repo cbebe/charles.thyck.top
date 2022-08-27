@@ -12,6 +12,7 @@ let profiles = {
   "github": "https://github.com/cbebe",
   "linkedin": "https://www.linkedin.com/in/charles-ancheta",
 }
+
 let thyck = {
   "githubUrl": "https://github.com/thyckcorgis",
   "websiteUrl": "https://thyck.top",

@@ -1,6 +1,6 @@
 // @ts-check
 
-const { extras } = require("../../src/bindings/URL.bs.js");
+const { extras } = require("../url.js");
 
 /**
  * @param {string} label

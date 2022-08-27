@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 async function createConfig() {
-  const { website } = await import("../src/bindings/URL.bs.js");
+  const { website } = await import("./url.js");
   const fetch = (await import("node-fetch")).default;
   const res = await fetch(
     "https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe",

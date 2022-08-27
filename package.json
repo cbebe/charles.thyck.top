@@ -9,7 +9,7 @@
     "re:start": "rescript build -w",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "./build-url.sh",
     "swizzle": "docusaurus swizzle",
     "dep": "docusaurus deploy",
     "clear": "docusaurus clear",

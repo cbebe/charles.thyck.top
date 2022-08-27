@@ -1,12 +1,11 @@
-type styles = {vmoji: string, mirror: string}
 @module("./styles.module.css")
-external styles: styles = "default"
+external styles: {"vmoji": string, "mirror": string} = "default"
 
 @genType @react.component
 let make = (~mirror=false) => {
   let dict = Js.Dict.empty()
-  Js.Dict.set(dict, styles.mirror, mirror)
-  <div className={CLSX.clsxd(styles.vmoji, dict)}>
+  Js.Dict.set(dict, styles["mirror"], mirror)
+  <div className={CLSX.clsxd(styles["vmoji"], dict)}>
     <svg width="100%" height="100%" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
       <g>
         <path

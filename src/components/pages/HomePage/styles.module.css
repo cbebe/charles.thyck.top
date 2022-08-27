@@ -9,12 +9,12 @@
   align-items: center;
 }
 
-.softieWrapper {
+.softie {
   display: flex;
   align-items: center;
 }
 
-.softie {
+.softie > h1 {
   text-align: center;
   animation: softFadeIn 1s 1.25s linear forwards;
   opacity: 0;

@@ -1,6 +1,5 @@
-type styles = {sectionHead: string}
 @module("./styles.module.css")
-external styles: styles = "default"
+external styles: {"sectionHead": string} = "default"
 
 let list: array<Features.Feature.t> = [
   {
@@ -37,7 +36,7 @@ let make = () => {
       <Docusaurus.Link to={URL.thyck["websiteUrl"]}>
         {React.createElement(SVG.thyck, {SVG.role: #img})}
       </Docusaurus.Link>
-      <h1 className={CLSX.clsx("hero__title", styles.sectionHead)}>
+      <h1 className={CLSX.clsx("hero__title", styles["sectionHead"])}>
         {"Thyck Corgis"->React.string}
       </h1>
       <p> {"Started October 2020"->React.string} </p>

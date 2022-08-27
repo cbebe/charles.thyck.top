@@ -30,10 +30,7 @@ module MyName = {
 
 module MyNameWithJS = {
   @react.component
-  let make = () => {
-    let isDark = IsDarkHook.useIsDark()
-    <MyName isDark />
-  }
+  let make = () => <MyName isDark={Docusaurus.useColorMode().colorMode == #dark} />
 }
 
 @react.component

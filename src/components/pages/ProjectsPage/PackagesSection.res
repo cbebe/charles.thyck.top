@@ -4,11 +4,7 @@ let usePackages = () => {
   let {siteConfig: {customFields: {packages}}} = Docusaurus.useDocusaurusContext()
   React.useMemo1(() => {
     packages->Js.Array2.map(p => {
-      {
-        name: p.package.name,
-        url: p.package.links.npm,
-        description: p.package.description,
-      }
+      {name: p.package.name, url: p.package.links.npm, description: p.package.description}
     })
   }, [packages])
 }

@@ -1,10 +1,9 @@
-type styles = {svg: string}
 @module("./styles.module.css")
-external styles: styles = "default"
+external styles: {"svg": string} = "default"
 
 @genType @react.component
 let make = (~svgTitle: option<string>=?, ~strokeWidth="5", ~stroke="white", ~viewBox, ~pathDs) => {
-  <svg className={styles.svg} viewBox fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className={styles["svg"]} viewBox fill="none" xmlns="http://www.w3.org/2000/svg">
     {switch svgTitle {
     | Some(t) => <title> {t->React.string} </title>
     | None => React.null

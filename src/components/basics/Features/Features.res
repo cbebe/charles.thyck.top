@@ -1,6 +1,5 @@
-type styles = {features: string, featureSvg: string}
 @module("./styles.module.css")
-external styles: styles = "default"
+external styles: {"features": string, "featureSvg": string} = "default"
 
 module Feature = {
   type elem = Img({img: string, alt?: string}) | Svg(SVG.t)
@@ -25,7 +24,7 @@ module Feature = {
     let element = switch elem {
     | Img({img, alt}) => <img src={img} alt={alt} />
     | Svg(component) =>
-      React.createElement(component, {SVG.role: #img, className: styles.featureSvg})
+      React.createElement(component, {SVG.role: #img, className: styles["featureSvg"]})
     }
     <div className={CLSX.clsx("col", "col--" ++ col->Belt.Int.toString)}>
       <div className="text--center">
@@ -35,12 +34,12 @@ module Feature = {
         }}
         <div className="text--center padding-horiz--md">
           {switch title {
-          | Raw(t) => t
+          | Raw(jsx) => jsx
           | Heading(t) => <h3> {t->React.string} </h3>
           }}
           {switch description {
-          | Raw(t) => t
-          | Paragraph(t) => <p> {t->React.string} </p>
+          | Raw(jsx) => jsx
+          | Paragraph(d) => <p> {d->React.string} </p>
           }}
         </div>
       </div>
@@ -53,15 +52,10 @@ let make = (~list: array<Feature.t>) => {
   let remainder = mod(list->Js.Array2.length, 3)
   let rows = Js.Math.ceil_int(list->Js.Array2.length->Belt.Int.toFloat /. 3.)
   let calculateRow = switch remainder {
-  | 0 => (_: int) => 3
-  | _ =>
-    (col: int) =>
-      switch col {
-      | col if col / 3 === rows - 1 => remainder
-      | _ => 3
-      }
+  | 0 => _ => 3
+  | _ => col => col / 3 === rows - 1 ? remainder : 3
   }
-  <section className={styles.features}>
+  <section className={styles["features"]}>
     <div className="container">
       <div className="row">
         {list

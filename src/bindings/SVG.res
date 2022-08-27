@@ -1,5 +1,4 @@
-type role = [#img]
-type props = {role: role, className?: string}
+type props = {role: [#img], className?: string}
 type t = React.component<props>
 
 @module("@site/static/img/devpost.svg") external devpost: t = "default"

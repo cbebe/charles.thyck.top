@@ -7,8 +7,8 @@ async function createConfig() {
   const res = await fetch(
     "https://registry.npmjs.org/-/v1/search?text=maintainer:cbebe",
   );
-  /** @type {import('./package').Data} */
-  // @ts-expect-error no way to prevent this
+  /** @type {import('../src/bindings/Package.gen').data} */
+  // @ts-expect-error no way to prevent this in plain js
   const data = await res.json();
 
   /** @type {import('@docusaurus/types').Config} */

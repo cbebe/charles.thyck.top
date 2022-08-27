@@ -1,5 +1,5 @@
 type styles = {buttons: string}
-@module("./projects.module.css")
+@module("./styles.module.css")
 external styles: styles = "default"
 
 @genType @react.component

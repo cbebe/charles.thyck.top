@@ -1,2 +1,2 @@
 // @ts-check
-export { make as default } from "../components/pages/ProjectsPage/ProjectsPage.gen";
+export { make as default } from "@site/src/components/pages/ProjectsPage/ProjectsPage.gen";

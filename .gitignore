@@ -22,7 +22,7 @@ yarn-error.log*
 drafts
 
 # Rescript artifacts
-*.bs.js
+src/**/*.js
 *.gen.tsx
 .bsb.lock
 .merlin

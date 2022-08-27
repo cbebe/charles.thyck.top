@@ -6,7 +6,7 @@ external useColorMode: unit => colorMode = "useColorMode"
 @module("@docusaurus/useIsBrowser")
 external useIsBrowser: unit => bool = "default"
 
-type customFields = {lastResumeUpdate: string, packages: array<Package.npmPackage>}
+type customFields = {lastResumeUpdate: string, packages: array<Package.t>}
 type siteConfig = {customFields: customFields}
 type docusaurusContext = {siteConfig: siteConfig}
 @module("@docusaurus/useDocusaurusContext")

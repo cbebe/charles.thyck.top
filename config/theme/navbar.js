@@ -1,6 +1,6 @@
 // @ts-check
 
-const { profiles } = require("../../src/bindings/URL.bs");
+const { profiles } = require("../../src/bindings/URL.bs.js");
 const { readFileSync } = require("fs");
 
 const newTabSvg = readFileSync("static/img/new_tab.svg");

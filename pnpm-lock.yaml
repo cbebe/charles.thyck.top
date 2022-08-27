@@ -10,14 +10,18 @@ specifiers:
   '@docusaurus/theme-common': 2.0.0-beta.21
   '@docusaurus/types': 2.0.0-beta.21
   '@mdx-js/react': ^1.6.22
+  '@rescript/react': ^0.10.3
   '@tsconfig/docusaurus': ^1.0.6
   '@types/node': ^17.0.45
   '@types/react': ^17.0.47
   clsx: ^1.2.1
+  gentype: ^4.5.0
   node-fetch: ^3.2.8
   prism-react-renderer: ^1.3.5
   react: ^17.0.2
   react-dom: ^17.0.2
+  rescript: ^10.0.0-beta.3
+  rescript-webapi: ^0.6.1
   typescript: ^4.7.4
 
 dependencies:
@@ -28,11 +32,13 @@ dependencies:
   '@docusaurus/theme-classic': 2.0.0-beta.21_3tgeifm2vmwrlpqlopppsnjtcu
   '@docusaurus/theme-common': 2.0.0-beta.21_3tgeifm2vmwrlpqlopppsnjtcu
   '@mdx-js/react': 1.6.22_react@17.0.2
+  '@rescript/react': 0.10.3_sfoxds7t5ydpegc3knd667wn6m
   clsx: 1.2.1
   node-fetch: 3.2.8
   prism-react-renderer: 1.3.5_react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  rescript-webapi: 0.6.1
 
 devDependencies:
   '@docusaurus/module-type-aliases': 2.0.0-beta.21_sfoxds7t5ydpegc3knd667wn6m
@@ -40,6 +46,8 @@ devDependencies:
   '@tsconfig/docusaurus': 1.0.6
   '@types/node': 17.0.45
   '@types/react': 17.0.47
+  gentype: 4.5.0
+  rescript: 10.0.0-beta.3
   typescript: 4.7.4
 
 packages:
@@ -2361,6 +2369,16 @@ packages:
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
+    dev: false
+
+  /@rescript/react/0.10.3_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-Lf9rzrR3bQPKJjOK3PBRa/B3xrJ7CqQ1HYr9VHPVxJidarIJJFZBhj0Dg1uZURX+Wg/xiP0PHFxXmdj2bK8Vxw==}
+    peerDependencies:
+      react: '>=16.8.1'
+      react-dom: '>=16.8.1'
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /@rollup/plugin-babel/5.3.1_3crms4j33zkfeqv7ozcuia3hfq:
@@ -4719,6 +4737,12 @@ packages:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
     dev: false
+
+  /gentype/4.5.0:
+    resolution: {integrity: sha512-XqHBQPS6Qb2HSgNJAwYRXbQJ4LSvz+MgNvuWnj8bz0teSorsy2kDxA6F1eZx5ft8cnfKAls4uNEgd5uNcPbQDg==}
+    hasBin: true
+    requiresBuild: true
+    dev: true
 
   /get-intrinsic/1.1.2:
     resolution: {integrity: sha512-Jfm3OyCxHh9DJyc28qGk+JmfkpO41A4XkneDSujN9MDXrm4oDKdHvndhZ2dN94+ERNfkYJWDclW6k2L/ZGHjXA==}
@@ -7318,6 +7342,16 @@ packages:
   /requires-port/1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
     dev: false
+
+  /rescript-webapi/0.6.1:
+    resolution: {integrity: sha512-I/eeHOcsUfWbCf6u15zd+rKxMz9awSjjdRa8eFtl2X+HjDNs0mJxoC4uFFK9dIazYcmY2VpuK5TTpOPXvdkhDw==}
+    dev: false
+
+  /rescript/10.0.0-beta.3:
+    resolution: {integrity: sha512-Fik3yIkHY8ajD5M4I2hHOSvUcLzgmNukr8mxlSe4SfAGTY67HoNvDEuONIG0A9kL34urcsMde2F698m2n0JcLg==}
+    hasBin: true
+    requiresBuild: true
+    dev: true
 
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}

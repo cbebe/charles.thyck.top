@@ -47,4 +47,5 @@ let setup = (containerRef: React.ref<unit>, utterancesTheme: string) => {
   | Some(el) => el->Message.make(utterancesTheme)
   | None => Script.make(ref, utterancesTheme)
   }
+  None
 }

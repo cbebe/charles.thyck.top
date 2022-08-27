@@ -8,32 +8,23 @@
  */
 module OriginalBlogPostItem = {
   @module("@theme-original/BlogPostItem") @react.component
-  external make: (~isBlogPostPage: bool) => React.element = "default"
+  external make: unit => React.element = "default"
 }
 
-type props = {"isBlogPostPage": bool}
 external toDomRef: React.ref<unit> => ReactDOM.domRef = "%identity"
 
 @genType
-let make = (props: props) => {
+let make = props => {
+  let {isBlogPostPage} = Docusaurus.useBlogPost()
   let {colorMode} = Docusaurus.useColorMode()
   let utterancesTheme = colorMode === #dark ? "github-dark" : "github-light"
   let containerRef = React.useRef()
 
   React.useEffect1(() => {
-    switch props["isBlogPostPage"] {
-    | false => None
-    | true => {
-        Utterances.setup(containerRef, utterancesTheme)
-        None
-      }
-    }
+    isBlogPostPage ? Utterances.setup(containerRef, utterancesTheme) : None
   }, [utterancesTheme])
   <>
     {React.createElement(OriginalBlogPostItem.make, props)}
-    {switch props["isBlogPostPage"] {
-    | true => <div ref={containerRef->toDomRef} />
-    | false => React.null
-    }}
+    {isBlogPostPage ? <div ref={containerRef->toDomRef} /> : React.null}
   </>
 }

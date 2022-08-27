@@ -1,4 +1,5 @@
 type colorMode = {colorMode: [#dark | #light]}
+type blogPost = {isBlogPostPage: bool}
 
 @module("@docusaurus/theme-common")
 external useColorMode: unit => colorMode = "useColorMode"
@@ -26,3 +27,13 @@ module Link = {
   @module("@docusaurus/Link") @react.component
   external make: (~to: string, ~children: React.element) => React.element = "default"
 }
+
+/**
+ * !! INTERNAL CODE !!
+ * Works as of Docusaurus v2.0.1
+ * 
+ * Watch out for this:
+ * https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/BlogPostItem/index.tsx
+ */
+@module("@docusaurus/theme-common/internal")
+external useBlogPost: unit => blogPost = "useBlogPost"

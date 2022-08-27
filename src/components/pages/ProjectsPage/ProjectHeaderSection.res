@@ -3,10 +3,10 @@ import { PROFILES } from "@site/config/url";
 import { GiteaSvg, GithubSvg, NPMSvg, DevpostSvg } from "@site/src/svg";
 `)
 
-@var external githubSvg: option<React.component<SVG.props>> = "GithubSvg"
-@var external giteaSvg: option<React.component<SVG.props>> = "GiteaSvg"
-@var external npmSvg: option<React.component<SVG.props>> = "NPMSvg"
-@var external devpostSvg: option<React.component<SVG.props>> = "DevpostSvg"
+@var external githubSvg: React.component<SVG.props> = "GithubSvg"
+@var external giteaSvg: React.component<SVG.props> = "GiteaSvg"
+@var external npmSvg: React.component<SVG.props> = "NPMSvg"
+@var external devpostSvg: React.component<SVG.props> = "DevpostSvg"
 
 @var
 external profiles: {"GITHUB": string, "DEVPOST": string, "NPM": string, "GITEA": string} =

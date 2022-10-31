@@ -29,11 +29,11 @@ module Feature = {
         <div className="text--center padding-horiz--md">
           {switch title {
           | Raw(jsx) => jsx
-          | Heading(t) => <h3> {t->React.string} </h3>
+          | Heading(t) => <h3> {React.string(t)} </h3>
           }}
           {switch description {
           | Raw(jsx) => jsx
-          | Paragraph(d) => <p> {d->React.string} </p>
+          | Paragraph(d) => <p> {React.string(d)} </p>
           }}
         </div>
       </div>

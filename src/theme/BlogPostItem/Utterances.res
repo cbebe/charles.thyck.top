@@ -13,7 +13,7 @@ module Script = {
     let script = document->Document.createElement("script")
 
     {
-      let e = script->conv
+      let e = conv(script)
       e.src = "https://utteranc.es/client.js"
       e.crossOrigin = #anonymous
       e.async = true
@@ -37,8 +37,7 @@ module Message = {
   external conv: el => t = "%identity"
   let make = (element: el, theme: string) => {
     let message = {"type": "set-theme", "theme": theme}
-    let e = element->conv
-    e.contentWindow->postMessage(message, "https://utteranc.es")
+    conv(element).contentWindow->postMessage(message, "https://utteranc.es")
   }
 }
 
@@ -48,7 +47,7 @@ let setup = (containerRef: React.ref<unit>, utterancesTheme: string) => {
   let utterancesEl = Element.querySelector(ref.current, utterancesSelector)
 
   switch utterancesEl {
-  | Some(el) => el->Message.make(utterancesTheme)
+  | Some(el) => Message.make(el, utterancesTheme)
   | None => Script.make(ref, utterancesTheme)
   }
   None

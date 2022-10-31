@@ -1,16 +1,16 @@
 @module("./styles.module.css")
 external styles: {"withSvg": string, "buttonSvg": string, "buttonSpaced": string} = "default"
 
-@genType @react.component
+@react.component
 let make = (~svg: option<'a>=?, ~label, ~to) => {
   <a className={CLSX.clsx("button button--secondary button--lg", styles["buttonSpaced"])} href={to}>
     {switch svg {
     | Some(component) =>
       <span className={styles["withSvg"]}>
         {React.createElement(component, {SVG.role: #img, className: styles["buttonSvg"]})}
-        {(" " ++ label)->React.string}
+        {React.string(" " ++ label)}
       </span>
-    | None => label->React.string
+    | None => React.string(label)
     }}
   </a>
 }

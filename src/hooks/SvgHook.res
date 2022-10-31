@@ -13,7 +13,6 @@ external unwrapList: Js.Array2.t<option<'a>> => Js.Array2.t<'a> = "%identity"
 
 let flatten = (arr: Js.Array2.t<option<'a>>) => arr->Js.Array2.filter(Js.Option.isSome)->unwrapList
 
-@genType
 let useSvg = () => {
   React.useEffect(() => {
     open Webapi.Dom

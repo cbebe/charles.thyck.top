@@ -13,7 +13,6 @@ module OriginalBlogPostItem = {
 
 external toDomRef: React.ref<unit> => ReactDOM.domRef = "%identity"
 
-@genType
 let make = props => {
   let {isBlogPostPage} = Docusaurus.useBlogPost()
   let {colorMode} = Docusaurus.useColorMode()

@@ -20,4 +20,5 @@ type packageT = {
 
 type t = {package: packageT, score: score, searchScore: float, flags?: flags}
 
+@genType
 type data = {objects: array<t>}

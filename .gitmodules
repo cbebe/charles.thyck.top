@@ -1,6 +1,6 @@
 [submodule "resume"]
 path = resume
 url = git@github.com:cbebe/.resume
-[submodule "src/pages/work"]
-path = src/pages/work
-url = git@github.com:cbebe/.work
+[submodule "themes/risotto"]
+path = themes/risotto
+url = https://github.com/cbebe/risotto.git

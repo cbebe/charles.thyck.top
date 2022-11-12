@@ -1,0 +1,65 @@
+baseURL = 'https://charlesancheta.com'
+# baseURL = 'http://localhost:3000' # for dev
+languageCode = 'en-us'
+title = 'Charles Ancheta'
+theme = 'risotto'
+enableEmoji = true
+
+[params]
+noindex = false
+
+[params.theme]
+palette = "base16-dark"
+
+# Automatically add content sections to main menu
+sectionPagesMenu = "main"
+
+[params.about]
+title = "Charles Ancheta"
+description = "Software Engineer"
+logo = "/favicon.ico"
+
+[[params.socialLinks]]
+icon = "fa-brands fa-github"
+title = "GitHub"
+url = "https://github.com/cbebe"
+
+[[params.socialLinks]]
+icon = "fa-brands fa-linkedin"
+title = "LinkedIn"
+url = "https://www.linkedin.com/in/charles-ancheta"
+
+[[params.socialLinks]]
+icon = "fa-solid fa-file"
+title = "Resume"
+url = "/Resume.pdf"
+
+[[params.socialLinks]]
+icon = "fa-solid fa-envelope"
+title = "Email"
+url = "mailto:cancheta.dev@gmail.com"
+
+[menu]
+
+[[menu.main]]
+identifier = "work"
+name = "Work"
+url = "/work/"
+weight = 10
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = 20
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/post/"
+weight = 30
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"

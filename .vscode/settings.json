@@ -2,6 +2,6 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "explorer.excludeGitIgnore": true,
+  "editor.formatOnSave": false,
   "deno.enable": false
 }

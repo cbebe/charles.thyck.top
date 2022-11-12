@@ -27,3 +27,7 @@ src/**/*.js
 .bsb.lock
 .merlin
 lib/bs
+
+# hugo build
+public
+.hugo_build.lock

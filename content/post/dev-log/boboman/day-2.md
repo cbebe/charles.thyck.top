@@ -1,7 +1,7 @@
 ---
 title: "Dev Log: Boboman - Day 2"
-authors: cbebe
-slug: dev-log/boboman/day2
+date: 2022-07-04
+author: Charles Ancheta
 tags: [dev-log, love, lua, gh-pages]
 ---
 

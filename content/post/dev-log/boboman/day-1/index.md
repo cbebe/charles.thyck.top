@@ -1,7 +1,7 @@
 ---
 title: "Dev Log: Boboman - Day 1"
-authors: cbebe
-slug: dev-log/boboman/day1
+date: 2022-07-03
+author: Charles Ancheta
 tags: [dev-log, love, lua]
 ---
 
@@ -11,7 +11,7 @@ find it enjoyable, even without having any tooling initially, so I wanted to giv
 [Sheepolution's How to LÖVE](https://www.sheepolution.com/learn/book/contents) book on Love2D, and felt prepared to make
 my first game from scratch. As per Jherzey's request, I'm creating a Bomberman clone.
 
-<!--truncate-->
+<!--more-->
 
 I tried looking for libraries that might be useful at first, such as the ones used in
 [Commando Kibbles](https://github.com/bakpakin/CommandoKibbles). I wanted to set up an Entity-Component system and all

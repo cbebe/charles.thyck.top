@@ -1,7 +1,7 @@
 ---
 title: "Dev Log: Boboman - Day 4"
-authors: cbebe
-slug: dev-log/boboman/day4
+date: 2022-07-06
+author: Charles Ancheta
 tags: [dev-log, love, lua, multiplayer]
 ---
 

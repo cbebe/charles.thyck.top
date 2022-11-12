@@ -1,13 +1,17 @@
----
-title: Bye bye Netlify
-slug: bye-bye-netlify
-authors: cbebe
-tags: [netlify, hosting]
----
++++
+author = "Charles Ancheta"
+title = "Bye bye Netlify"
+date = "2022-06-19"
+description = "It was short trial, but GitHub Pages just works better for me."
+tags = [
+    "netlify",
+    "hosting"
+]
++++
 
 It was short trial, but GitHub Pages just works better for me.
 
-<!-- truncate -->
+<!--more-->
 
 A couple of weeks ago, I moved my website from GitHub Pages to Netlify, hoping for a better development and production
 experience. I didn't really have a need to move just yet, but I wanted to see what the buzz about Netlify was about. So

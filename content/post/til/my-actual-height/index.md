@@ -1,7 +1,7 @@
 ---
 title: "TIL: My actual height"
-slug: til/my-actual-height
-authors: cbebe
+date: 2022-05-29
+author: Charles Ancheta
 tags: [til]
 ---
 
@@ -9,7 +9,7 @@ Today I learned what my actual height was (at least at the time of writing). For
 just stuck with 170 cm because that's what was in my driver's license when I got it 5 years ago (I really need to pass
 the road test this year). I'm not even sure if that was right at the time.
 
-<!--truncate-->
+<!--more-->
 
 So, I took a couple of IKEA measuring tapes (courtesy of Jherzey), put them together on a post in our basement, got a
 square ruler (triangular? (\*sigh\*...

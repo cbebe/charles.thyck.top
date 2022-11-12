@@ -20,7 +20,7 @@ module Feature = {
     | Svg(component) =>
       React.createElement(component, {SVG.role: #img, className: styles["featureSvg"]})
     }
-    <div className={CLSX.clsx("col", "col--" ++ col->Belt.Int.toString)}>
+    <div className={CLSX.clsx("col", "col--" ++ Belt.Int.toString(col))}>
       <div className="text--center">
         {switch link {
         | Some(link) => <Docusaurus.Link to={link}> {element} </Docusaurus.Link>
@@ -55,7 +55,7 @@ let make = (~list: array<Feature.t>) => {
         {list
         ->Js.Array2.mapi(({description, title, elem, link}, idx) => {
           <Feature
-            key={idx->Belt.Int.toString} col={12 / calculateRow(idx)} description title elem ?link
+            key={Belt.Int.toString(idx)} col={12 / calculateRow(idx)} description title elem ?link
           />
         })
         ->React.array}

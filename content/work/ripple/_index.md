@@ -3,7 +3,7 @@ title: Ripple Group
 weight: 5
 ---
 
-{{<figure src="./ripple.webp" width="200">}}
+{{<figure src="/ripple.webp" width="200">}}
 
 - Junior Software Engineer, September 2022 - Present
 <!--more-->

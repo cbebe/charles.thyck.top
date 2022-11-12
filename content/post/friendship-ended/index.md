@@ -5,7 +5,7 @@ author: Charles Ancheta
 tags: [dev, go, typescript, backend, meme]
 ---
 
-![Friendship ended](./friendship-ended.webp)
+![Friendship ended](/post/friendship-ended/friendship-ended.webp)
 
 <!--more-->
 

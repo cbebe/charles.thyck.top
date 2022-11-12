@@ -16,9 +16,7 @@ import (
 
 const (
 	projectName      = "charlesancheta.com"
-	deploymentBranch = "gh-pages-test"
-	// TODO: Change to real branch once done
-	// deploymentBranch = "gh-pages"
+	deploymentBranch = "gh-pages"
 )
 
 func getCmdOutput(name string, arg ...string) (string, error) {

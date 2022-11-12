@@ -3,6 +3,7 @@ baseURL = 'https://charlesancheta.com'
 languageCode = 'en-us'
 title = 'Charles Ancheta'
 theme = 'risotto'
+enableEmoji = true
 
 [params]
 noindex = false
@@ -25,7 +26,7 @@ url = "https://github.com/cbebe"
 
 [[params.socialLinks]]
 icon = "fa-brands fa-linkedin"
-title = "Linkedin"
+title = "LinkedIn"
 url = "https://www.linkedin.com/in/charles-ancheta"
 
 [[params.socialLinks]]

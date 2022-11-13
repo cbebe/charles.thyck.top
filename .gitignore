@@ -1,3 +1,6 @@
 # hugo build
 public
 .hugo_build.lock
+
+# generated assets
+resources/_gen

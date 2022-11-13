@@ -6,7 +6,9 @@ build:
 watch:
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D
 
-.PHONY: build watch resume
+pages: build deploy
+
+.PHONY: pages build watch resume
 
 %: bin/%/main.go
 	go run $<

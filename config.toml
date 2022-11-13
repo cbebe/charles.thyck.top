@@ -5,6 +5,8 @@ title = 'Charles Ancheta'
 theme = 'risotto'
 enableEmoji = true
 
+copyright = 'Charles Ancheta. MIT'
+
 [params]
 noindex = false
 

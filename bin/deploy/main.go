@@ -7,11 +7,12 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
-	"os/exec"
 	"strings"
+
+	"github.com/bitfield/script"
+	"github.com/plus3it/gorecurcopy"
 )
 
 const (
@@ -19,89 +20,64 @@ const (
 	deploymentBranch = "gh-pages"
 )
 
-func getCmdOutput(name string, arg ...string) (string, error) {
-	out, err := exec.Command(name, arg...).Output()
-	if err != nil {
-		return "", err
-	}
-	return strings.TrimSpace(string(out)), nil
+func execCmd(cmd string) error {
+	log.Println(cmd)
+	p := script.Exec(cmd)
+	p.Stdout()
+	return p.Error()
 }
 
-func execCmd(name string, arg ...string) error {
-	cmd := exec.Command(name, arg...)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	return cmd.Run()
-}
-
-type gitOptions struct {
-	url    string
-	branch string
-	hash   string
-}
-
-func getGitOptions() gitOptions {
-	url, err := getCmdOutput("git", "config", "--get", "remote.origin.url")
+func getCmdOutput(cmd string) string {
+	out, err := script.Exec(cmd).String()
 	if err != nil {
-		log.Fatalf("failed to get origin url: %v", err)
+		log.Fatalf("failed command `%s`: %v", cmd, err)
 	}
-	branch, err := getCmdOutput("git", "rev-parse", "--abbrev-ref", "HEAD")
-	if err != nil {
-		log.Fatalf("failed to get branch: %v", err)
-	}
-	hash, err := getCmdOutput("git", "rev-parse", "HEAD")
-	if err != nil {
-		log.Fatalf("failed to get commit hash: %v", err)
-	}
-
-	return gitOptions{url, branch, hash}
+	return strings.TrimSpace(out)
 }
 
 func mkTmpDir() (string, func()) {
-	dir, err := ioutil.TempDir(os.TempDir(), projectName+"-"+deploymentBranch)
+	dir, err := os.MkdirTemp(os.TempDir(), projectName+"-"+deploymentBranch)
 	if err != nil {
 		log.Fatalf("failed to make temp dir: %v", err)
 	}
-	return dir, func() { os.RemoveAll(dir) }
+	return dir, func() {
+		if err := os.RemoveAll(dir); err != nil {
+			log.Printf("failed to remove dir: %v\n", err)
+		}
+	}
 }
 
 func main() {
+	originUrl := getCmdOutput("git config --get remote.origin.url")
+	latestHash := getCmdOutput("git rev-parse HEAD")
+
 	output, cleanOutput := mkTmpDir()
 	defer cleanOutput()
 	gitPublish, cleanGitPublish := mkTmpDir()
 	defer cleanGitPublish()
 
 	// Make sure to create a new build output every time since it's blazingly fast anyway
-	err := execCmd("hugo", "-d", output)
-	if err != nil {
+	if err := execCmd(fmt.Sprintf("hugo -d %s", output)); err != nil {
 		log.Fatalf("failed to build: %v", err)
 	}
 
-	options := getGitOptions()
-
 	os.Chdir(gitPublish)
-	err = execCmd("git", "clone", "--depth", "1", "--branch", deploymentBranch, options.url, gitPublish)
-	if err != nil {
+	cloneCmd := fmt.Sprintf("git clone --depth 1 --branch %s %s %s", deploymentBranch, originUrl, gitPublish)
+	if err := execCmd(cloneCmd); err != nil {
 		// Branch doesn't exist, create new branch
-		execCmd("git", "init")
-		execCmd("git", "checkout", "-b", deploymentBranch)
-		execCmd("git", "remote", "add", "origin", options.url)
+		execCmd("git init")
+		execCmd("git checkout -b " + deploymentBranch)
+		execCmd("git remote add origin " + originUrl)
 	} else {
-		// Simply remove all files
-		execCmd("git", "rm", "-rf", ".")
+		execCmd("git rm -rf .") // Simply remove all files
 	}
-	// Sorry, UNIX only
-	os.Chdir(output)
-	err = execCmd("cp", "-r", ".", gitPublish)
-	if err != nil {
+	if err := gorecurcopy.CopyDirectory(output, gitPublish); err != nil {
 		log.Fatalf("failed to copy output to publish dir: %v", err)
 	}
 	os.Chdir(gitPublish)
-	execCmd("git", "add", "--all")
-	msg := fmt.Sprintf("Deploy website - based on %s", options.hash)
-	commitErr := execCmd("git", "commit", "-m", msg)
-	err = execCmd("git", "push", "--force", "origin", deploymentBranch)
-	if err != nil {
+	execCmd("git add --all")
+	commitErr := execCmd(fmt.Sprintf("git commit -m \"Deploy website - based on %s\"", latestHash))
+	if err := execCmd("git push --force origin " + deploymentBranch); err != nil {
 		log.Fatalf("failed to push to origin: %v", err)
 	} else if commitErr == nil {
 		fmt.Printf("Website is live at: https://%s\n", projectName)

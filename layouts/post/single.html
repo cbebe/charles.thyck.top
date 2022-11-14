@@ -6,7 +6,9 @@
         {{ .Content }}
     </div>
     <footer class="content__footer">
-        {{- partial "utterances.html" . -}}
+        {{ if hugo.IsProduction }}
+            {{- partial "utterances.html" . -}}
+        {{ end }}
     </footer>
 {{ end }}
 

@@ -28,11 +28,4 @@ more hackathons as a team. Check out our [GitHub](https://github.com/thyckcorgis
 
 ## NPM Packages
 
-<!--TODO: Use script for this -->
-
-| package                                                                          | description                                             |
-| -------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [create-md-blog](https://www.npmjs.com/package/create-md-blog)                   | Create a Markdown blog file from the command line       |
-| [libtime](https://www.npmjs.com/package/libtime)                                 | Nominal types for dealing with time intervals           |
-| [nest-file-logger](https://www.npmjs.com/package/nest-file-logger)               | Log NestJS output to log files                          |
-| [nestjs-dependency-graph](https://www.npmjs.com/package/nestjs-dependency-graph) | View the dependency graph of a particular NestJS module |
+{{% readfile file="/data/packages.md" %}}

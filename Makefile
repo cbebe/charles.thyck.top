@@ -1,9 +1,9 @@
 UPDATED=$(shell git log -1 --pretty="format:%cs" static/Resume.pdf)
 
-build:
+build: data/packages.md
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo
 
-watch:
+watch: data/packages.md
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D
 
 pages: build deploy
@@ -11,7 +11,11 @@ pages: build deploy
 .PHONY: pages build watch resume
 
 %: bin/%/main.go
-	go run $<
+	@go run $<
+
+# Not a prerequesite otherwise it would run every time
+data/packages.md:
+	@$(MAKE) packages
 
 resume: static/Resume.pdf
 

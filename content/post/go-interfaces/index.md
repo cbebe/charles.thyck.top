@@ -116,6 +116,6 @@ which I discovered from this
 [^3]: Another satisfying moment I had with Go is porting the
 [`docusaurus deploy`](https://github.com/facebook/docusaurus/blob/542228ee1beb5cfddd7ba8ae088f109f164e80c5/packages/docusaurus/src/commands/deploy.ts#L187)
 command for my website. This cuts down the deploy time for my website from 5
-minutes to under 10 seconds!!! This probably has to do more with moving from
+minutes to under 5 seconds!!! This probably has to do more with moving from
 Docusaurus to Hugo, but there is certainly a bump in speed when executing
 natively compared to Node.js.

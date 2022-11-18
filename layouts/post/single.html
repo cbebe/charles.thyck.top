@@ -21,9 +21,9 @@
         </p>
         {{ if .Params.tags }}
             <p>
-                tags: 
+                tags:
             {{ range .Params.tags }}
-                <a href="/tags/{{ . }}">{{ . }}</a> 
+                <a href="/tags/{{ . }}">{{ . }}</a>
             {{ end }}
             </p>
         {{ end}}

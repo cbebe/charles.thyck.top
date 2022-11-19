@@ -1,7 +1,7 @@
 UPDATED=$(shell git log -1 --pretty="format:%cs" static/Resume.pdf)
 
 build: data/packages.md
-	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo
+	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo --minify
 
 watch: data/packages.md
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D

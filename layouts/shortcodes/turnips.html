@@ -1,0 +1,26 @@
+{{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
+{{ $style := resources.Get "styles/turnips.scss" | resources.ExecuteAsTemplate "styles/turnips.scss" . | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+<div class="turnip-form">
+    <div class="buy">
+        <input type="text" placeholder="Buy Price"/>
+    </div>
+    <div class="days">
+        <input type="text" placeholder="Mon AM"/>
+        <input type="text" placeholder="Mon PM"/>
+        <input type="text" placeholder="Tue AM"/>
+        <input type="text" placeholder="Tue PM"/>
+        <input type="text" placeholder="Wed AM"/>
+        <input type="text" placeholder="Wed PM"/>
+        <input type="text" placeholder="Thu AM"/>
+        <input type="text" placeholder="Thu PM"/>
+        <input type="text" placeholder="Fri AM"/>
+        <input type="text" placeholder="Fri PM"/>
+        <input type="text" placeholder="Sat AM"/>
+        <input type="text" placeholder="Sat PM"/>
+    </div>
+    <div class="buttons">
+        <button>Clear Data</button>
+        <button>Predict</button>
+    </div>
+</div>

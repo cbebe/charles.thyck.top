@@ -10,6 +10,7 @@ Both alone and with :sparkles: friends :sparkles:
 - [Devpost](https://devpost.com/charlesancheta)
 - [NPM](https://npmjs.com/~cbebe)
 - [Gitea](https://git.thyck.top/)
+- [Turnip Price Calculator](/turnip)
 
 ## Thyck Corgis
 

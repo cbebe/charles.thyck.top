@@ -1,0 +1,21 @@
+{
+  "name": "turnip",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "wasm":"wasm-pack build ./predictor --target web ",
+    "start": "pnpm wasm && vite",
+    "build": "pnpm wasm && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@jihchi/vite-plugin-rescript": "^4.1.1",
+    "@ryyppy/rescript-promise": "^2.1.0",
+    "@types/node": "^18.11.9",
+    "rescript": "^10.0.1",
+    "rescript-webapi": "^0.7.0",
+    "vite": "^3.2.4",
+    "vite-plugin-wasm-pack": "^0.1.12"
+  }
+}

@@ -1,40 +1,44 @@
+@mixin bold {
+    line-height: 1.5rem;
+    font-weight: bold;
+    color: var(--fg);
+    font-size: 1rem;
+    background: var(--muted);
+    font-family: var(--font-monospace);
+    margin: 0.5rem;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .turnip-form {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
+
+    label {
+        font-weight: bold;
+        margin: 0 0.5rem;
+    }
+
+    input {
+        @include bold;
+        min-width: 50%;
+    }
+
+    button {
+        @include bold;
+    }
+
+    select {
+        @include bold;
+    }
 }
-.turnip-form .buy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 80%;
-}
+
 .turnip-form .days {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-width: 80%;
-}
-
-.turnip-form input {
-    background: var(--muted);
-    min-width: 50%;
-    line-height: 1.5rem;
-    font-weight: bold;
-    color: var(--fg);
-    font-size: 1rem;
-    font-family: var(--font-monospace);
-    margin: 0.5rem;
-}
-
-.turnip-form button {
-    background: var(--muted);
-    line-height: 1.5rem;
-    font-weight: bold;
-    color: var(--fg);
-    font-size: 1rem;
-    font-family: var(--font-monospace);
-    margin: 0.5rem;
 }

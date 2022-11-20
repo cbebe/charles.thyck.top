@@ -1,26 +1,37 @@
-{{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
+{{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}} 
 {{ $style := resources.Get "styles/turnips.scss" | resources.ExecuteAsTemplate "styles/turnips.scss" . | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
-<div class="turnip-form">
-    <div class="buy">
-        <input type="text" placeholder="Buy Price"/>
-    </div>
+<link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    <p>This application requires JavaScript to be enabled.</p>
+</noscript>
+<div class="turnip-form center">
     <div class="days">
-        <input type="text" placeholder="Mon AM"/>
-        <input type="text" placeholder="Mon PM"/>
-        <input type="text" placeholder="Tue AM"/>
-        <input type="text" placeholder="Tue PM"/>
-        <input type="text" placeholder="Wed AM"/>
-        <input type="text" placeholder="Wed PM"/>
-        <input type="text" placeholder="Thu AM"/>
-        <input type="text" placeholder="Thu PM"/>
-        <input type="text" placeholder="Fri AM"/>
-        <input type="text" placeholder="Fri PM"/>
-        <input type="text" placeholder="Sat AM"/>
-        <input type="text" placeholder="Sat PM"/>
+        <label for="buy-price">Island Price</label>
+        <label for="previous-pattern">Previous Pattern</label>
+        <input id="buy-price" type="text" placeholder="Buy Price" />
+        <select id="previous-pattern">
+            <option value="-1" label="Unsure" />
+            <option value="0" label="Fluctuating" />
+            <option value="1" label="Large Spike" />
+            <option value="2" label="Decreasing" />
+            <option value="3" label="Small Spike" />
+        </select>
+        <input data-time="mon-am" type="text" placeholder="Mon AM" />
+        <input data-time="mon-pm" type="text" placeholder="Mon PM" />
+        <input data-time="tue-am" type="text" placeholder="Tue AM" />
+        <input data-time="tue-pm" type="text" placeholder="Tue PM" />
+        <input data-time="wed-am" type="text" placeholder="Wed AM" />
+        <input data-time="wed-pm" type="text" placeholder="Wed PM" />
+        <input data-time="thu-am" type="text" placeholder="Thu AM" />
+        <input data-time="thu-pm" type="text" placeholder="Thu PM" />
+        <input data-time="fri-am" type="text" placeholder="Fri AM" />
+        <input data-time="fri-pm" type="text" placeholder="Fri PM" />
+        <input data-time="sat-am" type="text" placeholder="Sat AM" />
+        <input data-time="sat-pm" type="text" placeholder="Sat PM" />
     </div>
     <div class="buttons">
-        <button>Clear Data</button>
-        <button>Predict</button>
+        <button id="clear">Clear Data</button>
+        <button id="predict">Predict</button>
     </div>
 </div>

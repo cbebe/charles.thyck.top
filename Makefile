@@ -8,7 +8,16 @@ watch: data/packages.md
 
 pages: build deploy
 
-.PHONY: pages build watch resume
+turnip: turnip/turnips.html
+	cd turnip && pnpm start
+
+turnip/turnips.html: public/turnip/index.html
+	cp $< $@
+
+public/turnip/index.html:
+	@$(MAKE) build
+
+.PHONY: pages build watch resume turnip
 
 %: bin/%/main.go
 	@go run $<

@@ -11,8 +11,13 @@ copyright = 'Charles Ancheta. MIT'
 [markup.goldmark.renderer]
 unsafe = true
 
+[Author]
+name = 'Charles Ancheta'
+email = 'cancheta.dev@gmail.com'
+
 [params]
 noindex = false
+rss = true
 
 [params.theme]
 palette = "base16-dark"

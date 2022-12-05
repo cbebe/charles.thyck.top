@@ -9,8 +9,23 @@ let getDays = (): array<HtmlInputElement.t> =>
 
 external toInput: Dom.element => HtmlInputElement.t = "%identity"
 
+let set = (buyPrice, days, previousPattern) => {
+  open Belt.Int
+  select("#buy-price")->toInput->HtmlInputElement.setValue(buyPrice->toString)
+  select("#previous-pattern")->toInput->HtmlInputElement.setValue(previousPattern->toString)
+  getDays()->Js.Array2.forEachi((e, i) => {
+    switch days[i] {
+    | Some(value) => e->HtmlInputElement.setValue(value->toString)
+    | None => e->HtmlInputElement.setValue("")
+    }
+  })
+}
+
 let get = _ => {
-  let buyPrice = select("#buy-price")->toInput->getInt
+  let buyPrice = switch select("#buy-price")->toInput->getInt {
+  | Some(price) => Ok(price)
+  | None => Error("buy price not specified")
+  }
   // This will always have a value since it's from the dropdown
   let previousPattern = select("#previous-pattern")->toInput->getInt->Belt.Option.getUnsafe
   let days = getDays()->Js.Array2.map(e => e->getInt)

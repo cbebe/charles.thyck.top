@@ -17,7 +17,7 @@ turnip:
 	mv turnip/dist/index.html assets/turnip.html
 	mv turnip/dist/assets static/
 
-turnip-dev:
+turnip-dev: turnip/turnips.html
 	cd turnip && pnpm start
 
 turnip/turnips.html: public/turnip/index.html

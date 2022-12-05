@@ -18,6 +18,8 @@ pub struct Possibility {
 
 pub type Possibilities = Vec<Possibility>;
 
+pub struct PossibilitiesWithFudge(pub Possibilities, pub u16);
+
 impl Possibility {
     fn multiply_probability(&mut self, probability: f32) {
         self.probability = self.probability * probability;
@@ -28,12 +30,12 @@ pub fn generate_possibilities(
     buy_price: u16,
     prices: Prices,
     previous_pattern: Pattern,
-) -> Option<Possibilities> {
+) -> Option<PossibilitiesWithFudge> {
     for i in 0..6 {
         if let Some(possibility) =
             generate_possibilities_with_fudge(buy_price, prices, previous_pattern, i)
         {
-            return Some(possibility);
+            return Some(PossibilitiesWithFudge(possibility, i));
         }
     }
     None

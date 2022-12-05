@@ -66,16 +66,24 @@ let createButton = (label: string, action: table, predictions: array<Predictor.P
   button
 }
 
-let displayResults = (res: Predictor.t) => {
+let parsePredictions = (res: Predictor.t) => {
   let (predictions, categories) = sortPredictions(res)
+  let time = res.time->Belt.Float.toString
+  let num = res.predictions->Js.Array2.length->Belt.Int.toString
+  let fudge = {
+    switch res.fudge {
+    | 0 => ""
+    | i => `, with fudge factor of ${i->Belt.Int.toString}`
+    }
+  }
+  select("#result")->setText(`Took ${time} ms to calculate ${num} predictions${fudge}`)->ignore
+  (predictions, categories)
+}
 
-  let result =
-    select("#result")->setText(
-      `Took ${res.time->Belt.Float.toString} ms to calculate ${res.predictions
-        ->Js.Array2.length
-        ->Belt.Int.toString} predictions`,
-    )
+type t = (array<Predictor.Prediction.t>, array<float>)
 
+let showResults = ((predictions, categories)) => {
+  let result = select("#result")
   for i in 0 to 3 {
     if categories[i] > 0. {
       let pattern = i->Obj.magic

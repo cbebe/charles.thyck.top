@@ -67,9 +67,11 @@ fn _predict(
     };
 
     let total_probability = possibilities
+        .0
         .iter()
         .fold(0., |acc, it| acc + it.probability);
-    let floats: Vec<f32> = possibilities
+    let mut floats: Vec<f32> = possibilities
+        .0
         .into_iter()
         .map(|mut it| {
             it.probability = it.probability / total_probability;
@@ -84,7 +86,9 @@ fn _predict(
         .flatten()
         .collect();
 
-    Ok(floats)
+    let mut result: Vec<f32> = vec![possibilities.1 as f32];
+    result.append(&mut floats);
+    Ok(result)
 }
 
 #[wasm_bindgen]

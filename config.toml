@@ -31,24 +31,24 @@ description = "Software Engineer"
 logo = "/favicon.ico"
 
 [[params.socialLinks]]
-icon = "fa-brands fa-github"
 title = "GitHub"
 url = "https://github.com/cbebe"
 
 [[params.socialLinks]]
-icon = "fa-brands fa-linkedin"
 title = "LinkedIn"
 url = "https://www.linkedin.com/in/charles-ancheta"
 
 [[params.socialLinks]]
-icon = "fa-solid fa-file"
 title = "Resume"
 url = "/Resume.pdf"
 
 [[params.socialLinks]]
-icon = "fa-solid fa-envelope"
 title = "Email"
 url = "mailto:cancheta.dev@gmail.com"
+
+[[params.socialLinks]]
+title = "Mastodon"
+url = "https://mastodon.social/@cbebe"
 
 [menu]
 

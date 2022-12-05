@@ -43,12 +43,12 @@ let sortPredictions = res => {
 
 let writeError = (text: string) => select("#result")->setText(`error: ${text}`)->ignore
 
-type table = ShowAll | HideAll | ShowOne(Pattern.t)
+type table = ShowAll | Hide | ShowOne(Pattern.t)
 
 let filterPredictions = (predictions: array<Predictor.Prediction.t>, table: table) => {
   switch table {
   | ShowAll => predictions
-  | HideAll => []
+  | Hide => []
   | ShowOne(pattern) => predictions->Js.Array2.filter(p => p.pattern == pattern)
   }
 }
@@ -85,7 +85,7 @@ let displayResults = (res: Predictor.t) => {
     }
   }
   let showAll = createButton("Show All", ShowAll, predictions)
-  let hideAll = createButton("Hide All", HideAll, predictions)
+  let hideAll = createButton("Hide", Hide, predictions)
   result->Element.appendChild(~child=showAll)
   result->Element.appendChild(~child=hideAll)
 }

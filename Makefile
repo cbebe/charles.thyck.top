@@ -6,7 +6,7 @@ build: data/packages.md assets/turnip.html
 watch: data/packages.md assets/turnip.html
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D
 
-pages: build deploy
+pages: turnip build deploy
 
 assets/turnip.html:
 	@$(MAKE) turnip

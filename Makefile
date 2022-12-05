@@ -14,6 +14,12 @@ turnip: turnip/turnips.html
 turnip/turnips.html: public/turnip/index.html
 	cp $< $@
 
+turnip-build:
+	cd turnip && pnpm build
+	rm -rf static/assets
+	mv turnip/dist/index.html assets/turnip.html
+	mv turnip/dist/assets static/
+
 public/turnip/index.html:
 	@$(MAKE) build
 

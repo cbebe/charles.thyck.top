@@ -1,29 +1,32 @@
 UPDATED=$(shell git log -1 --pretty="format:%cs" static/Resume.pdf)
 
-build: data/packages.md
+build: data/packages.md assets/turnip.html
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo --minify
 
-watch: data/packages.md
+watch: data/packages.md assets/turnip.html
 	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D
 
 pages: build deploy
 
-turnip: turnip/turnips.html
-	cd turnip && pnpm start
+assets/turnip.html:
+	@$(MAKE) turnip
 
-turnip/turnips.html: public/turnip/index.html
-	cp $< $@
-
-turnip-build:
+turnip:
 	cd turnip && pnpm build
 	rm -rf static/assets
 	mv turnip/dist/index.html assets/turnip.html
 	mv turnip/dist/assets static/
 
+turnip-dev:
+	cd turnip && pnpm start
+
+turnip/turnips.html: public/turnip/index.html
+	cp $< $@
+
 public/turnip/index.html:
 	@$(MAKE) build
 
-.PHONY: pages build watch resume turnip
+.PHONY: pages build watch resume turnip turnip-dev
 
 %: bin/%/main.go
 	@go run $<

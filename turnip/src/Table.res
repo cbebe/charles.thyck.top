@@ -32,7 +32,7 @@ let formatPercent = n => {
 }
 
 @inline
-let createRows = (p: Predictor.Prediction.t) => {
+let createRows = (p: Predictor.prediction) => {
   let percent = formatPercent(p.probability)
   let (ams, pms) = {
     let (a, b) = ([], [])
@@ -67,7 +67,7 @@ let remove = () => {
   }
 }
 
-let make = (predictions: array<Predictor.Prediction.t>) => {
+let make = (predictions: array<Predictor.prediction>) => {
   open Document
   let thead = createHead()
   let tbody = {

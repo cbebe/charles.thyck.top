@@ -1,4 +1,4 @@
 let formatPercent: float => string
 
 let remove: unit => unit
-let make: array<Predictor.Prediction.t> => Webapi.Dom.Element.t
+let make: array<Predictor.prediction> => Webapi.Dom.Element.t

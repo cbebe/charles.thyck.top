@@ -45,7 +45,7 @@ let writeError = (text: string) => select("#result")->setText(`error: ${text}`)-
 
 type table = ShowAll | Hide | ShowOne(Pattern.t)
 
-let filterPredictions = (predictions: array<Predictor.Prediction.t>, table: table) => {
+let filterPredictions = (predictions: array<Predictor.prediction>, table: table) => {
   switch table {
   | ShowAll => predictions
   | Hide => []
@@ -53,9 +53,9 @@ let filterPredictions = (predictions: array<Predictor.Prediction.t>, table: tabl
   }
 }
 
-let createButton = (label: string, action: table, predictions: array<Predictor.Prediction.t>) => {
+let createButton = (label: string, action: table, predictions: array<Predictor.prediction>) => {
   let button = document->Document.createElement("button")
-  button->Element.setTextContent(label->Obj.magic)
+  button->Element.setTextContent(label)
   button->Element.addEventListener("click", _ => {
     Table.remove()
     let predictions = filterPredictions(predictions, action)
@@ -80,13 +80,13 @@ let parsePredictions = (res: Predictor.t) => {
   (predictions, categories)
 }
 
-type t = (array<Predictor.Prediction.t>, array<float>)
+type t = (array<Predictor.prediction>, array<float>)
 
 let showResults = ((predictions, categories)) => {
   let result = select("#result")
   for i in 0 to 3 {
     if categories[i] > 0. {
-      let pattern = i->Obj.magic
+      let pattern = Pattern.fromInt(i)
       let label = `${pattern->Pattern.toString} (${Table.formatPercent(categories[i])}%)`
       let button = createButton(label, ShowOne(pattern), predictions)
       result->Element.appendChild(~child=button)

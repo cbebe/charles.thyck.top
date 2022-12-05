@@ -1,7 +1,7 @@
 type t = {
   price: int,
   priceList: array<option<int>>,
-  predictions: array<Predictor.Prediction.t>,
+  predictions: array<Predictor.prediction>,
   categories: array<float>,
   pattern: int,
 }

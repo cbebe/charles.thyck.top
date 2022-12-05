@@ -1,25 +1,10 @@
+open Monad
 open Webapi.Dom
 
 @module("predictor") external init: _ => Promise.t<unit> = "default"
 
 @inline
 let select = query => document->Document.querySelector(query)->Belt.Option.getUnsafe
-
-@inline
-let then = (res: result<'a, 'b>, cb: 'a => result<'c, 'b>) => {
-  switch res {
-  | Ok(r) => cb(r)
-  | Error(err) => Error(err)
-  }
-}
-
-@inline
-let catch = (res: result<'a, 'b>, cb: 'b => unit) => {
-  switch res {
-  | Ok(_) => ()
-  | Error(err) => cb(err)
-  }
-}
 
 @inline
 let getResults = _ => {
@@ -42,7 +27,7 @@ window->Window.addEventListener("load", _ => {
     Fields.set(price, priceList, pattern)
     Ok()
   })
-  ->catch(_ => ())
+  ->ignore
   init()
   ->Promise.thenResolve(_ => {
     select("#predict")->Element.addEventListener("click", getResults)

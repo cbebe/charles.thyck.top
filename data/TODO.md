@@ -1,4 +1,5 @@
 **Future post ideas**
 
-- My failed attempts at replicating my Linux workflow on Windows (and how I've adapted)
 - Shiny Object Syndrome
+- Recommended Tools for Software Development
+- T3 Stack (and how it made me love TypeScript again)

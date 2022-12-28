@@ -38,8 +38,12 @@
 
   .days {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     min-width: 80%;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
@@ -51,7 +55,7 @@
     white-space: nowrap;
     background-color: var(--inner-bg);
     width: 100%;
-    
+
     tr {
       text-align: center;
     }

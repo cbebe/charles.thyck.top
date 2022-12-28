@@ -35,4 +35,13 @@ This website is built using [Hugo](https://gohugo.io) and my own
 ## Resume (`/resume`)
 
 - My Resume written in LaTeX
-- Currently private, will be open once I clean up some information
+- Can be easily built with [Nix](https://nixos.org/)
+  ```bash
+  cd resume
+  ./make.sh # nix-shell --pure --run 'make'
+  ```
+- NOTE: Be careful when clicking the links on the PDF viewer while using
+  `nix-shell` and watch mode (`./make.sh watch`). Weird stuff happens to Firefox
+  when I click the link on the PDF viewer which forces me to kill all Firefox
+  processes.
+  - If you need to test the links, use your own PDF viewer.

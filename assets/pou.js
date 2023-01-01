@@ -208,7 +208,8 @@ pouArray.forEach((pou) => {
 });
 
 document.addEventListener("keypress", (e) => {
-  if (e.key === " ") {
+  if (e.key === " " && e.target === document.body) {
+    e.preventDefault();
     toggleConfetti();
   }
   activatePou(e.key, e);

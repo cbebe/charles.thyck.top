@@ -54,8 +54,8 @@ function makePupil(cx) {
   const circle = document.createElementNS(svgns, "circle");
   circle.setAttribute("class", "pupil");
   circle.setAttribute("cx", cx.toString());
-  circle.setAttribute("cy", "51.881294");
-  circle.setAttribute("r", "2.4246597");
+  circle.setAttribute("cy", "51.8");
+  circle.setAttribute("r", "2.4");
   return circle;
 }
 
@@ -68,6 +68,7 @@ const openMouth = {
     "m 28.824959,36.085745 c 0,0 14.506532,31.22966 31.490978,0.06023",
   "lower-lip":
     "m 28.824959,36.085745 c 0,0 14.506532,31.22966 31.490978,0.06023",
+  "centre": "m 28.824959,36.085745 l 31.490978,0.06023",
 };
 
 function makeOpenMouthSvg() {
@@ -75,6 +76,7 @@ function makeOpenMouthSvg() {
   g.setAttribute("transform", "translate(0, 5)");
   g.appendChild(makePath("lower-mouth", openMouth, "open-mouth"));
   g.appendChild(makePath("upper-mouth", openMouth, "open-mouth"));
+  g.appendChild(makePath("centre", openMouth, "open-lip centre-lip"));
   g.appendChild(makePath("upper-lip", openMouth, "open-lip"));
   g.appendChild(makePath("lower-lip", openMouth, "open-lip"));
   return g;

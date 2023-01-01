@@ -1,0 +1,16 @@
+{{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
+{{ $style := resources.Get "styles/pou.scss" | resources.ToCSS $options }}
+{{ $script := resources.Get "pou.js" }}
+<link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+</noscript>
+<script src="{{ $script.Permalink }}" defer></script>
+<div class="piano"></div>
+<noscript>
+  <p>Pou won't show up without JavaScript :(</p>
+</noscript>
+<div class="confetti-container hidden">
+  <div class="confetti"></div>
+</div>
+<button id="toggle-confetti">Toggle Confetti</button>

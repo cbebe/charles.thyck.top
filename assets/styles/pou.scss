@@ -262,15 +262,18 @@ input {
   fill: #782121;
 }
 
-.open-lip {
+.lip {
   fill: none;
-  stroke: #000000;
-  stroke-width: 1;
   stroke-dasharray: none;
   stroke-opacity: 1;
 }
 
-.centre-lip {
+.open {
+  stroke: #000000;
+  stroke-width: 1;
+}
+
+.centre {
   stroke: #782121;
   stroke-width: 2;
 }

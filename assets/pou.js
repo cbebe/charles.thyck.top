@@ -76,9 +76,9 @@ function makeOpenMouthSvg() {
   g.setAttribute("transform", "translate(0, 5)");
   g.appendChild(makePath("lower-mouth", openMouth, "open-mouth"));
   g.appendChild(makePath("upper-mouth", openMouth, "open-mouth"));
-  g.appendChild(makePath("centre", openMouth, "open-lip centre-lip"));
-  g.appendChild(makePath("upper-lip", openMouth, "open-lip"));
-  g.appendChild(makePath("lower-lip", openMouth, "open-lip"));
+  g.appendChild(makePath("centre", openMouth, "centre lip"));
+  g.appendChild(makePath("upper-lip", openMouth, "open lip"));
+  g.appendChild(makePath("lower-lip", openMouth, "open lip"));
   return g;
 }
 

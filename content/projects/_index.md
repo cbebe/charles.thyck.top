@@ -11,6 +11,7 @@ Both alone and with :sparkles: friends :sparkles:
 - [NPM](https://npmjs.com/~cbebe)
 - [Gitea](https://git.thyck.top/)
 - [Turnip Price Calculator](/turnip)
+- [Pou Pentatonics (Happy New Year 2023!)](/pou)
 
 ## Thyck Corgis
 

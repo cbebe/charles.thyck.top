@@ -1,0 +1,296 @@
+/* #region confetti */
+/* https://blog.logrocket.com/how-create-confetti-effect-css/ */
+
+:root {
+  --pou-bg: yellow;
+}
+
+button {
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: var(--fg);
+  font-size: 1rem;
+  background: var(--muted);
+  font-family: var(--font-monospace);
+  margin: 0.5rem;
+}
+
+label {
+  color: white;
+  font-size: 1.5rem;
+}
+input {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.confetti-container {
+  user-select: none;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.confetti {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
+
+  .square {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--pou-bg);
+    transform: rotate(140deg);
+  }
+  .rectangle {
+    width: 1rem;
+    height: 0.5rem;
+    background-color: var(--pou-bg);
+  }
+  .hexagram {
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 1rem solid var(--pou-bg);
+    position: relative;
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+      border-top: 1rem solid var(--pou-bg);
+      position: absolute;
+      top: 0.33rem;
+      left: -0.5rem;
+    }
+  }
+
+  .dodecagram {
+    background: var(--pou-bg);
+    width: 8px;
+    height: 8px;
+    position: relative;
+    &:before {
+      content: "";
+      height: 8px;
+      width: 8px;
+      background: var(--pou-bg);
+      transform: rotate(30deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:after {
+      content: "";
+      height: 8px;
+      width: 8px;
+      background: var(--pou-bg);
+      transform: rotate(60deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.confetti .hexagram .confetti .pentagram {
+  width: 0rem;
+  height: 0rem;
+  display: block;
+  margin: 0.5rem 0;
+  border-right: 1rem solid transparent;
+  border-bottom: 0.7rem solid var(--pou-bg);
+  border-left: 1rem solid transparent;
+  transform: rotate(35deg);
+  position: relative;
+}
+
+.confetti .pentagram:before {
+  border-bottom: 0.8rem solid var(--pou-bg);
+  border-left: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -0.45rem;
+  left: -0.65rem;
+  display: block;
+  content: "";
+  transform: rotate(-35deg);
+}
+.confetti .pentagram:after {
+  position: absolute;
+  display: block;
+  color: var(--pou-bg);
+  top: 0.03rem;
+  left: -1.05rem;
+  width: 0rem;
+  height: 0rem;
+  border-right: 1rem solid transparent;
+  border-bottom: 0.7rem solid var(--pou-bg);
+  border-left: 1rem solid transparent;
+  transform: rotate(-70deg);
+  content: "";
+}
+
+.confetti .wavy-line {
+  position: relative;
+}
+.confetti .wavy-line::after,
+.confetti .wavy-line::before {
+  content: "";
+  height: 10px;
+  width: 80px;
+  background-size: 20px 10px;
+  position: absolute;
+  left: -9rem;
+  transform: rotate(90deg);
+}
+
+.confetti .wavy-line::before {
+  background-image: linear-gradient(
+    45deg,
+    transparent,
+    transparent 50%,
+    var(--pou-bg) 50%,
+    transparent 60%
+  );
+  top: 1rem;
+}
+.confetti .wavy-line::after {
+  background-image: linear-gradient(
+    -45deg,
+    transparent,
+    transparent 50%,
+    var(--pou-bg) 50%,
+    transparent 60%
+  );
+}
+
+.confetti i {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.2rem;
+  animation-name: confetti;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(60s / var(--speed));
+}
+
+.confetti i:nth-child(even) {
+  transform: rotate(90deg);
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* #endregion confetti */
+
+/* #region POU */
+
+.piano {
+  display: flex;
+
+  img,
+  svg {
+    width: 10rem;
+    margin: 1rem;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.outline {
+  opacity: 1;
+  fill: #000000;
+  stroke: none;
+  stroke-width: 0.8;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
+
+.body {
+  opacity: 1;
+  fill: #c4985a;
+  stroke: none;
+  stroke-width: 0.8;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
+
+.eye-outline {
+  fill: #000000;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 5.24814;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+  paint-order: stroke markers fill;
+  transform: scale(0.26458333);
+}
+
+.sclera {
+  fill: #ffffff;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 5.24814;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+  paint-order: stroke markers fill;
+  transform: scale(0.26458333);
+}
+
+.hidden {
+  display: none;
+  transition: transform 0.5s;
+}
+
+.open-mouth {
+  fill: #782121;
+}
+
+.open-lip {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
+
+.pupil {
+  fill: #000000;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 0.829436;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+  paint-order: stroke markers fill;
+  transition: transform 0.125s;
+}
+
+.mouth {
+  opacity: 1;
+  fill: #000000;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 0.264583px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-opacity: 1;
+}
+
+/* #endregion POU */

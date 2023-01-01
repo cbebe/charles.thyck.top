@@ -1,10 +1,10 @@
 {{ define "head" }}
 {{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
-{{ $style := resources.Get "styles/turnips.scss" | resources.ToCSS $options }}
-<link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{ $style := resources.Get "styles/turnips.scss" | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+<link rel="preload" href="{{ $style.Permalink }}" as="style" integrity="{{ $style.Data.Integrity }}" onload="this.onload=null;this.rel='stylesheet'">
 {{ readFile "assets/turnip.html" | safeHTML }}
 <noscript>
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 </noscript>
 {{ end }}
 

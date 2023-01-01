@@ -1,11 +1,11 @@
 {{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
-{{ $style := resources.Get "styles/pou.scss" | resources.ToCSS $options }}
-{{ $script := resources.Get "pou.js" }}
-<link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+{{ $style := resources.Get "styles/pou.scss" | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+{{ $script := resources.Get "pou.js" | resources.Fingerprint "sha512" }}
+<link rel="preload" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript>
-  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
 </noscript>
-<script src="{{ $script.Permalink }}" defer></script>
+<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
 <div class="piano"></div>
 <noscript>
   <p>Pou won't show up without JavaScript :(</p>

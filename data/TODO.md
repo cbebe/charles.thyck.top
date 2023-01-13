@@ -3,3 +3,5 @@
 - Shiny Object Syndrome
 - Recommended Tools for Software Development
 - T3 Stack (and how it made me love TypeScript again)
+- New Year, New Setup
+- HackED 2023

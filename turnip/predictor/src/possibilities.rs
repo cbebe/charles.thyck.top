@@ -230,10 +230,12 @@ fn get_decreasing_patterns(
         LOW_START_RATE,
         DEFAULT_DECAY_RATE,
     );
+    let probability = gen.decreasing_random_price(0, 12)?;
+    let prices = gen.prices();
     Some(vec![Possibility {
         pattern: Pattern::Decreasing,
-        prices: gen.prices(),
-        probability: gen.decreasing_random_price(0, 12)?,
+        prices,
+        probability,
     }])
 }
 

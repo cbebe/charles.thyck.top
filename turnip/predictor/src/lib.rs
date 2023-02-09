@@ -113,7 +113,19 @@ mod tests {
     const FLUCTUATING: &str = "105,99,115,58,51,117,121,124,109,71,65,60";
     const LARGE_SPIKE: &str = "91,87,83,79,74,71,100,192,415,158,143,69";
     const SMALL_SPIKE: &str = "93,134,173,63,55,47,121,169,166,60,50,42";
-    const DECREASING: &str = "82,78,75,71,68,64,60,56,52,49,45,41";
+    const DECREASING: &str = "82,78,75,71,68,64,60,56,,,,";
+
+    #[test]
+    fn test_decreasing() {
+        assert_eq!(
+            _predict(100, DECREASING, Pattern::Decreasing),
+            Ok(vec![
+                3., // Fudge factor of 3
+                2., 1., 82., 82., 78., 78., 75., 75., 71., 71., 68., 68., 64., 64., 60., 60., 56.,
+                56., 50., 54., 45., 51., 40., 48., 35., 45.,
+            ])
+        );
+    }
 
     #[test]
     fn test_fluctuating() {

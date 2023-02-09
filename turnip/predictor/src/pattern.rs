@@ -1,7 +1,4 @@
-use crate::{
-    pdf::{range_intersect, range_intersect_length, IUniform, Uniform},
-    price::{self, MinMax, PossiblePrices, Prices, RATE_MULTIPLIER},
-};
+use crate::pdf::{range_intersect, range_intersect_length, IUniform, Uniform};
 
 #[derive(Debug, Clone, Copy)]
 pub enum Pattern {
@@ -121,8 +118,8 @@ impl Generator {
 
         let mut prob = 1.;
         for i in start..(start + length) {
-            let mut min_pred = price::get(rate_min, self.buy_price);
-            let mut max_pred = price::get(rate_max, self.buy_price);
+            let mut min_pred = get_price(rate_min, self.buy_price);
+            let mut max_pred = get_price(rate_max, self.buy_price);
             if let Some(price) = self.given_prices[i] {
                 self.check_bounds(price, min_pred, max_pred)?;
                 let real_rate_range = rate_range_from_given_and_base(
@@ -153,8 +150,8 @@ impl Generator {
 
         let mut prob = 1.;
         if let Some(price) = self.given_prices[start + 1] {
-            let min_pred = price::get(rate_min, self.buy_price);
-            let max_pred = price::get(rate_max, self.buy_price);
+            let min_pred = get_price(rate_min, self.buy_price);
+            let max_pred = get_price(rate_max, self.buy_price);
             self.check_bounds(price, min_pred, max_pred)?;
             let real_rate_range =
                 rate_range_from_given_and_base(clamp(price, min_pred, max_pred), self.buy_price);
@@ -167,8 +164,8 @@ impl Generator {
         let left_price = self.given_prices[start];
         let right_price = self.given_prices[start + 2];
         for price in [left_price, right_price].iter().flatten() {
-            let min_pred = price::get(rate_min, self.buy_price) - 1;
-            let max_pred = price::get(rate_max, self.buy_price) - 1;
+            let min_pred = get_price(rate_min, self.buy_price) - 1;
+            let max_pred = get_price(rate_max, self.buy_price) - 1;
             self.check_bounds(*price, min_pred, max_pred)?;
             let f = |t: f32, zz: f32| {
                 if t <= 0. {
@@ -193,8 +190,8 @@ impl Generator {
         self.predicted_prices[start] = if let Some(price) = self.given_prices[start] {
             MinMax::new_val(price)
         } else {
-            let min_pred = price::get(rate_min, self.buy_price) - 1;
-            let max_pred = price::get(rate_max, self.buy_price) - 1;
+            let min_pred = get_price(rate_min, self.buy_price) - 1;
+            let max_pred = get_price(rate_max, self.buy_price) - 1;
             MinMax::new(min_pred, max_pred)
         };
         // Main Spike 2
@@ -202,14 +199,14 @@ impl Generator {
             MinMax::new_val(price)
         } else {
             let min_pred = self.predicted_prices[start].min();
-            let max_pred = price::get(rate_max, self.buy_price);
+            let max_pred = get_price(rate_max, self.buy_price);
             MinMax::new(min_pred, max_pred)
         };
         // Main Spike 3
         self.predicted_prices[start + 2] = if let Some(price) = self.given_prices[start + 2] {
             MinMax::new_val(price)
         } else {
-            let min_pred = price::get(rate_min, self.buy_price) - 1;
+            let min_pred = get_price(rate_min, self.buy_price) - 1;
             let max_pred = self.predicted_prices[start + 1].max() - 1;
             MinMax::new(min_pred, max_pred)
         };
@@ -226,8 +223,8 @@ impl Generator {
         let mut pdf = Uniform::new(start_rate_min, start_rate_max);
         let mut prob = 1.;
         for i in start..(start + length) {
-            let mut min_pred = price::get(pdf.a(), self.buy_price);
-            let mut max_pred = price::get(pdf.b(), self.buy_price);
+            let mut min_pred = get_price(pdf.a(), self.buy_price);
+            let mut max_pred = get_price(pdf.b(), self.buy_price);
             if let Some(price) = self.given_prices[i] {
                 self.check_bounds(price, min_pred, max_pred)?;
                 let real_rate_range = rate_range_from_given_and_base(
@@ -256,4 +253,39 @@ fn rate_range_from_given_and_base(given_price: u16, buy_price: u16) -> (f32, f32
 
 fn clamp(x: u16, min: u16, max: u16) -> u16 {
     max.min(x.max(min))
+}
+
+pub type Prices = [Option<u16>; 12];
+pub type PossiblePrices = [MinMax<u16>; 12];
+
+#[derive(Debug, Clone, Copy)]
+pub struct MinMax<T>(T, T)
+where
+    T: Copy;
+
+impl<T> MinMax<T>
+where
+    T: Copy,
+{
+    pub const fn new(min: T, max: T) -> Self {
+        Self(min, max)
+    }
+
+    pub const fn new_val(val: T) -> Self {
+        Self(val, val)
+    }
+
+    pub const fn min(&self) -> T {
+        self.0
+    }
+
+    pub const fn max(&self) -> T {
+        self.1
+    }
+}
+
+pub const RATE_MULTIPLIER: f32 = 10000.;
+
+pub fn get_price(rate: f32, base_price: u16) -> u16 {
+    (rate * f32::from(base_price) / RATE_MULTIPLIER).ceil() as u16
 }

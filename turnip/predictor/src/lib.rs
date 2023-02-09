@@ -3,7 +3,6 @@
 mod pattern;
 mod pdf;
 mod possibilities;
-mod price;
 
 #[macro_use]
 extern crate alloc;
@@ -11,8 +10,7 @@ extern crate alloc;
 use alloc::vec::Vec;
 use core::convert::TryInto;
 use js_sys::Float32Array;
-use pattern::Pattern;
-use price::Prices;
+use pattern::{Pattern, Prices};
 use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen::JsValue;
 
@@ -45,7 +43,7 @@ fn get_prices(prices: &str) -> Option<Prices> {
     conv(prices.split(',').map(|x| x.parse::<u16>().ok()).collect())
 }
 
-fn _predict(
+fn get_predictions(
     buy_price: u16,
     prices: &str,
     previous_pattern: Pattern,
@@ -98,12 +96,8 @@ pub fn predict(
     prices: &str,
     previous_pattern: i8,
 ) -> Result<Float32Array, PredictorError> {
-    // utils::set_panic_hook();
-    let previous_pattern = Pattern::from_int(previous_pattern);
-    match _predict(buy_price, prices, previous_pattern) {
-        Ok(val) => Ok(Float32Array::from(&val[..])),
-        Err(err) => Err(err),
-    }
+    get_predictions(buy_price, prices, Pattern::from_int(previous_pattern))
+        .map(|val: Vec<f32>| Float32Array::from(&val[..]))
 }
 
 #[cfg(test)]
@@ -118,7 +112,7 @@ mod tests {
     #[test]
     fn test_decreasing() {
         assert_eq!(
-            _predict(100, DECREASING, Pattern::Decreasing),
+            get_predictions(100, DECREASING, Pattern::Decreasing),
             Ok(vec![
                 3., // Fudge factor of 3
                 2., 1., 82., 82., 78., 78., 75., 75., 71., 71., 68., 68., 64., 64., 60., 60., 56.,
@@ -131,7 +125,7 @@ mod tests {
     fn test_fluctuating() {
         let sure: &'static str = "120,120,120,120,120,120,,,,,,";
         assert_eq!(
-            _predict(100, sure, Pattern::Decreasing),
+            get_predictions(100, sure, Pattern::Decreasing),
             Ok(vec![
                 0., // Fudge factor of 0
                 0., 0.5, 120., 120., 120., 120., 120., 120., 120., 120., 120., 120., 120., 120.,
@@ -146,7 +140,7 @@ mod tests {
     fn test_large_spike() {
         let sure: &'static str = "91,87,83,79,74,71,100,192,,,,";
         assert_eq!(
-            _predict(100, sure, Pattern::Unsure),
+            get_predictions(100, sure, Pattern::Unsure),
             Ok(vec![
                 1., // Fudge factor of 1
                 1., 1., 91., 91., 87., 87., 83., 83., 79., 79., 74., 74., 71., 71., 100., 100.,
@@ -159,19 +153,19 @@ mod tests {
     fn test_predict_bad_buy_price() {
         use Pattern::{Decreasing, Fluctuating, LargeSpike, SmallSpike};
         assert_eq!(
-            _predict(0, FLUCTUATING, SmallSpike),
+            get_predictions(0, FLUCTUATING, SmallSpike),
             Err(PredictorError::BadBuyPrice)
         );
         assert_eq!(
-            _predict(120, LARGE_SPIKE, Decreasing),
+            get_predictions(120, LARGE_SPIKE, Decreasing),
             Err(PredictorError::BadBuyPrice)
         );
         assert_eq!(
-            _predict(80, SMALL_SPIKE, LargeSpike),
+            get_predictions(80, SMALL_SPIKE, LargeSpike),
             Err(PredictorError::BadBuyPrice)
         );
         assert_ne!(
-            _predict(100, DECREASING, Fluctuating),
+            get_predictions(100, DECREASING, Fluctuating),
             Err(PredictorError::BadBuyPrice)
         );
     }
@@ -180,7 +174,7 @@ mod tests {
     fn test_predict_bad_price_list() {
         let bad_price: &'static str = "105,10,123,";
         assert_eq!(
-            _predict(100, bad_price, Pattern::Unsure),
+            get_predictions(100, bad_price, Pattern::Unsure),
             Err(PredictorError::BadPriceList)
         );
     }
@@ -189,7 +183,7 @@ mod tests {
     fn test_impossible_values() {
         let impossible: &'static str = "90,150,,,,,,,,,,";
         assert_eq!(
-            _predict(100, impossible, Pattern::Unsure),
+            get_predictions(100, impossible, Pattern::Unsure),
             Err(PredictorError::ImpossibleValues)
         );
     }

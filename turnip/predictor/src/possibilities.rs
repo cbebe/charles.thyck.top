@@ -1,7 +1,6 @@
 use alloc::vec::Vec;
 
-use crate::pattern::{self, Pattern};
-use crate::price::{MinMax, PossiblePrices, Prices};
+use crate::pattern::{self, MinMax, Pattern, PossiblePrices, Prices};
 
 pub struct PhaseLengths {
     high_1: usize,

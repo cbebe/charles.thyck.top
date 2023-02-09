@@ -1,4 +1,6 @@
-use crate::pattern::{Pattern, PatternGen};
+use alloc::vec::Vec;
+
+use crate::pattern::{self, Pattern};
 use crate::price::{MinMax, PossiblePrices, Prices};
 
 pub struct PhaseLengths {
@@ -18,24 +20,22 @@ pub struct Possibility {
 
 pub type Possibilities = Vec<Possibility>;
 
-pub struct PossibilitiesWithFudge(pub Possibilities, pub u16);
+pub struct WithFudge(pub Possibilities, pub u16);
 
 impl Possibility {
     fn multiply_probability(&mut self, probability: f32) {
-        self.probability = self.probability * probability;
+        self.probability *= probability;
     }
 }
 
-pub fn generate_possibilities(
-    buy_price: u16,
-    prices: Prices,
-    previous_pattern: Pattern,
-) -> Option<PossibilitiesWithFudge> {
+const DEFAULT_DECAY_RATE: MinMax<f32> = MinMax::new(0.03, 0.05);
+const FIRST_HIGH_RATE: MinMax<f32> = MinMax::new(0.9, 1.4);
+const LOW_START_RATE: MinMax<f32> = MinMax::new(0.85, 0.9);
+
+pub fn generate(buy_price: u16, prices: Prices, previous_pattern: Pattern) -> Option<WithFudge> {
     for i in 0..6 {
-        if let Some(possibility) =
-            generate_possibilities_with_fudge(buy_price, prices, previous_pattern, i)
-        {
-            return Some(PossibilitiesWithFudge(possibility, i));
+        if let Some(possibility) = generate_with_fudge(buy_price, prices, previous_pattern, i) {
+            return Some(WithFudge(possibility, i));
         }
     }
     None
@@ -43,7 +43,7 @@ pub fn generate_possibilities(
 
 macro_rules! add_len {
     ($start:ident, $length: ident, $new_len: expr) => {
-        $start = $start + $length;
+        $start += $length;
         $length = $new_len;
     };
 }
@@ -54,30 +54,31 @@ fn generate_fluctuating(
     lengths: &PhaseLengths,
     fudge_factor: u16,
 ) -> Option<Possibility> {
-    let high_rate = MinMax::new(0.9, 1.4);
-    let mut gen = PatternGen::new(
+    const START_RATE: MinMax<f32> = MinMax::new(0.6, 0.8);
+    const DECAY_RATE: MinMax<f32> = MinMax::new(0.04, 0.1);
+    let mut gen = pattern::Generator::new(
         buy_price,
         given_prices,
         fudge_factor,
-        MinMax::new(0.6, 0.8),
-        MinMax::new(0.04, 0.1),
+        START_RATE,
+        DECAY_RATE,
     );
     let mut start = 0;
     let mut length = lengths.high_1;
     // High 1
-    let mut probability = gen.individual_random_price(start, length, high_rate)?;
+    let mut probability = gen.individual_random_price(start, length, FIRST_HIGH_RATE)?;
     // Low 1
     add_len!(start, length, lengths.low_1);
-    probability = probability * gen.decreasing_random_price(start, length)?;
+    probability *= gen.decreasing_random_price(start, length)?;
     // High 2
     add_len!(start, length, lengths.high_2);
-    probability = probability * gen.individual_random_price(start, length, high_rate)?;
+    probability *= gen.individual_random_price(start, length, FIRST_HIGH_RATE)?;
     // Low 2
     add_len!(start, length, lengths.low_2);
-    probability = probability * gen.decreasing_random_price(start, length)?;
+    probability *= gen.decreasing_random_price(start, length)?;
     // High 3
     add_len!(start, length, lengths.high_3);
-    probability = probability * gen.individual_random_price(start, length, high_rate)?;
+    probability *= gen.individual_random_price(start, length, FIRST_HIGH_RATE)?;
     Some(Possibility {
         pattern: Pattern::Fluctuating,
         prices: gen.prices(),
@@ -91,19 +92,19 @@ fn generate_large_spike(
     peak_start: usize,
     fudge_factor: u16,
 ) -> Option<Possibility> {
-    let mut gen = PatternGen::new(
+    const MIN_RANDOMS: [f32; 11] = [0.9, 1.4, 2.0, 1.4, 0.9, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
+    const MAX_RANDOMS: [f32; 11] = [1.4, 2.0, 6.0, 2.0, 1.4, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9];
+    let mut gen = pattern::Generator::new(
         buy_price,
         given_prices,
         fudge_factor,
-        MinMax::new(0.85, 0.9),
-        MinMax::new(0.03, 0.05),
+        LOW_START_RATE,
+        DEFAULT_DECAY_RATE,
     );
     let mut probability = gen.decreasing_random_price(0, peak_start)?;
-    let min_randoms = [0.9, 1.4, 2.0, 1.4, 0.9, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4];
-    let max_randoms = [1.4, 2.0, 6.0, 2.0, 1.4, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9];
     for i in peak_start..12 {
-        let rate = MinMax::new(min_randoms[i - peak_start], max_randoms[i - peak_start]);
-        probability = probability * gen.individual_random_price(i, 1, rate)?;
+        let rate = MinMax::new(MIN_RANDOMS[i - peak_start], MAX_RANDOMS[i - peak_start]);
+        probability *= gen.individual_random_price(i, 1, rate)?;
     }
     Some(Possibility {
         pattern: Pattern::LargeSpike,
@@ -118,24 +119,24 @@ fn generate_small_spike(
     peak_start: usize,
     fudge_factor: u16,
 ) -> Option<Possibility> {
-    let mut gen = PatternGen::new(
+    const START_RATE: MinMax<f32> = MinMax::new(0.4, 0.9);
+    const SPIKE_RATE: MinMax<f32> = MinMax::new(1.4, 2.0);
+
+    let mut gen = pattern::Generator::new(
         buy_price,
         given_prices,
         fudge_factor,
-        MinMax::new(0.4, 0.9),
-        MinMax::new(0.03, 0.05),
+        START_RATE,
+        DEFAULT_DECAY_RATE,
     );
 
     let mut probability = gen.decreasing_random_price(0, peak_start)?;
 
-    let rate = MinMax::new(0.9, 1.4);
-    probability = probability * gen.individual_random_price(peak_start, 2, rate)?;
+    probability *= gen.individual_random_price(peak_start, 2, FIRST_HIGH_RATE)?;
 
-    let rate = MinMax::new(1.4, 2.0);
-    probability = probability * gen.peak_price(peak_start + 2, rate)?;
+    probability *= gen.peak_price(peak_start + 2, SPIKE_RATE)?;
 
-    probability =
-        probability * gen.decreasing_random_price(peak_start + 5, 12 - (peak_start + 5))?;
+    probability *= gen.decreasing_random_price(peak_start + 5, 12 - (peak_start + 5))?;
 
     Some(Possibility {
         pattern: Pattern::SmallSpike,
@@ -146,13 +147,13 @@ fn generate_small_spike(
 
 fn get_array<F>(mut f: F) -> Option<Possibilities>
 where
-    F: FnMut(&mut Possibilities) -> (),
+    F: FnMut(&mut Possibilities),
 {
     let mut possibilities = vec![];
 
     f(&mut possibilities);
 
-    (!possibilities.is_empty()).then(|| possibilities)
+    (!possibilities.is_empty()).then_some(possibilities)
 }
 
 fn get_large_spike_patterns(
@@ -193,23 +194,24 @@ fn get_fluctuating_patterns(
     fudge_factor: u16,
 ) -> Option<Possibilities> {
     get_array(|possibilities| {
+        let mut generate = |lp1: usize, hp1: usize, hp3: usize| {
+            let lengths = PhaseLengths {
+                high_1: hp1,
+                low_1: lp1,
+                high_2: 7 - hp1 - hp3,
+                low_2: 5 - lp1,
+                high_3: hp3,
+            };
+            let generated = generate_fluctuating(buy_price, prices, &lengths, fudge_factor);
+            if let Some(mut p) = generated {
+                p.multiply_probability(1. / (4. - 2.) / 7. / (7. - (hp1 as f32)));
+                possibilities.push(p);
+            }
+        };
         for low_phase_1_len in 2..4 {
             for high_phase_1_len in 0..7 {
                 for high_phase_3_len in 0..(7 - high_phase_1_len) {
-                    let lengths = PhaseLengths {
-                        high_1: high_phase_1_len,
-                        low_1: low_phase_1_len,
-                        high_2: 7 - high_phase_1_len - high_phase_3_len,
-                        low_2: 5 - low_phase_1_len,
-                        high_3: high_phase_3_len,
-                    };
-                    let generated = generate_fluctuating(buy_price, prices, &lengths, fudge_factor);
-                    if let Some(mut p) = generated {
-                        p.multiply_probability(
-                            1. / (4. - 2.) / 7. / (7. - (high_phase_1_len as f32)),
-                        );
-                        possibilities.push(p);
-                    }
+                    generate(low_phase_1_len, high_phase_1_len, high_phase_3_len);
                 }
             }
         }
@@ -221,18 +223,17 @@ fn get_decreasing_patterns(
     given_prices: Prices,
     fudge_factor: u16,
 ) -> Option<Possibilities> {
-    let mut gen = PatternGen::new(
+    let mut gen = pattern::Generator::new(
         buy_price,
         given_prices,
         fudge_factor,
-        MinMax::new(0.85, 0.9),
-        MinMax::new(0.03, 0.05),
+        LOW_START_RATE,
+        DEFAULT_DECAY_RATE,
     );
-    let probability = gen.decreasing_random_price(0, 12)?;
     Some(vec![Possibility {
         pattern: Pattern::Decreasing,
         prices: gen.prices(),
-        probability,
+        probability: gen.decreasing_random_price(0, 12)?,
     }])
 }
 
@@ -259,7 +260,7 @@ struct Generator {
 }
 
 impl Generator {
-    fn new(buy_price: u16, prices: Prices, fudge_factor: u16) -> Self {
+    const fn new(buy_price: u16, prices: Prices, fudge_factor: u16) -> Self {
         Self {
             buy_price,
             prices,
@@ -278,7 +279,7 @@ impl Generator {
     }
 }
 
-fn generate_possibilities_with_fudge(
+fn generate_with_fudge(
     buy_price: u16,
     prices: Prices,
     previous_pattern: Pattern,
@@ -290,5 +291,5 @@ fn generate_possibilities_with_fudge(
     gen.add_possibility(get_large_spike_patterns, transition.large_spike);
     gen.add_possibility(get_small_spike_patterns, transition.small_spike);
     gen.add_possibility(get_decreasing_patterns, transition.decreasing);
-    (!gen.possibilities.is_empty()).then(|| gen.possibilities)
+    (!gen.possibilities.is_empty()).then_some(gen.possibilities)
 }

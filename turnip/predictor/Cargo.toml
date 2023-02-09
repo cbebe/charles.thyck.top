@@ -1,6 +1,12 @@
 [package]
 name = "predictor"
+description = "Turnip Price Predictor"
+license = "MIT"
+repository = "https://github.com/cbebe/charlesancheta.com/turnip/predictor"
+readme = "README.md"
 version = "0.1.0"
+categories = ["wasm", "no-std"]
+keywords = ["animal-crossing"]
 authors = ["Charles Ancheta <55412395+cbebe@users.noreply.github.com>"]
 edition = "2018"
 
@@ -27,3 +33,5 @@ wasm-bindgen-test = "0.3.13"
 [profile.release]
 # Tell `rustc` to optimize for small code size.
 opt-level = "s"
+lto = true
+strip = true    # Automatically strip symbols from the binary.

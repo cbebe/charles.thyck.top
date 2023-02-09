@@ -10,19 +10,19 @@ impl<T> MinMax<T>
 where
     T: Copy,
 {
-    pub fn new(min: T, max: T) -> Self {
-        MinMax(min, max)
+    pub const fn new(min: T, max: T) -> Self {
+        Self(min, max)
     }
 
-    pub fn new_val(val: T) -> Self {
-        MinMax(val, val)
+    pub const fn new_val(val: T) -> Self {
+        Self(val, val)
     }
 
-    pub fn min(&self) -> T {
+    pub const fn min(&self) -> T {
         self.0
     }
 
-    pub fn max(&self) -> T {
+    pub const fn max(&self) -> T {
         self.1
     }
 }
@@ -30,5 +30,5 @@ where
 pub const RATE_MULTIPLIER: f32 = 10000.;
 
 pub fn get(rate: f32, base_price: u16) -> u16 {
-    (rate * (base_price as f32) / RATE_MULTIPLIER).ceil() as u16
+    (rate * f32::from(base_price) / RATE_MULTIPLIER).ceil() as u16
 }

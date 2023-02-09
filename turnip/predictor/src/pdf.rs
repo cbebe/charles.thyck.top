@@ -1,3 +1,5 @@
+use alloc::vec::Vec;
+
 pub struct Uniform {
     a: f32,
     b: f32,
@@ -16,12 +18,11 @@ pub trait IUniform {
     fn clamp_range(r: (Self::T, Self::T), i: usize) -> (Self::T, Self::T);
 }
 
-fn prefix_float_sum(input: &Vec<f32>) -> Vec<(f32, f32)> {
+fn prefix_float_sum(input: &[f32]) -> Vec<(f32, f32)> {
     let mut prefix_sum = vec![(0., 0.)];
     let mut sum = 0.;
     let mut c = 0.;
-    for i in 0..input.len() {
-        let cur = input[i];
+    for cur in input.iter() {
         let t = sum + cur;
         if sum.abs() >= cur.abs() {
             c += (sum - t) + cur;
@@ -31,8 +32,7 @@ fn prefix_float_sum(input: &Vec<f32>) -> Vec<(f32, f32)> {
         sum = t;
         prefix_sum.push((sum, c));
     }
-
-    return prefix_sum;
+    prefix_sum
 }
 
 pub fn range_intersect(a: (f32, f32), b: (f32, f32)) -> Option<(f32, f32)> {
@@ -40,9 +40,7 @@ pub fn range_intersect(a: (f32, f32), b: (f32, f32)) -> Option<(f32, f32)> {
 }
 
 pub fn range_intersect_length(a: (f32, f32), b: (f32, f32)) -> f32 {
-    range_intersect(a, b)
-        .and_then(|r| Some(r.1 - r.0))
-        .unwrap_or(0.)
+    range_intersect(a, b).map_or(0., |r| r.1 - r.0)
 }
 
 impl IUniform for Uniform {
@@ -53,9 +51,9 @@ impl IUniform for Uniform {
     }
 
     fn new(a: Self::T, b: Self::T) -> Self {
-        if a >= b {
-            panic!("a < b does not hold")
-        }
+        // if a >= b {
+        // panic!("a < b does not hold")
+        // }
         let range = (a, b);
         let total_length = b - a;
         let a = a.floor();
@@ -72,8 +70,8 @@ impl IUniform for Uniform {
     fn decay(&mut self, rate_decay_min: f32, rate_decay_max: f32) {
         let rate_decay_min = rate_decay_min.round() as usize;
         let rate_decay_max = rate_decay_max.round() as usize;
-        self.a = self.a - (rate_decay_max as f32);
-        self.b = self.b - (rate_decay_min as f32);
+        self.a -= rate_decay_max as f32;
+        self.b -= rate_decay_min as f32;
 
         let prefix = prefix_float_sum(&self.prob);
         let max_x = self.prob.len();
@@ -152,7 +150,7 @@ mod tests {
         let pdf = super::Uniform::new(6000., 8000.);
         assert_eq!(pdf.prob.len(), 2000);
         for i in 0..2000 {
-            assert_eq!(pdf.prob[i], 0.0005);
+            assert!((pdf.prob[i] - 0.0005).abs() < f32::EPSILON);
         }
     }
 

@@ -40,7 +40,7 @@ public/turnip/index.html:
 .PHONY: pages build watch resume turnip turnip-dev
 
 %: bin/%/main.go
-	@go run $<
+	@HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) go run $<
 
 # Not a prerequesite otherwise it would run every time
 data/packages.md:

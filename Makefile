@@ -46,8 +46,6 @@ public/turnip/index.html:
 data/packages.md:
 	@$(MAKE) packages
 
-resume: static/Resume.pdf
-
-static/Resume.pdf:
+resume:
 	cd resume && $(MAKE)
-	cp resume/Resume.pdf $@
+	cp -f resume/Resume.pdf static/Resume.pdf

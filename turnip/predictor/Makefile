@@ -11,4 +11,4 @@ lint:
 	-A clippy::cast_precision_loss \
 	-A clippy::cast_sign_loss \
 	-A clippy::cast_possible_truncation \
-	-A clippy::cast_possible_wrap
+	# -A clippy::cast_possible_wrap

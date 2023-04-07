@@ -75,7 +75,7 @@ impl IUniform for Uniform {
 
         let prefix = prefix_float_sum(&self.prob);
         let max_x = self.prob.len();
-        let max_y = (rate_decay_max - rate_decay_min) as usize;
+        let max_y = rate_decay_max - rate_decay_min;
 
         self.prob = (0..(max_x + max_y))
             .map(|i| {

@@ -52,11 +52,11 @@ fn get_predictions(
         if !(90..=110).contains(&buy_price) {
             return Err(PredictorError::BadBuyPrice);
         }
-        let prices = match get_prices(prices) {
-            Some(arr) => arr,
-            None => return Err(PredictorError::BadPriceList),
+        let Some(arr) = get_prices(prices) else {
+            return Err(PredictorError::BadPriceList)
         };
-        match possibilities::generate(buy_price, prices, previous_pattern) {
+
+        match possibilities::generate(buy_price, arr, previous_pattern) {
             Some(p) => p,
             None => return Err(PredictorError::ImpossibleValues),
         }

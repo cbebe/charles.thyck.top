@@ -173,7 +173,7 @@ impl Generator {
                 } else if zz < t {
                     zz
                 } else {
-                    t - t * (t.ln() - zz.ln())
+                    t.mul_add(-t.ln() - zz.ln(), t)
                 }
             };
             let (z1, z2) = (rate_range.0 - rate_min, rate_range.1 - rate_min);

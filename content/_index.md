@@ -1,29 +1,17 @@
 # Charles Ancheta's Personal Website
 
 - Computer Engineering student at the University of Alberta
-- Graduating (hopefully) April 2024
-- Currently battling
-  [Shiny Object Syndrome](https://www.parkersoftware.com/blog/shiny-object-syndrome-in-software-development/)
-- Doing my last 2 Co-op terms with [Ripple Group](/work/ripple) (Sep 2022 -
-  Apr 2023)
+- Love writing simple code for work and over-engineered monstrosities for fun
+- Looking forward to doing my last 8 months of school September 2023 - April 2024
 
-## What I'm currently using
+## What I'm currently learning
 
-### Frontend
+- Full Stack 🦀🦀🦀 Rust 🦀🦀🦀!!!  <sub>(sorry, I meant
+  [R*st](https://github.com/blyxyas/no-rust-policy-change))</sub>
+- Svelte
+- Pocketbase
 
-- Angular
-- React with [ReScript](https://rescript-lang.org/)
+## Side Projects I'm working on/planning to work on
 
-### Backend
-
-- .NET (C#)
-- Go
-
----
-
-- I have recently moved my [Docusaurus](https://docusaurus.io/) website to
-  [Hugo](https://gohugo.io/) for _Blazingly Fast™_ build times (and minimal JS). <sub>[why?](/post/why-i-migrated-to-hugo)</sub>
-
-  - Link to the [old website](https://cbebe.github.io/v2) (last updated
-    July 2022)
+[For some accountability](./projects#planned)
 

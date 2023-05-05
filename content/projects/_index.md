@@ -4,6 +4,21 @@ title: My Personal Projects
 
 Both alone and with :sparkles: friends :sparkles:
 
+## Current/Planned Projects<a name="planned"></a>
+
+- Time Tracking PWA for my girlfriend with Svelte frontend and Pocketbase backend
+- Web frontend for [Pincerhex](https://devpost.com/software/pincerhex), a Hex-playing program by me and my friend Will
+  - written in 🦀🦀🦀 Rust 🦀🦀🦀 btw
+  - [we won
+    btw](https://github.com/UndergraduateArtificialIntelligenceClub/hex-tournament-2023-submissions/blob/main/games/results.md)
+- [Markdown to LaTeX converter for my Resume](https://github.com/cbebe/charlesancheta.com/tree/master/resume) (in 🦀🦀🦀 Rust 🦀🦀🦀 btw)
+- [Open Kattis Group
+  Ranklist](https://open.kattis.com/universities/ualberta.ca) with a few extra
+  columns
+  - Show contributed score, and required individual score to climb the next
+    group rank
+- Water Sort Puzzle Solver
+
 ## Links
 
 - [GitHub](https://github.com/cbebe)

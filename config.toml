@@ -4,6 +4,7 @@ languageCode = 'en-us'
 title = 'Charles Ancheta'
 theme = 'risotto'
 enableEmoji = true
+enableRobotsTXT = true
 
 copyright = 'Charles Ancheta. MIT'
 

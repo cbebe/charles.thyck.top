@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /Resume.pdf
+
+Sitemap: https://charlesancheta.com/my-sitemap.xml

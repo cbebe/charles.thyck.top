@@ -45,4 +45,5 @@ more hackathons as a team. Check out our [GitHub](https://github.com/thyckcorgis
 
 ## NPM Packages
 
-{{% readfile file="/data/packages.md" %}}
+[They're gone now](/post/i-deleted-my-npm-packages/)
+<!-- {{% readfile file="/data/packages.md" %}} -->

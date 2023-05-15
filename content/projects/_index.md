@@ -11,7 +11,7 @@ Both alone and with :sparkles: friends :sparkles:
   - written in 🦀🦀🦀 Rust 🦀🦀🦀 btw
   - [we won
     btw](https://github.com/UndergraduateArtificialIntelligenceClub/hex-tournament-2023-submissions/blob/main/games/results.md)
-- [Markdown to LaTeX converter for my Resume](https://github.com/cbebe/charlesancheta.com/tree/master/resume) (in 🦀🦀🦀 Rust 🦀🦀🦀 btw)
+- Markdown to LaTeX converter for my Resume (in 🦀🦀🦀 Rust 🦀🦀🦀 btw)
 - [Open Kattis Group
   Ranklist](https://open.kattis.com/universities/ualberta.ca) with a few extra
   columns

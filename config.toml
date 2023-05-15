@@ -40,8 +40,8 @@ title = "LinkedIn"
 url = "https://www.linkedin.com/in/charles-ancheta"
 
 [[params.socialLinks]]
-title = "Resume"
-url = "/Resume.pdf"
+title = "RSS"
+url = "/index.xml"
 
 [[params.socialLinks]]
 title = "Email"

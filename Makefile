@@ -1,12 +1,11 @@
-UPDATED:=$(shell git log -1 --pretty="format:%cs" static/Resume.pdf)
 WASM_PACK:=$(shell command -v wasm-pack 2> /dev/null)
 HUGO:=$(shell command -v hugo 2> /dev/null)
 
-build: data/packages.md assets/turnip.html
-	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo --minify
+build: assets/turnip.html
+	hugo --minify
 
-watch: data/packages.md assets/turnip.html
-	HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) hugo serve -D
+watch: assets/turnip.html
+	hugo serve -D
 
 clean:
 	rm -f *.aux *.log *.out Resume-*.tex
@@ -37,15 +36,7 @@ turnip/turnips.html: public/turnip/index.html
 public/turnip/index.html:
 	@$(MAKE) build
 
-.PHONY: pages build watch resume turnip turnip-dev
+.PHONY: pages build watch turnip turnip-dev
 
 %: bin/%/main.go
-	@HUGOxPARAMSxGIT_LAST_UPDATED=$(UPDATED) go run $<
-
-# Not a prerequesite otherwise it would run every time
-data/packages.md:
-	@$(MAKE) packages
-
-resume:
-	cd resume && $(MAKE)
-	cp -f resume/Resume.pdf static/Resume.pdf
+	go run $<

@@ -36,7 +36,7 @@ turnip/turnips.html: public/turnip/index.html
 public/turnip/index.html:
 	@$(MAKE) build
 
-.PHONY: pages build watch turnip turnip-dev
+.PHONY: pages build watch turnip turnip-dev clean
 
 %: bin/%/main.go
 	go run $<

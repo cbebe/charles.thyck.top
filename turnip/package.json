@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "wasm":"wasm-pack build ./predictor --target web ",
-    "start": "pnpm wasm && vite",
-    "build": "pnpm wasm && vite build",
+    "prebuild":"wasm-pack build ./predictor --target web ",
+    "prestart":"wasm-pack build ./predictor --target web ",
+    "start": "vite",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

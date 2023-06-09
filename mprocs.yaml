@@ -1,3 +1,8 @@
 procs:
   hugo:
-    shell: make watch
+    cmd: [make, watch]
+  nvim:
+    cmd: [nvim]
+    autostart: false
+proc_list_width: 11
+hide_keymap_window: true

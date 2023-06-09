@@ -4,5 +4,8 @@ procs:
   nvim:
     cmd: [nvim]
     autostart: false
+  shell:
+    cmd: [zsh]
+    autostart: false
 proc_list_width: 11
 hide_keymap_window: true

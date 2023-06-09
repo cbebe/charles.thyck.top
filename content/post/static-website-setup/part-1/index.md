@@ -3,7 +3,6 @@ title: "Building a Static Website - Part 1: Introduction"
 date: 2023-06-08T23:04:45-06:00
 author: Charles Ancheta
 description: My 4-part series on how to build a website
-draft: true
 ---
 
 A couple of months ago, I help a friend set up a website for a business. Today,

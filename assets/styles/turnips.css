@@ -1,0 +1,58 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.turnip-form label {
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.turnip-form {
+  flex-direction: column;
+  width: 100%;
+}
+
+.turnip-form input,
+.turnip-form button,
+.turnip-form select {
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: var(--fg);
+  font-size: 1rem;
+  background: var(--muted);
+  font-family: var(--font-monospace);
+  margin: 0.5rem;
+}
+
+.turnip-form input {
+  min-width: 50%;
+}
+
+.turnip-form .days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 80%;
+}
+
+.turnip-form .days div {
+  display: flex;
+  flex-direction: column;
+}
+
+#results-table {
+  position: absolute;
+}
+
+#results-table > table {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: var(--inner-bg);
+  width: 100%;
+}
+
+#results-table > table tr {
+  text-align: center;
+}

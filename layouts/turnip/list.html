@@ -1,6 +1,5 @@
 {{ define "head" }}
-{{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
-{{ $style := resources.Get "styles/turnips.scss" | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+{{ $style := resources.Get "styles/turnips.css" | resources.Minify | resources.Fingerprint "sha512" }}
 <link rel="preload" href="{{ $style.Permalink }}" as="style" integrity="{{ $style.Data.Integrity }}" onload="this.onload=null;this.rel='stylesheet'">
 {{ readFile "assets/turnip.html" | safeHTML }}
 <noscript>

@@ -1,5 +1,4 @@
-{{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed")}}
-{{ $style := resources.Get "styles/pou.scss" | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+{{ $style := resources.Get "styles/pou.css" | resources.Minify | resources.Fingerprint "sha512" }}
 {{ $script := resources.Get "pou.js" | resources.Fingerprint "sha512" }}
 <link rel="preload" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript>

@@ -36,64 +36,68 @@ input {
   left: 0;
   right: 0;
   display: flex;
+}
 
-  .square {
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--pou-bg);
-    transform: rotate(140deg);
-  }
-  .rectangle {
-    width: 1rem;
-    height: 0.5rem;
-    background-color: var(--pou-bg);
-  }
-  .hexagram {
-    width: 0;
-    height: 0;
-    border-left: 0.5rem solid transparent;
-    border-right: 0.5rem solid transparent;
-    border-bottom: 1rem solid var(--pou-bg);
-    position: relative;
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-left: 0.5rem solid transparent;
-      border-right: 0.5rem solid transparent;
-      border-top: 1rem solid var(--pou-bg);
-      position: absolute;
-      top: 0.33rem;
-      left: -0.5rem;
-    }
-  }
+.confetti .square {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--pou-bg);
+  transform: rotate(140deg);
+}
 
-  .dodecagram {
-    background: var(--pou-bg);
-    width: 8px;
-    height: 8px;
-    position: relative;
-    &:before {
-      content: "";
-      height: 8px;
-      width: 8px;
-      background: var(--pou-bg);
-      transform: rotate(30deg);
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    &:after {
-      content: "";
-      height: 8px;
-      width: 8px;
-      background: var(--pou-bg);
-      transform: rotate(60deg);
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
+.confetti .rectangle {
+  width: 1rem;
+  height: 0.5rem;
+  background-color: var(--pou-bg);
+}
+
+.confetti .hexagram {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 1rem solid var(--pou-bg);
+  position: relative;
+}
+
+.confetti .hexagram:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid var(--pou-bg);
+  position: absolute;
+  top: 0.33rem;
+  left: -0.5rem;
+}
+
+.confetti .dodecagram {
+  background: var(--pou-bg);
+  width: 8px;
+  height: 8px;
+  position: relative;
+}
+
+.confetti .dodecagram:before {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: var(--pou-bg);
+  transform: rotate(30deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.confetti .dodecagram:after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: var(--pou-bg);
+  transform: rotate(60deg);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .confetti .hexagram .confetti .pentagram {
@@ -200,13 +204,13 @@ input {
 
 .piano {
   display: flex;
+}
 
-  img,
-  svg {
-    width: 10rem;
-    margin: 1rem;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  }
+.piano img,
+.piano svg {
+  width: 10rem;
+  margin: 1rem;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .outline {

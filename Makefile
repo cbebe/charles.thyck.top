@@ -20,9 +20,7 @@ ifndef WASM_PACK
   $(error "wasm-pack is not available. please run `cargo install wasm-pack`.")
 endif
 	cd turnip && pnpm build
-	rm -rf static/assets
-	mv turnip/dist/index.html assets/turnip.html
-	mv turnip/dist/assets static/
+	cd turnip && pnpm postbuild
 
 turnip/node_modules:
 	cd turnip && pnpm install

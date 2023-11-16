@@ -1,7 +1,6 @@
 wasm:
 	wasm-pack build --target web
 	wasm-opt -Oz -o pkg/predictor_bg.wasm pkg/predictor_bg.wasm
-	@ls -lh pkg/predictor_bg.wasm
 
 lint:
 	cargo clippy -- \

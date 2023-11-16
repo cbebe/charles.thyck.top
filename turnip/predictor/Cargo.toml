@@ -2,7 +2,7 @@
 name = "predictor"
 description = "Turnip Price Predictor"
 license = "MIT"
-repository = "https://github.com/cbebe/charlesancheta.com/turnip/predictor"
+repository = "https://github.com/cbebe/charles.thyck.top/turnip/predictor"
 readme = "README.md"
 version = "0.1.0"
 categories = ["wasm", "no-std"]

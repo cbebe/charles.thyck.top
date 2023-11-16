@@ -1,4 +1,4 @@
-module charlesancheta.com
+module charles.thyck.top
 
 go 1.19
 

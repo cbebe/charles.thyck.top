@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	projectName      = "charlesancheta.com"
+	projectName      = "charles.thyck.top"
 	deploymentBranch = "gh-pages"
 )
 

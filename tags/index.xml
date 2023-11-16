@@ -9,7 +9,25 @@
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
-    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charles.thyck.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charles.thyck.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hosting</title>
+      <link>https://charles.thyck.top/tags/hosting/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/tags/hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://charles.thyck.top/tags/website/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/tags/website/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>c&#43;&#43;</title>
       <link>https://charles.thyck.top/tags/c&#43;&#43;/</link>
@@ -128,15 +146,6 @@
     </item>
     
     <item>
-      <title>website</title>
-      <link>https://charles.thyck.top/tags/website/</link>
-      <pubDate>Tue, 29 Nov 2022 02:50:15 -0700</pubDate>
-      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
-      <guid>https://charles.thyck.top/tags/website/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>dev</title>
       <link>https://charles.thyck.top/tags/dev/</link>
       <pubDate>Wed, 16 Nov 2022 03:52:09 -0700</pubDate>
@@ -196,15 +205,6 @@
       <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
       <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/tags/gh-pages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hosting</title>
-      <link>https://charles.thyck.top/tags/hosting/</link>
-      <pubDate>Sun, 19 Jun 2022 00:00:00 +0000</pubDate>
-      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
-      <guid>https://charles.thyck.top/tags/hosting/</guid>
       <description></description>
     </item>
     

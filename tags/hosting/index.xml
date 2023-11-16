@@ -9,7 +9,19 @@
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
-    <lastBuildDate>Sun, 19 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://charles.thyck.top/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charles.thyck.top/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My domain expired 😭</title>
+      <link>https://charles.thyck.top/post/expired-domain/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/expired-domain/</guid>
+      <description>&lt;p&gt;I hope my namesake pianist &lt;a href=&#34;https://anchetamusic.wordpress.com/about/&#34;&gt;Charles
+Ancheta&lt;/a&gt; claims it back eventually.
+&amp;lsquo;charlesancheta.com&amp;rsquo; used to redirect to his Facebook page before I registered
+the domain as mine.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Bye bye Netlify</title>
       <link>https://charles.thyck.top/post/bye-bye-netlify/</link>

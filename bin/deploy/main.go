@@ -57,12 +57,12 @@ func main() {
 	defer cleanGitPublish()
 
 	// Make sure to create a new build output every time since it's blazingly fast anyway
-	if err := execCmd(fmt.Sprintf("hugo -d %s", output)); err != nil {
+	if err := execCmd(fmt.Sprintf("hugo -d \"%s\"", output)); err != nil {
 		log.Fatalf("failed to build: %v", err)
 	}
 
 	os.Chdir(gitPublish)
-	cloneCmd := fmt.Sprintf("git clone --depth 1 --branch %s %s %s", deploymentBranch, originUrl, gitPublish)
+	cloneCmd := fmt.Sprintf("git clone --depth 1 --branch \"%s\" \"%s\" \"%s\"", deploymentBranch, originUrl, gitPublish)
 	if err := execCmd(cloneCmd); err != nil {
 		// Branch doesn't exist, create new branch
 		execCmd("git init")

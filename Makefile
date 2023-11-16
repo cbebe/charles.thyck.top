@@ -1,4 +1,5 @@
 WASM_PACK:=$(shell command -v wasm-pack 2> /dev/null)
+WASM_OPT:=$(shell command -v wasm-opt 2> /dev/null)
 HUGO:=$(shell command -v hugo 2> /dev/null)
 
 build: assets/turnip.html themes/risotto/theme.toml
@@ -21,6 +22,9 @@ assets/turnip.html:
 turnip: turnip/node_modules
 ifndef WASM_PACK
   $(error "wasm-pack is not available. please run `cargo install wasm-pack`.")
+endif
+ifndef WASM_OPT
+  $(error "wasm-opt is not available. please run `cargo install wasm-opt`.")
 endif
 	cd turnip && pnpm prebuild && pnpm build
 	cd turnip && pnpm postbuild

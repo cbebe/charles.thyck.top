@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>first on Charles Ancheta</title>
+    <link>https://charlesancheta.com/tags/first/</link>
+    <description>Recent content in first on Charles Ancheta</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
+    <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
+    <copyright>Charles Ancheta. MIT</copyright>
+    <lastBuildDate>Sat, 28 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://charlesancheta.com/tags/first/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome!</title>
+      <link>https://charlesancheta.com/post/welcome/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charlesancheta.com/post/welcome/</guid>
+      <description>&lt;p&gt;Welcome to my website! I am Charles, a Computer Engineering Student working as a Full Stack Web Developer.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

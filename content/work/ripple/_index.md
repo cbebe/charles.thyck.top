@@ -12,6 +12,7 @@ weight: 5
 - Backend Web Development
   - C#
   - ASP.NET
+  - JSON-RPC
 - Data wrangling
   - Python
   - Pandas

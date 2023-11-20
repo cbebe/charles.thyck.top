@@ -9,7 +9,7 @@ tags = [
 ]
 +++
 
-I hope my namesake pianist [Charles
+I hope my ~~namesake~~[^1] pianist [Charles
 Ancheta](https://anchetamusic.wordpress.com/about/) claims it back eventually.
 'charlesancheta.com' used to redirect to his Facebook page before I registered
 the domain as mine.
@@ -29,3 +29,9 @@ again since it started costing around $100/year.
 Now I just have my personal website as a sub-domain in the only domain that I
 own. It's not too bad, but now I will have to start replacing all links to my
 website.
+
+[^1]: Apparently "namesake" implies that one was named after the other. I'm
+    not, so the word that I was translating was
+["katokayo"](https://en.wiktionary.org/wiki/tokayo#Tagalog) or "kapangalan"
+which only means "person with the same name" and never has the implication that
+one was named after the other intentionally.

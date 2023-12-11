@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head><title>Happy New Year! &ndash; Charles Ancheta</title>
+    <head><title>Building a Static Website - Part 1: Introduction &ndash; Charles Ancheta</title>
 
-<meta name="description" content="Pou singing a pentatonic scale">
+<meta name="description" content="My 4-part series on how to build a website">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,37 +38,51 @@
 
             <section class="page__body">
     <header class="content__header">
-        <h1>Happy New Year!</h1>
+        <h1>Building a Static Website - Part 1: Introduction</h1>
     </header>
     <div class="content__body">
-        <p>You might have to zoom in a little bit to see these bad boys. They sing a
-just-intonated major pentatonic scale from a low fifth to a high sixth. Just
-enough notes to play Auld Lang Syne. Click/tap on a Pou to play a note<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
-<p>Keyboard controls: z,x,a,s,d,q,w for the notes, space for confetti.</p>
-
-
-<link rel="preload" href="https://charles.thyck.top/styles/pou.min.a20e01ce011a16273b84d862a9fec9b4c61d29fc51bb91b4a08702f93391c120562c0a55d0ea16309a170feb9532715ffeed7e224164daf5e7c6015a80f54107.css" integrity="sha512-og4BzgEaFic7hNhiqf7JtMYdKfxRu5G0oIcC&#43;TORwSBWLApV0OoWMJoXD&#43;uVMnFf/u1&#43;IkFk2vXnxgFagPVBBw==" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript>
-  <link rel="stylesheet" href="https://charles.thyck.top/styles/pou.min.a20e01ce011a16273b84d862a9fec9b4c61d29fc51bb91b4a08702f93391c120562c0a55d0ea16309a170feb9532715ffeed7e224164daf5e7c6015a80f54107.css" integrity="sha512-og4BzgEaFic7hNhiqf7JtMYdKfxRu5G0oIcC&#43;TORwSBWLApV0OoWMJoXD&#43;uVMnFf/u1&#43;IkFk2vXnxgFagPVBBw==" />
-</noscript>
-<script src="https://charles.thyck.top/pou.7d27e5392af3012836c24719baa8f3fa768d893dde0982d28e776de559c493567d0b574bff7cb09e76c2d92834836a59b7f5862f434ea3d776e537800bf0b73c.js" integrity="sha512-fSflOSrzASg2wkcZuqjz&#43;naNiT3eCYLSjndt5VnEk1Z9C1dL/3ywnnbC2Sg0g2pZt/WGL0NOo9d25TeAC/C3PA==" defer></script>
-<div class="piano"></div>
-<noscript>
-  <p>Pou won't show up without JavaScript :(</p>
-</noscript>
-<div class="confetti-container hidden">
-  <div class="confetti"></div>
-</div>
-<button id="toggle-confetti">Toggle Confetti</button>
-
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>It&rsquo;s not as responsive on mobile sadly :(&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+        <p>A couple of months ago, I help a friend set up a website for a business. Today,
+I had another talk with a friend about building a portfolio website and he
+asked me for a few resources. I couldn&rsquo;t find a comprehensive one that outlines
+all the required steps so I&rsquo;ll try my best.</p>
+<h2 id="what-is-a-static-website">What is a static website?</h2>
+<p>From ChatGPT:</p>
+<p><img src="./static-vs-dynamic.webp" alt="Question: difference between a static and dynamic website in 2 sentences -Answer: A static website consists of fixed content that remains the same forall users and is created using HTML/CSS, while a dynamic website usesserver-side technologies to generate content dynamically, allowing forpersonalized and interactive experiences tailored to individualusers."></p>
+<p>Basically:</p>
+<ul>
+<li>Static - no server-side logic, cheaper</li>
+<li>Dynamic - with server-side logic, more expensive</li>
+</ul>
+<h2 id="what-makes-a-static-website">What makes a (static) website</h2>
+<p>Setting up a static website is basically free these days, maybe a few dollars a
+year if you want a custom domain. There are many free website builders out
+there. However, we&rsquo;re going DIY with no strings attached to any one provider.
+Any of these components can be swapped with many alternatives out there if you
+so choose.</p>
+<p>You really only need two things: your <strong>content</strong>, which is a bunch of HTML,
+CSS, and JavaScript files, and a <strong>hosting</strong> provider, basically a computer
+that serves your content 24/7.</p>
+<h2 id="what-we-will-use">What we will use</h2>
+<p>I&rsquo;m mostly going to outline my process because it&rsquo;s free (aside from the
+domain) and that it&rsquo;s going to teach you some skills on web development.</p>
+<p>We will need:</p>
+<ul>
+<li>A <strong>Computer</strong> (Windows/Mac/Linux)</li>
+<li><strong>GitHub account</strong>  for hosting your website with GitHub Pages</li>
+<li>Some <strong>programming knowledge</strong> (very little, don&rsquo;t worry)</li>
+<li><strong>Patience</strong> with my sucky writing 😭</li>
+</ul>
+<p>These would be nice to have:</p>
+<ul>
+<li><strong>Custom domain name</strong> - if you don&rsquo;t want your domain to appear as
+<code>your-github-username.github.io</code></li>
+<li><strong>Cloudflare account</strong> - for email protection and easier DNS management</li>
+</ul>
+<p>Since we are making a static website, most of the work will be done on your
+personal computer. The hosting provider will only be concerned with serving the
+final build output. For this, we would need to set up our development
+environment.</p>
+<p>Stay tuned for part 2!</p>
 
     </div>
     <footer class="content__footer">
@@ -119,11 +133,11 @@ enough notes to play Auld Lang Syne. Click/tap on a Pou to play a note<sup id="f
 </div>
                 <hr>
                 <div class="aside__content">
-    <p>Pou singing a pentatonic scale</p>
+    <p>My 4-part series on how to build a website</p>
     
         <p>
             By Charles Ancheta, 
-            2022-12-31
+            2023-06-08
         </p>
         
     

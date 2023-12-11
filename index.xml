@@ -23,6 +23,18 @@ the domain as mine.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Building a Static Website - Part 1: Introduction</title>
+      <link>https://charles.thyck.top/post/static-website-setup/part-1/</link>
+      <pubDate>Thu, 08 Jun 2023 23:04:45 -0600</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/static-website-setup/part-1/</guid>
+      <description>A couple of months ago, I help a friend set up a website for a business. Today, I had another talk with a friend about building a portfolio website and he asked me for a few resources. I couldn&amp;rsquo;t find a comprehensive one that outlines all the required steps so I&amp;rsquo;ll try my best.
+What is a static website? From ChatGPT:
+Basically:
+ Static - no server-side logic, cheaper Dynamic - with server-side logic, more expensive  What makes a (static) website Setting up a static website is basically free these days, maybe a few dollars a year if you want a custom domain.</description>
+    </item>
+    
+    <item>
       <title>TIL: Parallel `make`</title>
       <link>https://charles.thyck.top/post/til/parallel-make/</link>
       <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
@@ -51,8 +63,8 @@ Learning how to package libraries and applications was a good experience, though
       <guid>https://charles.thyck.top/post/pou/</guid>
       <description>You might have to zoom in a little bit to see these bad boys. They sing a just-intonated major pentatonic scale from a low fifth to a high sixth. Just enough notes to play Auld Lang Syne. Click/tap on a Pou to play a note1.
 Keyboard controls: z,x,a,s,d,q,w for the notes, space for confetti.
-Pou won&#39;t show up without JavaScript :(
-Toggle Confetti It&amp;rsquo;s not as responsive on mobile sadly :(&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
+     Pou won&#39;t show up without JavaScript :(
+   Toggle Confetti   It&amp;rsquo;s not as responsive on mobile sadly :(&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
     </item>
     
     <item>

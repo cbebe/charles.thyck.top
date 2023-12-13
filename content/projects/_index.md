@@ -6,18 +6,8 @@ Both alone and with :sparkles: friends :sparkles:
 
 ## Current/Planned Projects<a name="planned"></a>
 
-- Time Tracking PWA for my girlfriend with Svelte frontend and Pocketbase backend
-- Web frontend for [Pincerhex](https://devpost.com/software/pincerhex), a Hex-playing program by me and my friend Will
-  - written in 🦀🦀🦀 Rust 🦀🦀🦀 btw
-  - [we won
-    btw](https://github.com/UndergraduateArtificialIntelligenceClub/hex-tournament-2023-submissions/blob/main/games/results.md)
-- Markdown to LaTeX converter for my Resume (in 🦀🦀🦀 Rust 🦀🦀🦀 btw)
-- [Open Kattis Group
-  Ranklist](https://open.kattis.com/universities/ualberta.ca) with a few extra
-  columns
-  - Show contributed score, and required individual score to climb the next
-    group rank
-- Water Sort Puzzle Solver
+- [Start page](https://github.com/topics/startpage) with some personal integrations
+- [Monkey Language Compiler and Virtual Machine](https://github.com/cbebe/monkey-rs) following the book *[Writing a Compiler in Go](https://compilerbook.com/)*
 
 ## Links
 
@@ -46,4 +36,5 @@ more hackathons as a team. Check out our [GitHub](https://github.com/thyckcorgis
 ## NPM Packages
 
 [They're gone now](/post/i-deleted-my-npm-packages/)
+
 <!-- {{% readfile file="/data/packages.md" %}} -->

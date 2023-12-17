@@ -9,16 +9,14 @@
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
-    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charles.thyck.top/tags/gnu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://charles.thyck.top/tags/gnu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TIL: Parallel `make`</title>
       <link>https://charles.thyck.top/post/til/parallel-make/</link>
-      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
-      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/til/parallel-make/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve always kind of known about the &lt;code&gt;-j&lt;/code&gt; flag for &lt;code&gt;make&lt;/code&gt;, but I didn&amp;rsquo;t know
-that &lt;strong&gt;it just works&lt;/strong&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve always kind of known about the &lt;code&gt;-j&lt;/code&gt; flag for &lt;code&gt;make&lt;/code&gt;, but I didn&amp;rsquo;t know&#xA;that &lt;strong&gt;it just works&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

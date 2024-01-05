@@ -9,14 +9,15 @@
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
-    <lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://charles.thyck.top/tags/meme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://charles.thyck.top/tags/meme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Friendship Ended with TypeScript, now Go is My Best Friend</title>
       <link>https://charles.thyck.top/post/friendship-ended/</link>
-      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/friendship-ended/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://charles.thyck.top/post/friendship-ended/friendship-ended.webp&#34; alt=&#34;Friendship ended&#34;&gt;&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

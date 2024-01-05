@@ -9,14 +9,17 @@
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
-    <lastBuildDate>Wed, 10 May 2023 00:59:18 -0600</lastBuildDate>
-    <atom:link href="https://charles.thyck.top/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 May 2023 00:59:18 -0600</lastBuildDate><atom:link href="https://charles.thyck.top/tags/npm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I Deleted My NPM Packages</title>
       <link>https://charles.thyck.top/post/i-deleted-my-npm-packages/</link>
-      <pubDate>Wed, 10 May 2023 00:59:18 -0600</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <pubDate>Wed, 10 May 2023 00:59:18 -0600</pubDate>
+      <author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/i-deleted-my-npm-packages/</guid>
-      <description>I deleted all 4 of my NPM packages today. It has been over a year since I&amp;rsquo;ve last updated them, and I didn&amp;rsquo;t want to add any more clutter to the system.&#xA;I&amp;rsquo;ve always thought that having published open source code meant something, but then I realized that it doesn&amp;rsquo;t matter if it&amp;rsquo;s not useful.&#xA;Learning how to package libraries and applications was a good experience, though, and I would probably publish stuff IF/WHEN I have actually solved a need.</description>
+      <description>I deleted all 4 of my NPM packages today. It has been over a year since I&amp;rsquo;ve last updated them, and I didn&amp;rsquo;t want to add any more clutter to the system.
+I&amp;rsquo;ve always thought that having published open source code meant something, but then I realized that it doesn&amp;rsquo;t matter if it&amp;rsquo;s not useful.
+Learning how to package libraries and applications was a good experience, though, and I would probably publish stuff IF/WHEN I have actually solved a need.</description>
     </item>
+    
   </channel>
 </rss>

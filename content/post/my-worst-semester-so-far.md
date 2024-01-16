@@ -1,5 +1,6 @@
 ---
 title: "My Worst Semester so Far"
+author: Charles Ancheta
 date: 2024-01-04T16:42:26-07:00
 description: Only letter grade-wise, I mean, it was a pretty fun semester.
 ---

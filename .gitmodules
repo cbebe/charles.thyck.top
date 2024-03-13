@@ -1,3 +1,6 @@
 [submodule "themes/risotto"]
 path = themes/risotto
 url = https://github.com/cbebe/risotto.git
+[submodule "turnip"]
+	path = turnip
+	url = https://github.com/cbebe/turnip.git

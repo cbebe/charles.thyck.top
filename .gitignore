@@ -4,7 +4,3 @@ public
 
 # generated assets
 resources/_gen
-
-# turnip stuff
-static/assets
-assets/turnip.html

@@ -4,13 +4,6 @@ This website is built using [Hugo](https://gohugo.io) and my own
 [fork](https://github.com/cbebe/risotto) of
 [risotto](https://github.com/joeroe/risotto).
 
-## Turnip calculator (`/turnip`)
-
-- A less-featureful (and not necessarily more performant) clone of
-  [Turnip Prophet](https://turnipprophet.io/) written in Rust and ReScript.
-- Cold (very cold) starts take at most 1.5 seconds to load results. Average is
-  <100 milliseconds.
-
 ## Scripts (`/bin`)
 
 - `deploy` (Go)

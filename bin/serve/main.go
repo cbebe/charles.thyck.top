@@ -1,3 +1,5 @@
+/// 2>/dev/null ; gorun "$0" "$@" ; exit $?
+
 // Simple HTTP server for testing build output
 // Run `make serve` and open http://localhost:3000 in your browser
 

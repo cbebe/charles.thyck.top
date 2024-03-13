@@ -1,8 +1,8 @@
+/// 2>/dev/null ; gorun $(realpath $0) "$@" ; exit $?
+
 // Deploy script for github pages
 // Loosely based on Docusaurus Github Pages deploy script
 // https://github.com/facebook/docusaurus/blob/542228ee1beb5cfddd7ba8ae088f109f164e80c5/packages/docusaurus/src/commands/deploy.ts#L43
-// Run `make serve` and open http://localhost:3000 in your browser
-
 package main
 
 import (
@@ -56,13 +56,16 @@ func main() {
 	gitPublish, cleanGitPublish := mkTmpDir()
 	defer cleanGitPublish()
 
-	// Make sure to create a new build output every time since it's blazingly fast anyway
+	// Make sure to create a new build output every time since it's blazingly
+	// fast anyway
 	if err := execCmd(fmt.Sprintf("hugo -d \"%s\"", output)); err != nil {
 		log.Fatalf("failed to build: %v", err)
 	}
 
 	os.Chdir(gitPublish)
-	cloneCmd := fmt.Sprintf("git clone --depth 1 --branch \"%s\" \"%s\" \"%s\"", deploymentBranch, originUrl, gitPublish)
+	cloneCmd := fmt.Sprintf(
+		"git clone --depth 1 --branch \"%s\" \"%s\" \"%s\"",
+		deploymentBranch, originUrl, gitPublish)
 	if err := execCmd(cloneCmd); err != nil {
 		// Branch doesn't exist, create new branch
 		execCmd("git init")
@@ -76,10 +79,15 @@ func main() {
 	}
 	os.Chdir(gitPublish)
 	execCmd("git add --all")
-	commitErr := execCmd(fmt.Sprintf("git commit -m \"Deploy website - based on %s\"", latestHash))
-	if err := execCmd("git push --force origin " + deploymentBranch); err != nil {
+	commitErr := execCmd(
+		fmt.Sprintf(
+			"git commit -m \"Deploy website - based on %s\"", latestHash))
+	err := execCmd("git push --force origin " + deploymentBranch)
+	if err != nil {
 		log.Fatalf("failed to push to origin: %v", err)
 	} else if commitErr == nil {
 		fmt.Printf("Website is live at: https://%s\n", projectName)
 	}
 }
+
+// vim: ft=go

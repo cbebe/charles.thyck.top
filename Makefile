@@ -1,9 +1,15 @@
 HUGO:=$(shell command -v hugo 2> /dev/null)
 
 build: assets/turnip.html themes/risotto/theme.toml
+ifndef HUGO
+	CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest
+endif
 	hugo --minify
 
 watch: assets/turnip.html
+ifndef HUGO
+	CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest
+endif
 	hugo serve -D
 
 themes/risotto/theme.toml:

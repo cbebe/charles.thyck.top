@@ -28,7 +28,7 @@ sectionPagesMenu = "main"
 
 [params.about]
 title = "Charles Ancheta"
-description = "Software Engineer"
+description = "Computer Engineer"
 logo = "/favicon.ico"
 
 [[params.socialLinks]]

@@ -6,8 +6,14 @@ Both alone and with :sparkles: friends :sparkles:
 
 ## Current/Planned Projects<a name="planned"></a>
 
-- [Start page](https://github.com/topics/startpage) with some personal integrations
-- [Monkey Language Compiler and Virtual Machine](https://github.com/cbebe/monkey-rs) following the book *[Writing a Compiler in Go](https://compilerbook.com/)*
+Capstone projects!
+
+- Fysh (Fish-themed Esoteric Programming Language)
+  - [Compiler written (C++ and LLVM)](https://github.com/Fysh-Fyve/fysh)
+  - [Tree-sitter Grammar](https://github.com/Fysh-Fyve/tree-sitter-fysh)
+  - [Fysh Language Server following Language Server Protocol
+    (Go)](https://github.com/Fysh-Fyve/fyshls)
+- [Fysh-Fyve (Softcore RISC-V CPU in VHDL)](https://github.com/Fysh-Fyve/riscv)
 
 ## Links
 
@@ -20,18 +26,20 @@ Both alone and with :sparkles: friends :sparkles:
 
 ## Thyck Corgis
 
-Started October 2020 Formed for University of Alberta Engineering Competition, we went on to participate in a couple
-more hackathons as a team. Check out our [GitHub](https://github.com/thyckcorgis)!
+Started October 2020 Formed for University of Alberta Engineering Competition,
+we went on to participate in a couple more hackathons as a team. Check out our
+[GitHub](https://github.com/thyckcorgis)!
 
 ### [WApp](https://devpost.com/software/wapp) - February 2021
 
-- Are you thirsty?! Well urine luck! ComPEEte with friends to rank #1 in the litreboard using our award winning WApp!
+- Are you thirsty?! Well urine luck! ComPEEte with friends to rank #1 in the
+  litreboard using our award winning WApp!
   [Demo Video](https://youtu.be/BXuvQGEnreE)
 
 ### [Heart 2 Heart Confessations](https://devpost.com/software/heart-2-heart) - January 2021
 
-- A mobile application that tackles the fear of initiating difficult conversations with friends, family, or significant
-  others.
+- A mobile application that tackles the fear of initiating difficult
+  conversations with friends, family, or significant others.
 
 ## NPM Packages
 

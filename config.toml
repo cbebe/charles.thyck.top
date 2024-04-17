@@ -12,7 +12,7 @@ copyright = 'Charles Ancheta. MIT'
 [markup.goldmark.renderer]
 unsafe = true
 
-[Author]
+[params.author]
 name = 'Charles Ancheta'
 email = 'cancheta.dev@gmail.com'
 

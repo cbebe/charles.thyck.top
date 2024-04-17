@@ -1,11 +1,11 @@
 ---
 title: Ripple Group
-weight: 5
+weight: 10
 ---
 
 {{<figure src="/ripple.webp" width="210" height="60" alt="Ripple Group Logo">}}
 
-- Junior Software Engineer, September 2022 - Present
+- Junior Software Engineer, September 2022 - January 2024
 
 <!--more-->
 

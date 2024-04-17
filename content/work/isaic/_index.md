@@ -1,6 +1,6 @@
 ---
 title: ISAIC
-weight: 10
+weight: 15
 ---
 
 {{<figure src="/isaic.webp" width="200" height="118" alt="ISAIC Logo">}}

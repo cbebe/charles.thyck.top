@@ -6,9 +6,7 @@
 
 ## What I'm currently learning
 
-- HTMX
-- Compiler Design
-- Data Visualization & Modelling
+- Machine Learning (finally drank the Kool-Aid)
 
 ## Side Projects I'm working on/planning to work on
 

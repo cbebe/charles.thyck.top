@@ -6,7 +6,7 @@
 
 ## What I'm currently learning
 
-- Machine Learning (finally drank the Kool-Aid)
+- Creative programming with p5.js
 
 ## Side Projects I'm working on/planning to work on
 

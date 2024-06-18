@@ -75,3 +75,7 @@ weight = 30
 category = "categories"
 tag = "tags"
 series = "series"
+
+[languages]
+[languages.en]
+languageName = 'English'

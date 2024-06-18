@@ -6,23 +6,25 @@ Both alone and with :sparkles: friends :sparkles:
 
 ## Current/Planned Projects<a name="planned"></a>
 
-Capstone projects!
-
-- Fysh (Fish-themed Esoteric Programming Language)
-  - [Compiler written (C++ and LLVM)](https://github.com/Fysh-Fyve/fysh)
-  - [Tree-sitter Grammar](https://github.com/Fysh-Fyve/tree-sitter-fysh)
-  - [Fysh Language Server following Language Server Protocol
-    (Go)](https://github.com/Fysh-Fyve/fyshls)
-- [Fysh-Fyve (Softcore RISC-V CPU in VHDL)](https://github.com/Fysh-Fyve/riscv)
+- [Fysh Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=Fysh-Fyve.fysh)
+  - Syntax highlighting
+  - Code completion using LSP
+  - Automatic installation
+  - [Source code on GitHub](https://github.com/Fysh-Fyve/vscode-fysh/)
+- [Fysh Interpreter in Go](https://github.com/Fysh-Fyve/fysh)
 
 ## Links
 
 - [GitHub](https://github.com/cbebe)
 - [Devpost](https://devpost.com/charlesancheta)
-- [NPM](https://npmjs.com/~cbebe)
-- [Gitea](https://git.thyck.top/)
-- [Turnip Price Calculator](/turnip)
-- [Pou Pentatonics (Happy New Year 2023!)](/post/pou)
+
+## Capstone Project - Fysh-Fyve - April 2024
+
+- Fysh (Fish-themed Esoteric Programming Language)
+  - [Compiler written in C++ with LLVM backend](https://github.com/Fysh-Fyve/fysh-sea)
+  - [Tree-sitter Grammar](https://github.com/Fysh-Fyve/tree-sitter-fysh)
+  - [Fysh Language Server following Language Server Protocol in Go](https://github.com/Fysh-Fyve/fyshls)
+- [Fysh-Fyve (Softcore RISC-V CPU in VHDL)](https://github.com/Fysh-Fyve/riscv)
 
 ## Thyck Corgis
 

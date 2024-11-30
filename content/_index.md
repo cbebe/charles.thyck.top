@@ -1,13 +1,7 @@
 # Charles Ancheta's Personal Website
 
-- Computer Engineering student at the University of Alberta
-- Love writing simple code for work and over-engineered monstrosities for fun
-- Graduating June 2024, started at Izzy Software May 2024
-
-## What I'm currently learning
-
-- Creative programming with p5.js
-
-## Side Projects I'm working on/planning to work on
-
-[For some accountability](./projects#planned)
+- Software Engineer at [Izzy](https://www.izzyplatform.com/)
+- BSc Computer Engineering graduate at the University of Alberta
+- 1/3 of [CitySync](https://citysync.ca)
+- 1/3 of [Fysh-Fyve](https://fysh-fyve.github.io)
+- 1/4 of [Thyck Corgis](https://thyck.top)

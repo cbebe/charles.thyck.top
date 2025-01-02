@@ -38,3 +38,15 @@ The most generic resolutions you'll find.
    - Before I just put whatever is left from credit card bills into my savings,
      but now I want to actually try to hit a savings percentage as a goal
    - 60% is probably attainable considering my living situation
+
+EDIT:
+
+More goals after a conversation with Jherzey:
+
+1. Move out
+2. Greet people on their birthdays
+   - First step is finding out what their birthdays are
+     - I only know mine because I have to use it to fill out forms (I still
+       forget sometimes)
+     - I only know one (1) my sisters' birthday because it's the same as mine
+     - I only know Jherzey's because she'll get mad otherwise

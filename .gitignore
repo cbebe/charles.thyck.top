@@ -4,3 +4,5 @@ public
 
 # generated assets
 resources/_gen
+
+.DS_Store

@@ -28,7 +28,13 @@ Today I'm going to list out some words that I find interesting:
   We borrowed them from English, but pronounce the _ll_ like it's from Spanish.
   In Spanish, they're pronounced with a regular _l_ (dólar and gorila).
 
-- All the bean words that have Hokkien 豆 (tāu):
+While eating
+[_adobong sitaw_](https://iankewks.com/adobong-sitaw/#:~:text=Adobong%20sitaw%20is%20one%20of,simple%2C%20and%20budget%2Dfriendly!)
+for dinner, I realized that it's a type of bean that ends in "_taw_". Then it
+reminded me of a time my uncle mentioned _tawsi_ which more obviously sounds
+like _dau6 si6_ (douchi) in Cantonese.
+
+- All the bean loanwords that have Hokkien 豆 (tāu):
   - _toyo_ - soy sauce - 豆油
   - [_taho_](https://en.wikipedia.org/wiki/Taho) - soft or silken tofu snack -
     豆腐 or shortened 豆腐花 ("[_douhua_](https://en.wikipedia.org/wiki/Douhua)")
@@ -38,3 +44,16 @@ Today I'm going to list out some words that I find interesting:
   - _toge_ - bean sprouts - 豆芽
   - _sitaw_ - Chinese long bean - 青豆 ("green bean")
   - _bataw_ - hyacinth bean - 肉豆
+
+EDIT: I came across a
+[list of loanwords in Tagalog](https://en.wikipedia.org/wiki/List_of_loanwords_in_Tagalog)
+and I was surprised by some of them. I knew of some loanwords that originated
+from Sanskrit like _agham_ (science) from आगम (āgama) and _mukha_ (face) from
+मुख (mukha), but there are actually a lot more, especially abstract concepts.
+
+Makes me wonder how people even spoke Tagalog before any outside influence, if
+it even existed then. Somehow I feel less repulsion towards Taglish now. "Pure"
+Tagalog before English influence was mostly Spanish-influenced, and "pure"
+Tagalog before Spanish influence was mostly Indian and Chinese-influenced. You'd
+have to go very far back to remove all outside influences. And for what? Just
+speak the natural progression of Tagalog.

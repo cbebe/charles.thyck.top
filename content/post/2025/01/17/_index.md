@@ -31,3 +31,9 @@ bou2 zaat3_) and 荷葉珍珠雞 (_ho4 yip6 zan1 zyu1 gai1_). I actually had to 
 - 珍珠雞 ("pearl chicken")- This evolved from 糯米雞 (_no6 mai5 gai1_, "sticky rice chicken") which were too large to serve in dim sum.
 
 Dim sum lore goes hard.
+
+EDIT: I went on the [English Wikipedia Dim sum
+page](https://en.wikipedia.org/wiki/Dim_sum) and it had all the common items,
+including the "four-treasure chicken roll" and "pearl chicken" which could've
+saved me a lot of time on flashcard making 🫠 Oh well, I guess it was a good
+exercise to translate them myself anyway.

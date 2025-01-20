@@ -91,6 +91,10 @@ we would see more activity next week once people are back.
 Overall, this is definitely a historic moment for the Internet, and the start of
 a new cultural exchange. I wish the best to both the US and Chinese netizens.
 
+EDIT: AOC's take on the mention of "President" Trump on the welcome page:
+
+<video src="./aoc.webm" controls width="320" height="480"></video>
+
 [^1]: The only definition of "fine shyt" I could find in Urban Dictionary that
 didn't involve another slang term was "a beautiful woman".
 

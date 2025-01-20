@@ -104,7 +104,8 @@ living easy. They are unaware that most minimum-wage workers have to work 2 or 3
 jobs just to cover food and rent.
 
 [^3]: Thank you, President Trump, very cool! Not even in office yet and has
-already "saved" TikTok.
+already
+["saved" TikTok](https://en.wikipedia.org/wiki/Donald_Trump%E2%80%93TikTok_controversy#Executive_order_to_ban_TikTok).
 
 [^4]: I tried to have ChatGPT critique this blog and got scolded for spreading
 misinformation 👀 Nice to know who's already invested into TikTok (jk).

@@ -48,5 +48,5 @@ More goals after a conversation with Jherzey:
    - First step is finding out what their birthdays are
      - I only know mine because I have to use it to fill out forms (I still
        forget sometimes)
-     - I only know one (1) my sisters' birthday because it's the same as mine
+     - I only know one (1) of my sisters' birthdays because it's the same as mine
      - I only know Jherzey's because she'll get mad otherwise

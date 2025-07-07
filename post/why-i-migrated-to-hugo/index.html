@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>Why I Migrated to Hugo &ndash; Charles Ancheta</title>
+
+<meta name="description" content="Computer Engineer">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+
+<link rel="stylesheet" href="https://charles.thyck.top/styles/risotto.min.ddc86cedd56f601a31494f30308bebeb59a546115259df9b372b4339234421562bd02be7d6794519d641e2ed9ee8035085814598034b9186658a36f325af60ad.css" integrity="sha512-3chs7dVvYBoxSU8wMIvr61mlRhFSWd&#43;bNytDOSNEIVYr0Cvn1nlFGdZB4u2e6ANQhYFFmANLkYZlijbzJa9grQ==">
+<link rel="alternate" type="application/rss+xml" href="https://charles.thyck.top//index.xml" title="Charles Ancheta">
+
+    </head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://charles.thyck.top/" class="page__logo-inner">Charles Ancheta</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/work/" title="">Work</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/projects/" title="">Projects</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/post/" title="">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Why I Migrated to Hugo</h1>
+    </header>
+    <div class="content__body">
+        <p>Aside from the fact that Hugo is <em>Blazingly Fast™</em>, I had a few problems with
+Docusaurus/the whole JS ecosystem that made it hard for me to keep updating my
+website.</p>
+<h2 id="i-had-no-need-for-react-in-this-website">I had no need for React in this website</h2>
+<p>There were only a few components that needed JavaScript, and now that I re-built
+the website with Hugo, there was only one that actually needed to be dynamic
+(i.e. post comments section, which was a single script tag in Hugo compared to
+an entire source file in React).</p>
+<p>I was basically compiling my Markdown files to JSX, then compiling it to HTML
+instead of going directly to HTML. This made me unsatisfied with my build times
+considering I was not using much Docusaurus&rsquo; features.</p>
+<h2 id="i-liked-writing-code-too-much-that-i-never-wrote-actual-content">I liked writing code too much that I never wrote actual content</h2>
+<p>Around the end of August, I discovered <a href="https://rescript-lang.org/">ReScript</a>.
+This was a breath of fresh air, coming from TypeScript fatigue. Naturally, I was
+tempted to convert all my TypeScript projects to ReScript (even my work ones,
+thank my co-worker for stopping me).</p>
+<p>My website wasn&rsquo;t saved from this, though. It was fun for a while, playing
+around with its type system. Then I realized I spent more time inside the <code>src</code>
+directory instead of <code>blog</code>. I was basically just playing around with the code,
+not even changing the appearance or structure of the pages.</p>
+<p>While I still use ReScript for my actual projects, my website doesn&rsquo;t need it.</p>
+<h2 id="simply-less-javascript">Simply less JavaScript</h2>
+<p>My content is purely markdown, my structure is purely HTML, my styling is
+stolen<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. No code necessary<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. The only JS that I request now is from
+Cloudflare (email protection and analytics) and
+<a href="https://utteranc.es/">utteranc.es</a> (post comments using GitHub account). In
+conclusion, I&rsquo;m just de-bloating my website, and I&rsquo;m trying to move away from
+writing more code. The world surely is a better place with me exercising
+restraint.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>I really just love this <a href="https://github.com/joeroe/risotto">style</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="/post/go-interfaces/">aside from the little Go script that I use to auto-generate
+more content</a>, but this is just one instance&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    <footer class="content__footer">
+        <script src="https://utteranc.es/client.js"
+        repo="cbebe/charles.thyck.top"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+  <img class="about__logo" src="https://charles.thyck.top/favicon.ico" width="24" height="24" alt="Logo">
+  <h1 class="about__title">Charles Ancheta</h1>
+  <p class="about__description">Computer Engineer</p>
+</div>
+
+
+<ul class="aside__social-links">
+  
+  <li>
+    <a href="https://github.com/cbebe" rel="me" aria-label="GitHub" title="GitHub">GitHub</a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/charles-ancheta" rel="me" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
+  </li>
+  
+  <li>
+    <a href="/index.xml" rel="me" aria-label="RSS" title="RSS">RSS</a>
+  </li>
+  
+  <li>
+    <a href="mailto:cancheta.dev@gmail.com" rel="me" aria-label="Email" title="Email">Email</a>
+  </li>
+  
+  <li>
+    <a href="https://mastodon.social/@cbebe" rel="me" aria-label="Mastodon" title="Mastodon">Mastodon</a>
+  </li>
+  
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Charles Ancheta, 
+            2022-11-29
+        </p>
+        
+            <p>
+                tags:
+            
+                <a href="/tags/website">website</a>
+            
+                <a href="/tags/hugo">hugo</a>
+            
+                <a href="/tags/blazingly">blazingly</a>
+            
+                <a href="/tags/fast">fast</a>
+            
+                <a href="/tags/js">js</a>
+            
+                <a href="/tags/go">go</a>
+            
+                <a href="/tags/rescript">rescript</a>
+            
+            </p>
+        
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+
+    
+    
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      
+          
+            
+            
+                <br/><span class="active">$ echo $LANG<br/><b>English</b></span><br/>
+
+            
+          
+      
+    
+</p>
+<br /><br />
+<p class="copyright">© 2025 Charles Ancheta. MIT</p>
+<p class="advertisement">
+  Powered by <a href="https://gohugo.io/">hugo</a> and my own
+  <a href="https://github.com/cbebe/risotto">fork</a> of
+  <a href="https://github.com/joeroe/risotto">risotto</a>.
+</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

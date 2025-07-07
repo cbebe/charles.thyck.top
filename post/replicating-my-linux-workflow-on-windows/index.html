@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>Replicating My Linux Workflow on Windows &ndash; Charles Ancheta</title>
+
+<meta name="description" content="Computer Engineer">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+
+<link rel="stylesheet" href="https://charles.thyck.top/styles/risotto.min.ddc86cedd56f601a31494f30308bebeb59a546115259df9b372b4339234421562bd02be7d6794519d641e2ed9ee8035085814598034b9186658a36f325af60ad.css" integrity="sha512-3chs7dVvYBoxSU8wMIvr61mlRhFSWd&#43;bNytDOSNEIVYr0Cvn1nlFGdZB4u2e6ANQhYFFmANLkYZlijbzJa9grQ==">
+<link rel="alternate" type="application/rss+xml" href="https://charles.thyck.top//index.xml" title="Charles Ancheta">
+
+    </head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://charles.thyck.top/" class="page__logo-inner">Charles Ancheta</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/work/" title="">Work</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/projects/" title="">Projects</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/post/" title="">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Replicating My Linux Workflow on Windows</h1>
+    </header>
+    <div class="content__body">
+        <p>A new co-op position meant new hardware<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, and a new technology stack to
+learn. Unfortunately, that includes having to use Windows. Coming back to
+Windows after almost 2 full years on Linux, it felt like I forgot how to use a
+computer. All the keyboard shortcuts that my hands were used to would do funny
+things like lock my laptop. I just wanted my shell, my terminal, and my tiling
+window manager back.</p>
+<p>Note that this post is only about Windows alternatives for tools in my Linux
+workflow. I won&rsquo;t be talking about tools that are specific to the job like IDEs
+and DB browsers (maybe in a separate post).</p>
+<h2 id="going-full-linux-with-wsl">Going full Linux with WSL</h2>
+<p>I used WSL before I became a full-time Linux user. I had a positive experience
+with it, so my first instinct was to reach for that. I was disappointed with the
+performance, though, and the startup time is horrible. Not good if I want to be
+able to use the shell right away. Having a separate <code>$HOME</code> directory also made
+file organization awkward.</p>
+<p>I figured that this was in no way going to be tolerable, so I knew I had to get
+cross-platform or Windows-native tools. It was time to give up my dream of
+having a single workflow everywhere.</p>
+<h2 id="terminal-tools">Terminal Tools</h2>
+<h3 id="shell-nushell-nuhttpswwwnushellsh">Shell: Nushell (<a href="https://www.nushell.sh/"><code>nu</code></a>)</h3>
+<p>I use Nushell because&hellip; (?) I didn&rsquo;t like Powershell<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>?? Now that I&rsquo;m writing
+about it, there was no reason for me NOT to learn Powershell. The concept of
+piping objects instead of text is somewhat different, but Nushell uses that same
+concept (since it&rsquo;s inspired by Powershell). If anything, Powershell is probably
+more polished since it&rsquo;s built with Windows as a priority. I also had to spend
+time learning Nushell, anyway. My time would&rsquo;ve been better spent learning the
+tools that are actually native to the system I&rsquo;m using. I wasn&rsquo;t giving up <code>zsh</code>
+on my Linux machines either, so Nushell being cross-platform doesn&rsquo;t mean
+anything to me.</p>
+<h3 id="directory-navigation-lfhttpsgithubcomgokcehanlf---zoxidehttpsgithubcomajeetdsouzazoxide">Directory navigation: <a href="https://github.com/gokcehan/lf"><code>lf</code></a> -&gt; <a href="https://github.com/ajeetdsouza/zoxide"><code>zoxide</code></a></h3>
+<p>I used to use <code>lf</code> to change directories using an
+<a href="https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh"><code>lfcd</code></a> binding, but
+it&rsquo;s a bit harder to integrate with Nushell since change in environment
+variables are scoped. I came across <code>zoxide</code> which is great for jumping around
+my most frequently visited directories. If I do need to explore a deep
+directory, I actually fire up <code>lf</code>, even if it takes around 1.5 seconds to start
+up.</p>
+<h3 id="terminal-multiplexing-nothing-">Terminal Multiplexing: Nothing :(</h3>
+<p>I tried looking for a cross-platform platform alternative to
+<a href="https://github.com/tmux/tmux/wiki"><code>tmux</code></a>, probably something written in Go or
+Rust. One of them was <a href="https://zellij.dev/"><code>zellij</code></a>, but it doesn&rsquo;t work on
+Windows. For simple terminal management, <a href="/post/replicating-my-linux-workflow-on-windows/#terminal-emulator">Windows Terminal</a>
+works fine.</p>
+<h4 id="neovim">Neovim</h4>
+<p>I have also flipped my workflow around Neovim and terminals. Instead of having
+two or three <code>tmux</code> panes, I simply have Neovim open and use the terminal inside
+it using the <code>:terminal</code> command. By not using Neovim inside <code>tmux</code>, I can use
+the increment number (<code>&lt;C-a&gt;</code>) binding properly. I have also carried this in my
+Linux workflow which simplifies things by a lot. It could get annoying sometimes
+though when I accidentally quit Neovim as it also kills the shell sessions that
+I start inside it. VSCode also has this problem so I usually run development
+server processes in separate Windows Terminal tabs.</p>
+<h2 id="window-management">Window Management</h2>
+<p>I tried to get tiling windows using
+<a href="https://learn.microsoft.com/en-us/windows/powertoys/fancyzones">FancyZones from Microsoft PowerToys</a>,
+but it felt laggy and it was quite a resource hog. I also didn&rsquo;t have enough
+screen space for it to be useful, anyway. I eventually got used to pressing
+<code>Alt + Tab</code> and <code>Alt + Shift + Tab</code> to go back and forth between windows, which
+isn&rsquo;t too bad. I have also carried this keyboard shortcut back to Pop! OS,
+although I still prefer moving between workspaces<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h2 id="terminal-emulator">Terminal Emulator</h2>
+<p>Windows Terminal, hands down. This is what I&rsquo;ve used back when I used
+Windows 10. It&rsquo;s customizable enough to keep me happy and the shortcut to start
+different shells in new tabs is really handy when I need an admin shell (no more
+searching for <code>Powershell</code>, and clicking &lsquo;Run as Administrator&rsquo;). It&rsquo;s also the
+only terminal that I&rsquo;ve used on Windows that actually sends mouse terminal
+sequences to programs. Even the VSCode integrated terminal doesn&rsquo;t work properly
+with <code>lazygit</code>!</p>
+<p>I also tried using Alacritty, which is what I use for the rest of my machines,
+but it doesn&rsquo;t matter how fast the terminal emulator is if the programs
+themselves are slow. Not having the features of Windows terminal actually slows
+me down more.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>When I first started using Windows again, it all felt so foreign to me. But with
+these alternatives to my workflow, there&rsquo;s not much difference from when I&rsquo;m
+working inside Linux. Maybe except for having Visual Studio running in the
+background for the back-end server. With cross-platform tools written in modern
+languages like Rust and Go, I can simply download the binary, plop it into
+<code>PATH</code>, and go crazy.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>This beast of a gaming laptop costs around 3 times as much as my personal
+laptop. It does makes sense now that they&rsquo;d give me something so beefed up since
+none of my own hardware can actually run Visual Studio.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Maybe it had to do with it being slow? I think all shells are sluggish on
+Windows anyway, even Nushell. Powershell 7 promises some performance
+improvements, though. I will try setting it as my main shell after I&rsquo;ve copied
+my Nushell config. Writing really does help with introspection. EDIT December
+17: Nope, nope, nope. The shell taking at most 1.5 seconds to &ldquo;load
+configurations&rdquo; when I haven&rsquo;t made any personal configuration yet seems like
+bad news. I will never use it as an interactive shell, sorry.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>I realized now that Windows also has desktop workspaces. I need to start
+using that more.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+    <footer class="content__footer">
+        <script src="https://utteranc.es/client.js"
+        repo="cbebe/charles.thyck.top"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+  <img class="about__logo" src="https://charles.thyck.top/favicon.ico" width="24" height="24" alt="Logo">
+  <h1 class="about__title">Charles Ancheta</h1>
+  <p class="about__description">Computer Engineer</p>
+</div>
+
+
+<ul class="aside__social-links">
+  
+  <li>
+    <a href="https://github.com/cbebe" rel="me" aria-label="GitHub" title="GitHub">GitHub</a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/charles-ancheta" rel="me" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
+  </li>
+  
+  <li>
+    <a href="/index.xml" rel="me" aria-label="RSS" title="RSS">RSS</a>
+  </li>
+  
+  <li>
+    <a href="mailto:cancheta.dev@gmail.com" rel="me" aria-label="Email" title="Email">Email</a>
+  </li>
+  
+  <li>
+    <a href="https://mastodon.social/@cbebe" rel="me" aria-label="Mastodon" title="Mastodon">Mastodon</a>
+  </li>
+  
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Charles Ancheta, 
+            2022-12-09
+        </p>
+        
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+
+    
+    
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      
+          
+            
+            
+                <br/><span class="active">$ echo $LANG<br/><b>English</b></span><br/>
+
+            
+          
+      
+    
+</p>
+<br /><br />
+<p class="copyright">© 2025 Charles Ancheta. MIT</p>
+<p class="advertisement">
+  Powered by <a href="https://gohugo.io/">hugo</a> and my own
+  <a href="https://github.com/cbebe/risotto">fork</a> of
+  <a href="https://github.com/joeroe/risotto">risotto</a>.
+</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Personal Projects on Charles Ancheta</title>
+    <link>https://charles.thyck.top/projects/</link>
+    <description>Recent content in My Personal Projects on Charles Ancheta</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en</language>
+    <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
+    <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
+    <copyright>Charles Ancheta. MIT</copyright>
+    <atom:link href="https://charles.thyck.top/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Back Burner</title>
+      <link>https://charles.thyck.top/projects/back-burner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/projects/back-burner/</guid>
+      <description>&#xA;Time Tracking PWA for my girlfriend with Svelte frontend and Pocketbase backend ❓REASON: It&amp;rsquo;s kinda hard to get the requirements down for this because of how complicated hourly differentials are 😭 Web frontend for Pincerhex, a Hex-playing program by me and my friend Will written in 🦀🦀🦀 Rust 🦀🦀🦀 btw we won btw ❓REASON: I already got to show my boss at work and he got obliterated, mission accomplished It&amp;rsquo;s still pretty ugly, though Markdown to LaTeX converter for my Resume (in 🦀🦀🦀 Rust 🦀🦀🦀 btw) ❓REASON: I think it&amp;rsquo;s pretty much complete, but also, I haven&amp;rsquo;t had to send out resumes in a while Open Kattis Group Ranklist with a few extra columns Show contributed score, and required individual score to climb the next group rank ❓REASON: Also done, I&amp;rsquo;m just paranoid about deploying it in my home server Water Sort Puzzle Solver ❓REASON: I uninstalled the game, too addicting </description>
+    </item>
+  </channel>
+</rss>

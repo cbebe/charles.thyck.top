@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Til on Charles Ancheta</title>
+    <link>https://charles.thyck.top/tags/til/</link>
+    <description>Recent content in Til on Charles Ancheta</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en</language>
+    <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
+    <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
+    <copyright>Charles Ancheta. MIT</copyright>
+    <lastBuildDate>Sat, 11 Jan 2025 00:50:18 -0700</lastBuildDate>
+    <atom:link href="https://charles.thyck.top/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TIL: Beans Etymology</title>
+      <link>https://charles.thyck.top/post/til/beans/</link>
+      <pubDate>Sat, 11 Jan 2025 00:50:18 -0700</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/til/beans/</guid>
+      <description>Being a Tagalog speaker and a language learner, I&amp;rsquo;ve always been interested in etymology of Tagalog words. The obvious influences are Spanish and English, but there&amp;rsquo;s also a lot from Hokkien and Malay.&#xA;Today I&amp;rsquo;m going to list out some words that I find interesting:&#xA;Linggo (Sunday; week) - All the days in Tagalog are directly borrowed from Spanish one to one, except for Sunday (domingo). Apparently it could be from Malay minggu which came from Portuguese domingo.</description>
+    </item>
+    <item>
+      <title>TIL: Parallel `make`</title>
+      <link>https://charles.thyck.top/post/til/parallel-make/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/til/parallel-make/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always kind of known about the &lt;code&gt;-j&lt;/code&gt; flag for &lt;code&gt;make&lt;/code&gt;, but I didn&amp;rsquo;t know&#xA;that &lt;strong&gt;it just works&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TIL: My actual height</title>
+      <link>https://charles.thyck.top/post/til/my-actual-height/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/til/my-actual-height/</guid>
+      <description>&lt;p&gt;Today I learned what my actual height was (at least at the time of writing). For a few years now I&amp;rsquo;ve always kind of&#xA;just stuck with 170 cm because that&amp;rsquo;s what was in my driver&amp;rsquo;s license when I got it 5 years ago (I really need to pass&#xA;the road test this year). I&amp;rsquo;m not even sure if that was right at the time.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fast on Charles Ancheta</title>
+    <link>https://charles.thyck.top/tags/fast/</link>
+    <description>Recent content in Fast on Charles Ancheta</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en</language>
+    <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
+    <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
+    <copyright>Charles Ancheta. MIT</copyright>
+    <lastBuildDate>Tue, 29 Nov 2022 02:50:15 -0700</lastBuildDate>
+    <atom:link href="https://charles.thyck.top/tags/fast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why I Migrated to Hugo</title>
+      <link>https://charles.thyck.top/post/why-i-migrated-to-hugo/</link>
+      <pubDate>Tue, 29 Nov 2022 02:50:15 -0700</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/why-i-migrated-to-hugo/</guid>
+      <description>&lt;p&gt;Aside from the fact that Hugo is &lt;em&gt;Blazingly Fast™&lt;/em&gt;, I had a few problems with&#xA;Docusaurus/the whole JS ecosystem that made it hard for me to keep updating my&#xA;website.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

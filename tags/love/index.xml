@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Love on Charles Ancheta</title>
+    <link>https://charles.thyck.top/tags/love/</link>
+    <description>Recent content in Love on Charles Ancheta</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en</language>
+    <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
+    <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
+    <copyright>Charles Ancheta. MIT</copyright>
+    <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://charles.thyck.top/tags/love/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dev Log: Boboman - Day 4</title>
+      <link>https://charles.thyck.top/post/dev-log/boboman/day-4/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/dev-log/boboman/day-4/</guid>
+      <description>I feel like the hardest part of writing this game would be the enemy logic. That&amp;rsquo;s why I&amp;rsquo;m putting it off for as long as possible! Today I implemented map generation, randomly placing boxes sufficiently far enough from players.&#xA;I also added controls for other players, which reminded me of my local multiplayer experience with Boxhead. I miss having multiple people on play a single keyboard. These days it would be awkward to play that way.</description>
+    </item>
+    <item>
+      <title>Dev Log: Boboman - Day 3</title>
+      <link>https://charles.thyck.top/post/dev-log/boboman/day-3/</link>
+      <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/dev-log/boboman/day-3/</guid>
+      <description>Feeling good today. I got to fix the collision bug that was happening yesterday. It actually had to do with the collision lifecycle, so to make the player detectable, I decoupled the check from the lifecycle of the bomb. Because of this, I could revert the player&amp;rsquo;s bomb timer to normal. Moving away from a project and letting your brain sit on a problem for a while really does wonders.</description>
+    </item>
+    <item>
+      <title>Dev Log: Boboman - Day 2</title>
+      <link>https://charles.thyck.top/post/dev-log/boboman/day-2/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/dev-log/boboman/day-2/</guid>
+      <description>MAJOR BUG ALERT!!&#xA;Apparently my collision logic for the bombs weren&amp;rsquo;t going to hold up. Every time a bomb explodes, there is a small time window where you can place a bomb and the bomb would not recognize the player, making it a &amp;ldquo;not new&amp;rdquo; bomb. Because of that, the player gets pushed off right away and could end up in the weirdest of places.&#xA;After hours of debugging I couldn&amp;rsquo;t really solve it because of how the collision library orders the entity updates.</description>
+    </item>
+    <item>
+      <title>Dev Log: Boboman - Day 1</title>
+      <link>https://charles.thyck.top/post/dev-log/boboman/day-1/</link>
+      <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/dev-log/boboman/day-1/</guid>
+      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been heavily configuring my text editor, Neovim, which means that I&amp;rsquo;ve been writing a lot of Lua. I do&#xA;find it enjoyable, even without having any tooling initially, so I wanted to give game development and&#xA;&lt;a href=&#34;https://love2d.org&#34;&gt;Love2D&lt;/a&gt; a try. I just finished&#xA;&lt;a href=&#34;https://www.sheepolution.com/learn/book/contents&#34;&gt;Sheepolution&amp;rsquo;s How to LÖVE&lt;/a&gt; book on Love2D, and felt prepared to make&#xA;my first game from scratch. As per Jherzey&amp;rsquo;s request, I&amp;rsquo;m creating a Bomberman clone.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

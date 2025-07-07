@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on Charles Ancheta</title>
+    <link>https://charles.thyck.top/tags/typescript/</link>
+    <description>Recent content in Typescript on Charles Ancheta</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en</language>
+    <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
+    <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
+    <copyright>Charles Ancheta. MIT</copyright>
+    <lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://charles.thyck.top/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Friendship Ended with TypeScript, now Go is My Best Friend</title>
+      <link>https://charles.thyck.top/post/friendship-ended/</link>
+      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
+      <guid>https://charles.thyck.top/post/friendship-ended/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Friendship ended&#34; src=&#34;https://charles.thyck.top/post/friendship-ended/friendship-ended.webp&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

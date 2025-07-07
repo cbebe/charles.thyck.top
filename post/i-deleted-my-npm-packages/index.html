@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>I Deleted My NPM Packages &ndash; Charles Ancheta</title>
+
+<meta name="description" content="These should&#39;ve just been Github gists">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+
+<link rel="stylesheet" href="https://charles.thyck.top/styles/risotto.min.ddc86cedd56f601a31494f30308bebeb59a546115259df9b372b4339234421562bd02be7d6794519d641e2ed9ee8035085814598034b9186658a36f325af60ad.css" integrity="sha512-3chs7dVvYBoxSU8wMIvr61mlRhFSWd&#43;bNytDOSNEIVYr0Cvn1nlFGdZB4u2e6ANQhYFFmANLkYZlijbzJa9grQ==">
+<link rel="alternate" type="application/rss+xml" href="https://charles.thyck.top//index.xml" title="Charles Ancheta">
+
+    </head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://charles.thyck.top/" class="page__logo-inner">Charles Ancheta</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/work/" title="">Work</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/projects/" title="">Projects</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://charles.thyck.top/post/" title="">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>I Deleted My NPM Packages</h1>
+    </header>
+    <div class="content__body">
+        <p>I deleted all 4 of my NPM packages today. It has been over a year since I&rsquo;ve
+last updated them, and I didn&rsquo;t want to add any more clutter to the system.</p>
+<p>I&rsquo;ve always thought that having published open source code meant something, but
+then I realized that it doesn&rsquo;t matter if it&rsquo;s not useful.</p>
+<p>Learning how to package libraries and applications was a good experience,
+though, and I would probably publish stuff IF/WHEN I have actually solved a
+need. Here are the reasons why I deleted each of them.</p>
+<h2 id="timeinterval-nominal-type-libtime">TimeInterval nominal type: <code>libtime</code></h2>
+<p>This should just be a single file that can be easily copied and extended. I also
+created a <a href="https://gist.github.com/cbebe/504e5098d3674da574ff85e8126cdb22">GitHub Gist</a>
+so it can also be downloaded.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">/* TimeInterval nominal type and converters */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">declare</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">TypeSymbol</span>: <span style="color:#66d9ef">unique</span> <span style="color:#66d9ef">symbol</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">TimeInterval</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">&amp;</span> { [<span style="color:#a6e22e">TypeSymbol</span>]<span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;TimeInterval&#39;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Functions for converting to TimeInterval */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">milliseconds</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">howMany</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">howMany</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TimeInterval</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">howMany</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">howMany</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>) <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TimeInterval</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">minutes</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">howMany</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">howMany</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>) <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TimeInterval</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hours</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">howMany</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">howMany</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span>) <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TimeInterval</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">days</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">howMany</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">howMany</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span>) <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TimeInterval</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">weeks</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">howMany</span>: <span style="color:#66d9ef">number</span>) <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">howMany</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3600</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">7</span>) <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TimeInterval</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Functions for converting to numbers */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toSeconds</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">timeInterval</span>: <span style="color:#66d9ef">TimeInterval</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">timeInterval</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toMilliseconds</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">timeInterval</span>: <span style="color:#66d9ef">TimeInterval</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">timeInterval</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">number</span>;
+</span></span></code></pre></div><p>This can be used like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">delay</span>(<span style="color:#a6e22e">duration</span>: <span style="color:#66d9ef">TimeInterval</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">void</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">void</span>&gt;((<span style="color:#a6e22e">resolve</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">toMilliseconds</span>(<span style="color:#a6e22e">duration</span>))
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something here...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">delay</span>(<span style="color:#a6e22e">minutes</span>(<span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do another thing here...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="nestjs-file-logger-module-nestjs-file-logger">NestJS File Logger Module: <code>nestjs-file-logger</code></h2>
+<p>This is also better suited to be just a copy-pasta, since I wouldn&rsquo;t have been
+able to offer a decent amount of customizability, nor did I want to. I just
+wanted to publish a package for the sake of it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;reflect-metadata&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Module</span>, <span style="color:#a6e22e">ConsoleLogger</span>, <span style="color:#a6e22e">Inject</span>, <span style="color:#a6e22e">Injectable</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@nestjs/common&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Logger</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">WinstonLogger</span>, <span style="color:#a6e22e">format</span>, <span style="color:#a6e22e">transports</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;winston&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">WinstonModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;nest-winston&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Level</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;debug&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;log&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;warn&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;error&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@Injectable</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileLogger</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ConsoleLogger</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@Inject</span>(<span style="color:#e6db74">&#34;winston&#34;</span>) <span style="color:#a6e22e">logger</span>: <span style="color:#66d9ef">WinstonLogger</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">doLog</span>(<span style="color:#a6e22e">level</span>: <span style="color:#66d9ef">Level</span>, <span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">any</span>, ...<span style="color:#a6e22e">optionalParams</span>: <span style="color:#66d9ef">any</span>[]) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>[<span style="color:#a6e22e">level</span>](<span style="color:#a6e22e">message</span>, ...<span style="color:#a6e22e">optionalParams</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">logger</span>[<span style="color:#a6e22e">level</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;log&#34;</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;info&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">level</span>](
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>([<span style="color:#a6e22e">message</span> <span style="color:#66d9ef">instanceof</span> Error <span style="color:#f92672">?</span> <span style="color:#a6e22e">message.stack</span> : <span style="color:#66d9ef">message</span>, ...<span style="color:#a6e22e">optionalParams</span>])
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">debug</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">any</span>, ...<span style="color:#a6e22e">optionalParams</span>: <span style="color:#66d9ef">any</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">doLog</span>(<span style="color:#e6db74">&#34;debug&#34;</span>, <span style="color:#a6e22e">message</span>, ...<span style="color:#a6e22e">optionalParams</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">any</span>, ...<span style="color:#a6e22e">optionalParams</span>: <span style="color:#66d9ef">any</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">doLog</span>(<span style="color:#e6db74">&#34;log&#34;</span>, <span style="color:#a6e22e">message</span>, ...<span style="color:#a6e22e">optionalParams</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">warn</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">any</span>, ...<span style="color:#a6e22e">optionalParams</span>: <span style="color:#66d9ef">any</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">doLog</span>(<span style="color:#e6db74">&#34;warn&#34;</span>, <span style="color:#a6e22e">message</span>, ...<span style="color:#a6e22e">optionalParams</span>); }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">any</span>, ...<span style="color:#a6e22e">optionalParams</span>: <span style="color:#66d9ef">any</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">doLog</span>(<span style="color:#e6db74">&#34;error&#34;</span>, <span style="color:#a6e22e">message</span>, ...<span style="color:#a6e22e">optionalParams</span>); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">combine</span>, <span style="color:#a6e22e">timestamp</span>, <span style="color:#a6e22e">printf</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logFormat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">printf</span>(({ <span style="color:#a6e22e">level</span>, <span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">timestamp</span> }) <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">`[</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">timestamp</span><span style="color:#e6db74">}</span><span style="color:#e6db74">] </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">level</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CustomWinstonModule</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">WinstonModule</span>.<span style="color:#a6e22e">forRoot</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">format</span>: <span style="color:#66d9ef">combine</span>(<span style="color:#a6e22e">timestamp</span>({ <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toISOString</span>() }), <span style="color:#a6e22e">logFormat</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">transports</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">transports</span>.<span style="color:#a6e22e">File</span>({ <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;logs/error.log&#34;</span>, <span style="color:#a6e22e">level</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;warn&#34;</span> }),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">transports</span>.<span style="color:#a6e22e">File</span>({ <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;logs/combined.log&#34;</span>, <span style="color:#a6e22e">level</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;info&#34;</span> }),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">transports</span>.<span style="color:#a6e22e">File</span>({ <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;logs/debug.log&#34;</span>, <span style="color:#a6e22e">level</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;debug&#34;</span> }),
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@Module</span>({ <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">CustomWinstonModule</span>], <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">FileLogger</span>], <span style="color:#a6e22e">exports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">FileLogger</span>] })
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoggerModule</span> { }
+</span></span></code></pre></div><p>Stolen from the README:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">/* Import `LoggerModule` into your `AppModule` */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Module</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@nestjs/common&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">LoggerModule</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;nest-file-logger&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@Module</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">LoggerModule</span>],
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppModule</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/***************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use `FileLogger` on application setup: */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NestFactory</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@nestjs/core&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FileLogger</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;nest-file-logger&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">AppModule</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./app.module&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">NestFactory</span>.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">AppModule</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">useLogger</span>(<span style="color:#a6e22e">app</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">FileLogger</span>));
+</span></span></code></pre></div><p><a href="https://gist.github.com/cbebe/d309f16d4a052f539b13da797c327a94">Link to Gist</a></p>
+<h2 id="create-blog-file-cli-create-md-blog">Create Blog File CLI: <code>create-md-blog</code></h2>
+<p>This was a CLI application that prompts you for a title and tags (even before
+you write the actual blog post) and creates a Markdown file containing this
+metadata. That&rsquo;s it. And I published it.</p>
+<p>This did not need to exist at all. It&rsquo;s basically just a hammer looking for a
+nail. Or me, an NPM-obsessed dev, looking for something to publish. It probably
+took 100x more time to create this than the amount of time I&rsquo;ve saved using
+this CLI application. These days I just use <code>hugo new post/&lt;title&gt;.md</code>.</p>
+<h2 id="nestjs-dependency-graph-nestjs-dependency-graph">NestJS Dependency Graph: <code>nestjs-dependency-graph</code></h2>
+<p>This one would&rsquo;ve actually been useful if it wasn&rsquo;t so hard to set up.
+Fortunately,
+<a href="https://www.npmjs.com/package/nestjs-spelunker"><code>nestjs-spelunker</code></a> is a
+similar tool that is actually maintained and comes with a more portable JSON
+format.</p>
+
+    </div>
+    <footer class="content__footer">
+        <script src="https://utteranc.es/client.js"
+        repo="cbebe/charles.thyck.top"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+  <img class="about__logo" src="https://charles.thyck.top/favicon.ico" width="24" height="24" alt="Logo">
+  <h1 class="about__title">Charles Ancheta</h1>
+  <p class="about__description">Computer Engineer</p>
+</div>
+
+
+<ul class="aside__social-links">
+  
+  <li>
+    <a href="https://github.com/cbebe" rel="me" aria-label="GitHub" title="GitHub">GitHub</a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/charles-ancheta" rel="me" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
+  </li>
+  
+  <li>
+    <a href="/index.xml" rel="me" aria-label="RSS" title="RSS">RSS</a>
+  </li>
+  
+  <li>
+    <a href="mailto:cancheta.dev@gmail.com" rel="me" aria-label="Email" title="Email">Email</a>
+  </li>
+  
+  <li>
+    <a href="https://mastodon.social/@cbebe" rel="me" aria-label="Mastodon" title="Mastodon">Mastodon</a>
+  </li>
+  
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    <p>These should&#39;ve just been Github gists</p>
+    
+        <p>
+            By Charles Ancheta, 
+            2023-05-10
+        </p>
+        
+            <p>
+                tags:
+            
+                <a href="/tags/js">js</a>
+            
+                <a href="/tags/npm">npm</a>
+            
+                <a href="/tags/trash-packages">trash-packages</a>
+            
+            </p>
+        
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+
+    
+    
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      
+          
+            
+            
+                <br/><span class="active">$ echo $LANG<br/><b>English</b></span><br/>
+
+            
+          
+      
+    
+</p>
+<br /><br />
+<p class="copyright">© 2025 Charles Ancheta. MIT</p>
+<p class="advertisement">
+  Powered by <a href="https://gohugo.io/">hugo</a> and my own
+  <a href="https://github.com/cbebe/risotto">fork</a> of
+  <a href="https://github.com/joeroe/risotto">risotto</a>.
+</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

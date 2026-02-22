@@ -20,7 +20,7 @@ imported into the page with [`readFile`](https://gohugo.io/functions/readfile/).
 
 # Initial Code
 
-{{< readfile file="fetch.go" code="true" lang="go" >}}
+{{% readfile file="fetch.go" code="true" lang="go" %}}
 
 The initial code works fine for the task, but I also want it to be formatted
 with [`deno fmt`](https://deno.land/manual@v1.28.0/tools/formatter) (for no good

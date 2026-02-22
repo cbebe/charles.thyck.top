@@ -1,6 +1,6 @@
 baseURL = 'https://charles.thyck.top'
 # baseURL = 'http://localhost:3000' # for dev
-languageCode = 'en-us'
+languageCode = 'en-ca'
 title = 'Charles Ancheta'
 theme = 'risotto'
 enableEmoji = true
@@ -46,10 +46,6 @@ url = "/index.xml"
 [[params.socialLinks]]
 title = "Email"
 url = "mailto:cancheta.dev@gmail.com"
-
-[[params.socialLinks]]
-title = "Mastodon"
-url = "https://mastodon.social/@cbebe"
 
 [menu]
 

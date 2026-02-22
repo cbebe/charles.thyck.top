@@ -1,0 +1,15 @@
+[tools]
+hugo-extended = "latest"
+
+[tasks.build]
+run = "hugo --minify"
+
+[tasks.dev]
+run = "hugo serve -D"
+
+[tasks.pages]
+run = "go run bin/deploy/main.go"
+depends = ["build"]
+
+[tasks.submodule]
+run = "git submodule update --init --recursive"

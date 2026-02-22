@@ -17,7 +17,7 @@ weight: 10
   - Python
   - Pandas
   - SQL
-  - [Polars](https://www.pola.rs/) (py-polars)]
+  - [Polars](https://www.pola.rs/) (py-polars)
 - Frontend Web Development
   - Angular
 - [Website Link](https://ripplegroup.ca)

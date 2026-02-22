@@ -4,8 +4,8 @@
     <title>Go on Charles Ancheta</title>
     <link>https://charles.thyck.top/tags/go/</link>
     <description>Recent content in Go on Charles Ancheta</description>
-    <generator>Hugo 0.125.0</generator>
-    <language>en</language>
+    <generator>Hugo</generator>
+    <language>en-us</language>
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
@@ -23,14 +23,14 @@
       <link>https://charles.thyck.top/post/go-interfaces/</link>
       <pubDate>Wed, 16 Nov 2022 03:52:09 -0700</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/go-interfaces/</guid>
-      <description>A few months ago I made a meme about Go being my new favourite language (replacing TypeScript) and I just want to share a satisfying moment I had recently.&#xA;The Task In the previous iteration of my website1, I have a few lines in my config that fetches information about my published NPM packages to be rendered on the Projects page. I wanted to do the same for my new website, outputted as a Markdown table, which can be easily imported into the page with readFile.</description>
+      <description>&lt;p&gt;A few months ago I made a &lt;a href=&#34;https://charles.thyck.top/post/friendship-ended/&#34;&gt;meme&lt;/a&gt; about Go being my new&#xA;favourite language (replacing TypeScript) and I just want to share a satisfying&#xA;moment I had recently.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-task&#34;&gt;The Task&lt;/h1&gt;&#xA;&lt;p&gt;In the &lt;a href=&#34;https://cbebe.github.io/v2&#34;&gt;previous iteration&lt;/a&gt; of my website&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, I&#xA;have a few lines in my config that fetches information about my published NPM&#xA;packages to be rendered on the&#xA;&lt;a href=&#34;https://cbebe.github.io/v2/projects/#packages&#34;&gt;Projects page&lt;/a&gt;. I wanted to do&#xA;the same for my new website, outputted as a Markdown table, which can be easily&#xA;imported into the page with &lt;a href=&#34;https://gohugo.io/functions/readfile/&#34;&gt;&lt;code&gt;readFile&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Friendship Ended with TypeScript, now Go is My Best Friend</title>
       <link>https://charles.thyck.top/post/friendship-ended/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/friendship-ended/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Friendship ended&#34; src=&#34;https://charles.thyck.top/post/friendship-ended/friendship-ended.webp&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://charles.thyck.top/post/friendship-ended/friendship-ended.webp&#34; alt=&#34;Friendship ended&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

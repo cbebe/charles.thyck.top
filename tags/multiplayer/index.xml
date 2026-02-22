@@ -4,8 +4,8 @@
     <title>Multiplayer on Charles Ancheta</title>
     <link>https://charles.thyck.top/tags/multiplayer/</link>
     <description>Recent content in Multiplayer on Charles Ancheta</description>
-    <generator>Hugo 0.125.0</generator>
-    <language>en</language>
+    <generator>Hugo</generator>
+    <language>en-us</language>
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
@@ -16,7 +16,7 @@
       <link>https://charles.thyck.top/post/dev-log/boboman/day-4/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/dev-log/boboman/day-4/</guid>
-      <description>I feel like the hardest part of writing this game would be the enemy logic. That&amp;rsquo;s why I&amp;rsquo;m putting it off for as long as possible! Today I implemented map generation, randomly placing boxes sufficiently far enough from players.&#xA;I also added controls for other players, which reminded me of my local multiplayer experience with Boxhead. I miss having multiple people on play a single keyboard. These days it would be awkward to play that way.</description>
+      <description>&lt;p&gt;I feel like the hardest part of writing this game would be the enemy logic. That&amp;rsquo;s why I&amp;rsquo;m putting it off for as long as&#xA;possible! Today I implemented map generation, randomly placing boxes sufficiently far enough from players.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://charles.thyck.top/post/dev-log/boboman/day-4/multiplayer.webp&#34; alt=&#34;Multiplayer gameplay&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I also added controls for other players, which reminded me of my local multiplayer experience with Boxhead. I miss&#xA;having multiple people on play a single keyboard. These days it would be awkward to play that way.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

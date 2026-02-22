@@ -4,8 +4,8 @@
     <title>Gh-Pages on Charles Ancheta</title>
     <link>https://charles.thyck.top/tags/gh-pages/</link>
     <description>Recent content in Gh-Pages on Charles Ancheta</description>
-    <generator>Hugo 0.125.0</generator>
-    <language>en</language>
+    <generator>Hugo</generator>
+    <language>en-us</language>
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
@@ -16,7 +16,7 @@
       <link>https://charles.thyck.top/post/dev-log/boboman/day-2/</link>
       <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/dev-log/boboman/day-2/</guid>
-      <description>MAJOR BUG ALERT!!&#xA;Apparently my collision logic for the bombs weren&amp;rsquo;t going to hold up. Every time a bomb explodes, there is a small time window where you can place a bomb and the bomb would not recognize the player, making it a &amp;ldquo;not new&amp;rdquo; bomb. Because of that, the player gets pushed off right away and could end up in the weirdest of places.&#xA;After hours of debugging I couldn&amp;rsquo;t really solve it because of how the collision library orders the entity updates.</description>
+      <description>&lt;p&gt;MAJOR BUG ALERT!!&lt;/p&gt;&#xA;&lt;p&gt;Apparently my collision logic for the bombs weren&amp;rsquo;t going to hold up. Every time a bomb explodes, there is a small time&#xA;window where you can place a bomb and the bomb would not recognize the player, making it a &amp;ldquo;not new&amp;rdquo; bomb. Because of&#xA;that, the player gets pushed off right away and could end up in the weirdest of places.&lt;/p&gt;&#xA;&lt;p&gt;After hours of debugging I couldn&amp;rsquo;t really solve it because of how the collision library orders the entity updates. I&#xA;didn&amp;rsquo;t feel like giving up for today, though, and making no progress. I simply created a deployment script to deploy the&#xA;game to &lt;a href=&#34;https://cbebe.github.io/boboman/&#34;&gt;GitHub pages&lt;/a&gt; and fixed the player update logic so it at least doesn&amp;rsquo;t end up&#xA;outside of the map. Still a pretty good day even if I didn&amp;rsquo;t make as much progress as I wanted.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

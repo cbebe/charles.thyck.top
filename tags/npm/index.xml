@@ -4,8 +4,8 @@
     <title>Npm on Charles Ancheta</title>
     <link>https://charles.thyck.top/tags/npm/</link>
     <description>Recent content in Npm on Charles Ancheta</description>
-    <generator>Hugo 0.125.0</generator>
-    <language>en</language>
+    <generator>Hugo</generator>
+    <language>en-us</language>
     <managingEditor>cancheta.dev@gmail.com (Charles Ancheta)</managingEditor>
     <webMaster>cancheta.dev@gmail.com (Charles Ancheta)</webMaster>
     <copyright>Charles Ancheta. MIT</copyright>
@@ -16,7 +16,7 @@
       <link>https://charles.thyck.top/post/i-deleted-my-npm-packages/</link>
       <pubDate>Wed, 10 May 2023 00:59:18 -0600</pubDate><author>cancheta.dev@gmail.com (Charles Ancheta)</author>
       <guid>https://charles.thyck.top/post/i-deleted-my-npm-packages/</guid>
-      <description>I deleted all 4 of my NPM packages today. It has been over a year since I&amp;rsquo;ve last updated them, and I didn&amp;rsquo;t want to add any more clutter to the system.&#xA;I&amp;rsquo;ve always thought that having published open source code meant something, but then I realized that it doesn&amp;rsquo;t matter if it&amp;rsquo;s not useful.&#xA;Learning how to package libraries and applications was a good experience, though, and I would probably publish stuff IF/WHEN I have actually solved a need.</description>
+      <description>&lt;p&gt;I deleted all 4 of my NPM packages today. It has been over a year since I&amp;rsquo;ve&#xA;last updated them, and I didn&amp;rsquo;t want to add any more clutter to the system.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve always thought that having published open source code meant something, but&#xA;then I realized that it doesn&amp;rsquo;t matter if it&amp;rsquo;s not useful.&lt;/p&gt;&#xA;&lt;p&gt;Learning how to package libraries and applications was a good experience,&#xA;though, and I would probably publish stuff IF/WHEN I have actually solved a&#xA;need. Here are the reasons why I deleted each of them.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
